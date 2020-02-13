@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Animate.web</title>
+    <meta charset="utf-8" />
+    <script src="dist/animate.web.js"></script>
+    <!--  <script src="https://cdn.jsdelivr.net/npm/animatable-properties@latest/dist/animatable.js"></script>-->
+  </head>
+
+  <body>
+    <div
+      id="animation"
+      style="border-color: black; border-style: solid; border-width: thick; color: cyan; background-color: blueviolet; font-size: xx-large; width: 15ch; text-align: center;"
+    >
+      Animate me!
+    </div>
+    <button onclick="animation.play()">Play</button>
+    <script>
+      /* global animateweb */
+      // animateweb.bounceIn.options.iterations = Infinity
+      // animateweb.bounceIn.options.direction = 'alternate-reverse'
+      const animation = document.querySelector('#animation').animate(animateweb.bounceIn.keyframes, animateweb.bounceIn.options)
+      animation.cancel()
+      console.log(animation)
+      console.log(animateweb)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+# Animate.web
+
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
+[Animate.css](https://github.com/daneden/animate.css) animations ported to Web Animations API.
+
+## Install
+
+```
+$ yarn add animate.web
+```
+
+or
+
+```
+$ npm install animate.web
+```
+
+## Usage
+
+Import:
+
+```javascript
+import animateweb from 'animate.web'
+```
+
+Or load from CDN:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/animate.web@latest/dist/animateweb.js"></script>
+```
+
+Assign a selector to the element(s) you want to animate:
+
+```html
+<div id="animation">Animate me!</div>
+```
+
+Create animation with default options:
+
+```javascript
+const animation = document.querySelector('#animation').animate(animateweb.bounceIn.keyframes, animateweb.bounceIn.options)
+```
+
+Or apply any custom options if you need. Full list of available options [here](https://developer.mozilla.org/en-US/docs/Web/API/Element/animate)
+
+For example, change duration to 3 seconds and play it infinitely:
+
+```javascript
+animateweb.bounceIn.options.duration = 3000
+animateweb.bounceIn.options.iterations = Infinity
+const animation = document.querySelector('#animation').animate(animateweb.bounceIn.keyframes, animateweb.bounceIn.options)
+```
+
+After being created the animation will play immediately. If you want to prevent this use `cancel()` method right after the creation:
+
+```javascript
+const animation = document.querySelector('#animation').animate(animateweb.bounceIn.keyframes, animateweb.bounceIn.options)
+animation.cancel()
+```
+
+Use all available properties, methods and event handlers of the animation. Full list [here](https://developer.mozilla.org/en-US/docs/Web/API/Animation)
+
+For example, play animation on click:
+
+```html
+<button onclick="animation.play()">Play</button>
+```

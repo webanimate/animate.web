@@ -1,0 +1,71 @@
+{
+  "name": "animate.web",
+  "version": "0.0.0-alpha.0",
+  "description": "Animate.css animations ported to Web Animations API",
+  "main": "src/index.js",
+  "author": "Web Animate",
+  "license": "MIT",
+  "private": false,
+  "homepage": "https://github.com/webanimate/animate.web#readme",
+  "unpkg": "dist/animateweb.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/webanimate/animate.web.git"
+  },
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw",
+    "fix": "yarn fix:eslint && yarn fix:prettier && yarn build",
+    "fix:eslint": "eslint --fix \"**/*.*\"",
+    "fix:prettier": "prettier --write \"**/*.*\"",
+    "lint": "yarn lint:eslint && yarn lint:prettier",
+    "lint:eslint": "eslint \"**/*.*\"",
+    "lint:prettier": "prettier --check \"**/*.*\""
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-html": "^6.0.0",
+    "eslint-plugin-json": "^2.0.1",
+    "prettier": "^1.19.1",
+    "rollup": "^1.29.0",
+    "rollup-plugin-terser": "^5.2.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 11,
+      "sourceType": "module"
+    },
+    "plugins": [
+      "html",
+      "json"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:json/recommended",
+      "prettier"
+    ]
+  },
+  "prettier": {
+    "printWidth": 180,
+    "semi": false,
+    "singleQuote": true
+  },
+  "keywords": [
+    "waapi",
+    "web",
+    "animations",
+    "api",
+    "web-animations-api",
+    "css",
+    "transitions"
+  ]
+}
