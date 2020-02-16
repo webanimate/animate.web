@@ -986,23 +986,20 @@ export default {
       'heartBeat'
     ],
 
-    'Bouncing Entrances': [
+    Bounce: [
       'bounceIn', //
       'bounceInDown',
       'bounceInLeft',
       'bounceInRight',
-      'bounceInUp'
-    ],
-
-    'Bouncing Exits': [
-      'bounceOut', //
+      'bounceInUp',
+      'bounceOut',
       'bounceOutDown',
       'bounceOutLeft',
       'bounceOutRight',
       'bounceOutUp'
     ],
 
-    'Fading Entrances': [
+    Fade: [
       'fadeIn', //
       'fadeInDown',
       'fadeInDownBig',
@@ -1011,11 +1008,8 @@ export default {
       'fadeInRight',
       'fadeInRightBig',
       'fadeInUp',
-      'fadeInUpBig'
-    ],
-
-    'Fading Exits': [
-      'fadeOut', //
+      'fadeInUpBig',
+      'fadeOut',
       'fadeOutDown',
       'fadeOutDownBig',
       'fadeOutLeft',
@@ -1026,7 +1020,7 @@ export default {
       'fadeOutUpBig'
     ],
 
-    Flippers: [
+    Flip: [
       'flip', //
       'flipInX',
       'flipInY',
@@ -1034,62 +1028,50 @@ export default {
       'flipOutY'
     ],
 
-    Lightspeed: [
-      'lightSpeedIn', //
-      'lightSpeedOut'
-    ],
-
-    'Rotating Entrances': [
+    Rotate: [
       'rotateIn', //
       'rotateInDownLeft',
       'rotateInDownRight',
       'rotateInUpLeft',
-      'rotateInUpRight'
-    ],
-
-    'Rotating Exits': [
-      'rotateOut', //
+      'rotateInUpRight',
+      'rotateOut',
       'rotateOutDownLeft',
       'rotateOutDownRight',
       'rotateOutUpLeft',
       'rotateOutUpRight'
     ],
 
+    Slide: [
+      'slideInDown', //
+      'slideInLeft',
+      'slideInRight',
+      'slideInUp',
+      'slideOutDown',
+      'slideOutLeft',
+      'slideOutRight',
+      'slideOutUp'
+    ],
+
     Specials: [
       'hinge', //
       'jackInTheBox',
+      'lightSpeedIn',
+      'lightSpeedOut',
       'rollIn',
       'rollOut'
     ],
 
-    'Zooming Entrances': [
+    Zoom: [
       'zoomIn', //
       'zoomInDown',
       'zoomInLeft',
       'zoomInRight',
-      'zoomInUp'
-    ],
-
-    'Zooming Exits': [
-      'zoomOut', //
+      'zoomInUp',
+      'zoomOut',
       'zoomOutDown',
       'zoomOutLeft',
       'zoomOutRight',
       'zoomOutUp'
-    ],
-
-    'Sliding Entrances': [
-      'slideInDown', //
-      'slideInLeft',
-      'slideInRight',
-      'slideInUp'
-    ],
-
-    'Sliding Exits': [
-      'slideOutDown', //
-      'slideOutLeft',
-      'slideOutRight',
-      'slideOutUp'
     ]
   }
 }
