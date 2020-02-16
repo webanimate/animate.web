@@ -3,15 +3,197 @@
   <head>
     <title>Animate.web</title>
     <meta charset="utf-8" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!-- Load script locally for development ↓↓↓ ---------->
     <script src="dist/animate.web.js"></script>
-    <!--  <script src="https://cdn.jsdelivr.net/npm/animatable-properties@latest/dist/animatable.js"></script>-->
-  </head>
+    <!--    <script src="https://cdn.jsdelivr.net/npm/webanimate/animate.web@latest/dist/animate.web.js"></script>-->
+    <!--  Load from cdn: jsdelivr ↑↑↑ or unpkg ↓↓↓ -->
+    <!--  <script src="https://unpkg.com/animate.web"></script>-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@latest/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/eva-icons@latest/style/eva-icons.css" rel="stylesheet" type="text/css" />
+    <!--    <link href="https://themify.me/wp-content/themes/themify-v32/themify-icons/themify-icons.css" rel="stylesheet" type="text/css" />-->
+    <link href="https://cdn.jsdelivr.net/npm/line-awesome@latest/dist/line-awesome/css/line-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@latest/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
 
+    <link href="https://cdn.jsdelivr.net/npm/quasar@latest/dist/quasar.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qiconpicker@latest/dist/index.min.css" rel="stylesheet" type="text/css" />
+  </head>
   <body>
-    <div
-      id="animation"
-      style="border-color: black; border-style: solid; border-width: thick; color: cyan; background-color: blueviolet; font-size: xx-large; width: 15ch; text-align: center;"
-    >
+    <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/quasar@^1.9.1/dist/quasar.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qiconpicker@latest/dist/index.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qiconpicker@latest/dist/icon-set/material-icons.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qiconpicker@latest/dist/icon-set/eva-icons.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qiconpicker@latest/dist/icon-set/fontawesome-v5.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qiconpicker@latest/dist/icon-set/ionicons-v4.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qiconpicker@latest/dist/icon-set/mdi-v4.umd.js"></script>
+    <!--    <script src="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qiconpicker@latest/dist/icon-set/themify.umd.js"></script>-->
+    <script src="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qiconpicker/dist/icon-set/line-awesome.umd.js"></script>
+
+    <div id="q-app">
+      <q-layout view="hHh lpR fFf" class="shadow-2 rounded-borders">
+        <q-header elevated>
+          <q-toolbar class="bg-primary glossy text-white">
+            <q-toolbar-title
+              >Animate.web
+              <div class="text-subtitle2">$ yarn add animate.web&nbsp;</div>
+            </q-toolbar-title>
+
+            <q-btn flat dense round @click="drawer = !drawer" aria-label="Menu">
+              <q-icon name="menu" size="md"></q-icon>
+            </q-btn>
+          </q-toolbar>
+        </q-header>
+
+        <q-drawer v-model="drawer" side="right" show-if-above>
+          <q-list no-border link inset-delimiter>
+            <q-item clickable v-ripple @click="Quasar.utils.openURL('https://github.com/webanimate/animate.web')">
+              <q-item-section avatar>
+                <q-icon color="primary" name="fab fa-github"></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>Github repository</q-item-label>
+                <q-item-label caption>View repository on Github</q-item-label>
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable v-ripple @click="Quasar.utils.openURL('https://npmjs.com/package/animate.web')">
+              <q-item-section avatar>
+                <q-icon color="primary" name="fab fa-npm"></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>NPM package</q-item-label>
+                <q-item-label caption>View package on NPM</q-item-label>
+              </q-item-section>
+            </q-item>
+
+            <q-item clickable v-ripple @click="Quasar.utils.openURL('https://github.com/webanimate/animate.web/blob/master/index.html')">
+              <q-item-section avatar>
+                <q-icon color="primary" name="fab fa-github-alt"></q-icon>
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>Github demo</q-item-label>
+                <q-item-label caption>View source of this demo</q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-drawer>
+
+        <q-page-container>
+          <q-page>
+            <div class="row">
+              <div class="q-ma-md" style="min-width: 300px; max-width: 300px;">
+                <q-select v-model="iconSet" :options="iconSets" label="Select icon set" dense></q-select>
+                <q-input v-model="filter" label="Filter" dense clearable class="q-ma-md"> </q-input>
+                <q-icon-picker v-model="icon" :icon-set="iconSet" :pagination.sync="pagination" :filter="filter" tooltips style="height: 490px"></q-icon-picker>
+              </div>
+
+              <div class="q-ma-md" style="min-width: 300px; max-width: 300px;">
+                <q-card bordered>
+                  <q-card-section>
+                    <q-btn color="primary" label="Select animation">
+                      <q-menu max-height="100vh">
+                        <q-list dense style="min-width: 100px">
+                          <q-item clickable v-for="animations, category, index in animateweb.categories" :key="`category-${index}`">
+                            <q-item-section style="white-space: nowrap;">{{category}}</q-item-section>
+                            <q-item-section side>
+                              <q-icon name="keyboard_arrow_right"></q-icon>
+                            </q-item-section>
+
+                            <q-menu anchor="top right" self="top left">
+                              <q-list>
+                                <q-item v-for="(animation, index) in animations" :key="`animation-${index}`" dense clickable @click="animate(animation)">
+                                  <q-item-section>{{animation}}</q-item-section>
+                                </q-item>
+                              </q-list>
+                            </q-menu>
+                          </q-item>
+                          <q-separator></q-separator>
+                        </q-list>
+                      </q-menu>
+                    </q-btn>
+                  </q-card-section>
+                </q-card>
+              </div>
+
+              <div class="q-ma-md" style="min-width: 300px; max-width: 300px;">
+                <q-card bordered>
+                  <q-card-section style="text-align: center;">
+                    <q-icon :name="icon" style="font-size: 10vw;z-index: 1000000" id="icon"></q-icon>
+                    <div>{{icon}}</div>
+                  </q-card-section>
+                  <q-card-section> </q-card-section>
+                </q-card>
+              </div>
+            </div>
+          </q-page>
+        </q-page-container>
+      </q-layout>
+    </div>
+    <script>
+      /* global Vue, animateweb */
+      new Vue({
+        el: '#q-app',
+
+        data: function() {
+          return {
+            iconSet: 'material-icons',
+            icon: 'fab fa-jenkins',
+            filter: '',
+            pagination: {
+              itemsPerPage: 60,
+              page: 0
+            },
+            drawer: true
+          }
+        },
+
+        created() {
+          this.iconSets = [
+            'material-icons', //
+            'mdi-v4',
+            'ionicons-v4',
+            'eva-icons',
+            'fontawesome-v5',
+            // 'themify',
+            'line-awesome'
+          ]
+          this.prevAnimation = ''
+          this.animation = document.querySelector('#icon').animate(animateweb.jello.keyframes, animateweb.jello.options)
+        },
+
+        methods: {
+          animate(name) {
+            if (name === this.prevAnimation) {
+              this.animation.cancel()
+              this.animation.play()
+              console.log(1)
+            } else {
+              this.prevAnimation = name
+              this.animation = document.querySelector('#icon').animate(animateweb[name].keyframes, animateweb[name].options)
+              console.log(name)
+            }
+          },
+          filterFn(val, update) {
+            if (val === '') {
+              update(() => {
+                this.options = this._options
+              })
+              return
+            }
+
+            update(() => {
+              const needle = val.toLowerCase()
+              this.options = this._options.filter(v => v.toLowerCase().indexOf(needle) > -1)
+            })
+          }
+        }
+      })
+    </script>
+
+    <div id="animation" style="border-color: black; border-style: solid; border-width: thick; color: cyan; background-color: blueviolet; font-size: xx-large; width: 15ch; text-align: center;">
       Animate me!
     </div>
     <button onclick="animation.play()">Play</button>

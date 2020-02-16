@@ -8,7 +8,7 @@ export default {
   output: {
     file: `dist/${name}.js`,
     format: 'umd',
-    name: name,
+    name: name.replace('.', ''),
     sourcemap: true
   },
   plugins: [
