@@ -972,106 +972,131 @@ export default {
   },
 
   categories: {
-    'Attention Seekers': [
-      'bounce', //
-      'flash',
-      'pulse',
-      'rubberBand',
-      'shake',
-      'headShake',
-      'swing',
-      'tada',
-      'wobble',
-      'jello',
-      'heartBeat'
-    ],
+    'Attention Seekers': {
+      bounce: true,
+      flash: true,
+      pulse: true,
+      rubberBand: true,
+      shake: true,
+      headShake: true,
+      swing: true,
+      tada: true,
+      wobble: true,
+      jello: true,
+      heartBeat: true
+    },
 
-    Bounce: [
-      'bounceIn', //
-      'bounceInDown',
-      'bounceInLeft',
-      'bounceInRight',
-      'bounceInUp',
-      'bounceOut',
-      'bounceOutDown',
-      'bounceOutLeft',
-      'bounceOutRight',
-      'bounceOutUp'
-    ],
+    Bounce: {
+      Entrances: {
+        bounceIn: true,
+        bounceInDown: true,
+        bounceInLeft: true,
+        bounceInRight: true,
+        bounceInUp: true
+      },
+      Exits: {
+        bounceOut: true,
+        bounceOutDown: true,
+        bounceOutLeft: true,
+        bounceOutRight: true,
+        bounceOutUp: true
+      }
+    },
 
-    Fade: [
-      'fadeIn', //
-      'fadeInDown',
-      'fadeInDownBig',
-      'fadeInLeft',
-      'fadeInLeftBig',
-      'fadeInRight',
-      'fadeInRightBig',
-      'fadeInUp',
-      'fadeInUpBig',
-      'fadeOut',
-      'fadeOutDown',
-      'fadeOutDownBig',
-      'fadeOutLeft',
-      'fadeOutLeftBig',
-      'fadeOutRight',
-      'fadeOutRightBig',
-      'fadeOutUp',
-      'fadeOutUpBig'
-    ],
+    Fade: {
+      Entrances: {
+        fadeIn: true,
+        fadeInDown: true,
+        fadeInDownBig: true,
+        fadeInLeft: true,
+        fadeInLeftBig: true,
+        fadeInRight: true,
+        fadeInRightBig: true,
+        fadeInUp: true,
+        fadeInUpBig: true
+      },
+      Exits: {
+        fadeOut: true,
+        fadeOutDown: true,
+        fadeOutDownBig: true,
+        fadeOutLeft: true,
+        fadeOutLeftBig: true,
+        fadeOutRight: true,
+        fadeOutRightBig: true,
+        fadeOutUp: true,
+        fadeOutUpBig: true
+      }
+    },
 
-    Flip: [
-      'flip', //
-      'flipInX',
-      'flipInY',
-      'flipOutX',
-      'flipOutY'
-    ],
+    Flip: {
+      Entrances: {
+        flipInX: true,
+        flipInY: true
+      },
+      Exits: {
+        flipOutX: true,
+        flipOutY: true
+      },
+      flip: true
+    },
 
-    Rotate: [
-      'rotateIn', //
-      'rotateInDownLeft',
-      'rotateInDownRight',
-      'rotateInUpLeft',
-      'rotateInUpRight',
-      'rotateOut',
-      'rotateOutDownLeft',
-      'rotateOutDownRight',
-      'rotateOutUpLeft',
-      'rotateOutUpRight'
-    ],
+    Rotate: {
+      Entrances: {
+        rotateIn: true,
+        rotateInDownLeft: true,
+        rotateInDownRight: true,
+        rotateInUpLeft: true,
+        rotateInUpRight: true
+      },
+      Exits: {
+        rotateOut: true,
+        rotateOutDownLeft: true,
+        rotateOutDownRight: true,
+        rotateOutUpLeft: true,
+        rotateOutUpRight: true
+      }
+    },
+    Slide: {
+      Entrances: {
+        slideInDown: true,
+        slideInLeft: true,
+        slideInRight: true,
+        slideInUp: true
+      },
+      Exits: {
+        slideOutDown: true,
+        slideOutLeft: true,
+        slideOutRight: true,
+        slideOutUp: true
+      }
+    },
 
-    Slide: [
-      'slideInDown', //
-      'slideInLeft',
-      'slideInRight',
-      'slideInUp',
-      'slideOutDown',
-      'slideOutLeft',
-      'slideOutRight',
-      'slideOutUp'
-    ],
+    Specials: {
+      lightSpeed: {
+        lightSpeedIn: true,
+        lightSpeedOut: true
+      },
+      hinge: true,
+      jackInTheBox: true,
+      rollIn: true,
+      rollOut: true
+    },
 
-    Specials: [
-      'hinge', //
-      'jackInTheBox',
-      'lightSpeedIn',
-      'lightSpeedOut',
-      'rollIn',
-      'rollOut'
-    ],
-
-    Zoom: [
-      'zoomIn', //
-      'zoomInDown',
-      'zoomInLeft',
-      'zoomInRight',
-      'zoomInUp',
-      'zoomOut',
-      'zoomOutDown',
-      'zoomOutLeft',
-      'zoomOutRight',
-      'zoomOutUp'
-    ]
+    Zoom: {
+      Entrances: {
+        zoomIn: true,
+        zoomInDown: true,
+        zoomInLeft: true,
+        zoomInRight: true,
+        zoomInUp: true
+      },
+      Exits: {
+        zoomOut: true,
+        zoomOutDown: true,
+        zoomOutLeft: true,
+        zoomOutRight: true,
+        zoomOutUp: true
+      }
+    }
   }
 }
