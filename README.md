@@ -4,6 +4,8 @@
 
 [Animate.css](https://github.com/daneden/animate.css) animations ported to Web Animations API.
 
+This is alpha. Please don't use it. Stable version coming very soon.
+
 [DEMO](https://webanimate.github.io/animate.web/) and its [source code](https://github.com/webanimate/animate.web/blob/master/index.html).
 
 ## Install
