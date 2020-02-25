@@ -951,7 +951,7 @@ export default {
     keyframes: [
       { offset: 0.0, opacity: 1, transform: 'scale3d(1, 1, 1) translateX(0px)', easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)' },
       { offset: 0.4, opacity: 1, transform: 'scale3d(0.475, 0.475, 0.475) translateX(-10px)', easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)' },
-      { offset: 1.0, opacity: 0, transform: 'scale3d(0.1) translateX(1000px)', easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)' }
+      { offset: 1.0, opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translateX(1000px)', easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)' }
     ],
     options: {
       duration: 1000,
