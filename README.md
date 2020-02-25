@@ -4,6 +4,8 @@
 
 [Animate.css](https://github.com/daneden/animate.css) animations ported to Web Animations API.
 
+[DEMO](https://webanimate.github.io/animate.web/) and its [source code](https://github.com/webanimate/animate.web/blob/master/index.html).
+
 ## Install
 
 ```
@@ -66,3 +68,8 @@ For example, play animation on click:
 ```html
 <button onclick="animation.play()">Play</button>
 ```
+
+####Categories
+Animations are sorted into categories via `animateweb.categories` property that allows infinite levels of sub-categories.
+
+To view an example of how you can create expandable menu from the `categories` object search for `categories-menu` in demo [source code](https://github.com/webanimate/animate.web/blob/master/index.html). It is written as a recursive Vue component.
