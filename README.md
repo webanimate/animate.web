@@ -1,6 +1,8 @@
 # Animate.web
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![](https://img.shields.io/npm/v/animate.web.svg)](https://www.npmjs.com/package/animate.web)
+[![](https://img.shields.io/bundlephobia/minzip/animate.web.svg)](https://bundlephobia.com/result?p=animate.web)
 
 [Animate.css](https://github.com/daneden/animate.css) animations ported to Web Animations API.
 
@@ -31,7 +33,10 @@ import animateweb from 'animate.web'
 Or load from CDN:
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/animate.web@latest/dist/animateweb.js"></script>
+<!-- Either -->
+<script src="https://unpkg.com/animate.web"></script>
+<!-- or -->
+<script src="https://cdn.jsdelivr.net/npm/animate.web@latest/dist/animate.web.js"></script>
 ```
 
 Assign a selector to the element(s) you want to animate:
