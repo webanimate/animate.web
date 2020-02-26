@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": false,
   "homepage": "https://github.com/webanimate/animate.web#readme",
-  "unpkg": "dist/animateweb.js",
+  "unpkg": "dist/animate.web.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/webanimate/animate.web.git"
