@@ -51,7 +51,7 @@
 
         <q-drawer v-model="drawer" side="right" show-if-above>
           <q-list no-border link inset-delimiter>
-            <drawer-menu-item v-for="(item, index) in drawerMenuItems" :key="'drawer-' + index" :url="item.url" :icon="item.icon" :label="item.label" :caption="item.caption"></drawer-menu-item>
+            <drawer-menu-item v-for="(item, index) in drawerMenuItems" :key="'drawer-menu-item-' + index" :url="item.url" :icon="item.icon" :label="item.label" :caption="item.caption"></drawer-menu-item>
           </q-list>
         </q-drawer>
 
@@ -120,7 +120,7 @@
         template: `
           <q-menu max-height="100vh" :anchor="anchor" :self="self">
             <q-list dense style="min-width: 100px">
-              <template v-for="value, key, index in categories" :key="'item-' + level + '-' + index">
+              <template v-for="value, key, index in categories" :key="'categories-menu-level' + level + '-index-' + index">
 
                 <q-item clickable v-if="value !== true">
                   <q-item-section style="white-space: nowrap;">{{key}}</q-item-section>
