@@ -39,6 +39,14 @@ Or load from CDN:
 <script src="https://cdn.jsdelivr.net/npm/animate.web@latest/dist/animate.web.js"></script>
 ```
 
+If you need only one or several animations it is possible to load them individually via CDN. For example, if you only need `bounceIn`, `flash` and `flip`:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/animate.web@latest/dist/bounceIn.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animate.web@latest/dist/flash.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/animate.web@latest/dist/flip.js"></script>
+```
+
 Assign a selector to the element(s) you want to animate:
 
 ```html
@@ -80,3 +88,35 @@ For example, play animation on click:
 Animations are sorted into categories via `animateweb.categories` property that allows infinite levels of sub-categories.
 
 To view an example of how you can create expandable menu from the `categories` object search for `categories-menu` in demo [source code](https://github.com/webanimate/animate.web/blob/master/index.html). It is written as a recursive Vue component.
+
+# Development
+
+Build the bundle for browsers into `./dist` folder:
+
+```shell script
+yarn build
+```
+
+Rebuild the bundle when its source files change on disk:
+
+```shell script
+yarn watch
+```
+
+Run tests:
+
+```shell script
+yarn test
+```
+
+Lint:
+
+```shell script
+yarn lint
+```
+
+Fix linting and style errors:
+
+```shell script
+yarn fix
+```

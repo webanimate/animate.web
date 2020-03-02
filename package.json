@@ -17,7 +17,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c && yarn build:split",
+    "build:split": "rollup -c rollup.config.split.js",
     "watch": "rollup -cw",
     "fix": "yarn fix:eslint && yarn fix:prettier && yarn build",
     "fix:eslint": "eslint --fix \"**/*.*\"",
@@ -27,6 +28,7 @@
     "lint:prettier": "prettier --check \"**/*.*\""
   },
   "devDependencies": {
+    "@rollup/plugin-virtual": "^2.0.1",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-html": "^6.0.0",
