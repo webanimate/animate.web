@@ -11,6 +11,7 @@ dist
 !*.js
 !*.json
 !*.md
+!*.yml
 
 # Editor directories and files
 .idea
