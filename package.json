@@ -17,7 +17,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c && yarn build:split",
+    "build": "yarn build:all && yarn build:split",
+    "build:all": "rollup -c",
     "build:split": "rollup -c rollup.config.split.js",
     "watch": "rollup -cw",
     "fix": "yarn fix:eslint && yarn fix:prettier && yarn build",
@@ -25,21 +26,30 @@
     "fix:prettier": "prettier --write \"**/*.*\"",
     "lint": "yarn lint:eslint && yarn lint:prettier",
     "lint:eslint": "eslint \"**/*.*\"",
-    "lint:prettier": "prettier --check \"**/*.*\""
+    "lint:prettier": "prettier --check \"**/*.*\"",
+    "test": "jest"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.6",
+    "@babel/preset-env": "^7.8.6",
     "@rollup/plugin-virtual": "^2.0.1",
+    "animatable-properties": "^2.0.4",
+    "babel-jest": "^25.1.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-json": "^2.0.1",
+    "jest": "^25.1.0",
+    "lodash.isplainobject": "^4.0.6",
     "prettier": "^1.19.1",
-    "rollup": "^1.29.0",
-    "rollup-plugin-terser": "^5.2.0"
+    "rollup": "^2.0.2",
+    "rollup-plugin-terser": "^5.2.0",
+    "waapi-timing-properties": "^0.0.0-alpha.7"
   },
   "eslintConfig": {
     "env": {
       "browser": true,
+      "jest": true,
       "node": true
     },
     "parserOptions": {
@@ -54,6 +64,20 @@
       "eslint:recommended",
       "plugin:json/recommended",
       "prettier"
+    ]
+  },
+  "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "clover",
+      "html"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(animatable-properties|waapi-timing-properties)/)"
     ]
   },
   "prettier": {

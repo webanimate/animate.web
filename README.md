@@ -87,6 +87,10 @@ For example, play animation on click:
 ####Categories
 Animations are sorted into categories via `animateweb.categories` property that allows infinite levels of sub-categories.
 
+`animateweb.categories` is an object of "key: value" pairs where `value` can be either `true` or `object` itself.
+
+If `value === true`, then `key` is the name an animation. If `value` is an object (not an array) then `key` is the name of a sub-category. Each sub-category is the same object of "key: value" pairs, so they can be infinite.
+
 To view an example of how you can create expandable menu from the `categories` object search for `categories-menu` in demo [source code](https://github.com/webanimate/animate.web/blob/master/index.html). It is written as a recursive Vue component.
 
 # Development
@@ -103,12 +107,6 @@ Rebuild the bundle when its source files change on disk:
 yarn watch
 ```
 
-Run tests:
-
-```shell script
-yarn test
-```
-
 Lint:
 
 ```shell script
@@ -120,3 +118,25 @@ Fix linting and style errors:
 ```shell script
 yarn fix
 ```
+
+## Testing
+
+Run tests:
+
+```shell script
+yarn test
+```
+
+Unit tests check integrity of animations and categories and make sure that all animations keyframes and options contain only allowed attributes.
+
+Here's what is checked in unit tests:
+
+1. Each keyframe of each animation is tested to contain only [alowed attributes](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Keyframe_Formats), that is one or more of [animatable CSS properties](https://www.npmjs.com/package/animatable-properties) and (optionally) `offset`, `easing`, `composite`.
+1. If `offset` attribute is present in a keyframe it is tested to be a number between 0 and 1.
+1. If `offset` attributes are present in several keyframes they are tested to be in ascending order.
+1. If `easing` attribute is present in a keyframe it is tested to be valid [CSS easing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function).
+1. If `composite` attribute is present in a keyframe it is tested to be valid [KeyframeEffect.composite operation](https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect/composite).
+1. Animation's options are tested to be valid [WAAPI timing properties](https://www.npmjs.com/package/waapi-timing-properties).
+1. Categories object (if present) is tested to be valid.
+
+An example of successful unit test:
