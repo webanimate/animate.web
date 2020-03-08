@@ -84,12 +84,12 @@ For example, play animation on click:
 <button onclick="animation.play()">Play</button>
 ```
 
-####Categories
+#### Categories
 Animations are sorted into categories via `animateweb.categories` property that allows infinite levels of sub-categories.
 
 `animateweb.categories` is an object of "key: value" pairs where `value` can be either `true` or `object` itself.
 
-If `value === true`, then `key` is the name an animation. If `value` is an object (not an array) then `key` is the name of a sub-category. Each sub-category is the same object of "key: value" pairs, so they can be infinite.
+If `value === true`, then `key` is the name an animation. If `value` is an object (not an array) then `key` is the name of a sub-category. Each sub-category is the same object of "key: value" pairs structure, so they can be infinite.
 
 To view an example of how you can create expandable menu from the `categories` object search for `categories-menu` in demo [source code](https://github.com/webanimate/animate.web/blob/master/index.html). It is written as a recursive Vue component.
 
