@@ -139,4 +139,6 @@ Here's what is checked in unit tests:
 1. Animation's options are tested to be valid [WAAPI timing properties](https://www.npmjs.com/package/waapi-timing-properties).
 1. Categories object (if present) is tested to be valid.
 
-An example of successful unit test:
+An example of passed unit tests:
+
+![image](https://user-images.githubusercontent.com/60752454/76156345-cd924c00-6101-11ea-8e6f-17cb3ff3030a.png)
