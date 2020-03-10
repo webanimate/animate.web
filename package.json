@@ -45,7 +45,7 @@
     "prettier": "^1.19.1",
     "rollup": "^2.0.2",
     "rollup-plugin-terser": "^5.2.0",
-    "waapi-timing-properties": "^0.0.0-alpha.7"
+    "waapi-timing-properties": "^1.0.0"
   },
   "eslintConfig": {
     "env": {

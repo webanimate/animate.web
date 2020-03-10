@@ -4591,10 +4591,10 @@ w3c-xmlserializer@^1.1.2:
     webidl-conversions "^4.0.2"
     xml-name-validator "^3.0.0"
 
-waapi-timing-properties@^0.0.0-alpha.7:
-  version "0.0.0-alpha.8"
-  resolved "https://registry.yarnpkg.com/waapi-timing-properties/-/waapi-timing-properties-0.0.0-alpha.8.tgz#cf07fbd5eeb8906b5a14c78d04e9a4b80ba276a7"
-  integrity sha512-GrV9DntgECQe3o0573EdroBdXC69/tov3d677X69ABIP+wf4Nvfcji98voOemlHzg0EwjdvtvaXo6VTxvjZucA==
+waapi-timing-properties@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/waapi-timing-properties/-/waapi-timing-properties-1.0.0.tgz#43f6108dbc606d9485f55cfcf9e9d1b5eda361ee"
+  integrity sha512-AIFq+GwAL7NgHbFzV4e9ho7lpQVyZUMsUOVvgSl0/nWY5He0nk7muJHkgyi00D8SfRF0iJyo0oQ3EipsS87WxQ==
   dependencies:
     lodash.isempty "^4.4.0"
     lodash.isnumber "^3.0.3"
