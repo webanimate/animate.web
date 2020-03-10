@@ -23,6 +23,7 @@
     <link id="favicon" rel="shortcut icon" type="image/svg+xml" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@latest/svgs/brands/github.svg" />
   </head>
   <body>
+    <script src="https://unpkg.com/animatable-properties"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@^1.9.1/dist/quasar.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qiconpicker@latest/dist/index.umd.min.js"></script>
@@ -99,7 +100,7 @@
       </q-layout>
     </div>
     <script>
-      /* global Vue, Quasar, animateweb */
+      /* global Vue, Quasar, animateweb, animatable */
 
       Vue.component('drawer-menu-item', {
         props: ['url', 'icon', 'label', 'caption'],
@@ -222,13 +223,15 @@
               })
               data.push(_data)
             }
-            Object.keys(properties).forEach(key => {
-              columns.push({
-                name: key,
-                label: key,
-                field: key,
-                align: 'left'
-              })
+            ;['offset', 'easing', 'composite', ...animatable.properties].forEach(key => {
+              if (properties[key]) {
+                columns.push({
+                  name: key,
+                  label: key,
+                  field: key,
+                  align: 'left'
+                })
+              }
             })
             return { data: data, columns: columns }
           }
