@@ -26,7 +26,7 @@ Object.keys(animations).forEach(key => {
     describe(`\n\n******************************\n${key} animation\n******************************\n`, () => {
       // Keyframes
       describe(`keyframes`, () => {
-        const keyframesOffset = []
+        const keyframesOffsets = []
         const keyframesEasings = []
         const keyframesComposites = []
         describe(`to contain only alowed attributes`, () => {
@@ -35,7 +35,7 @@ Object.keys(animations).forEach(key => {
             Object.keys(keyframe).forEach(attribute => {
               keyframesAttributes.push(attribute)
               if (attribute === 'offset' && keyframe[attribute] !== null) {
-                keyframesOffset.push(keyframe[attribute])
+                keyframesOffsets.push(keyframe[attribute])
               }
               if (attribute === 'easing') {
                 keyframesEasings.push(keyframe[attribute])
@@ -51,10 +51,10 @@ Object.keys(animations).forEach(key => {
         })
 
         // Offsets
-        if (keyframesOffset.length > 0) {
+        if (keyframesOffsets.length > 0) {
           describe(`offsets`, () => {
             describe(`to be number between 0 and 1`, () => {
-              keyframesOffset.forEach((value, index) => {
+              keyframesOffsets.forEach((value, index) => {
                 test(`${index}: ${value}`, () => {
                   expect(value).toEqual(expect.any(Number))
                   expect(value).toBeGreaterThanOrEqual(0)
@@ -63,10 +63,10 @@ Object.keys(animations).forEach(key => {
               })
             })
             describe(`to be in ascending order`, () => {
-              keyframesOffset.forEach((value, index) => {
+              keyframesOffsets.forEach((value, index) => {
                 if (index > 0) {
-                  test(`${index}: ${value} >= ${keyframesOffset[index - 1]}`, () => {
-                    expect(value).toBeGreaterThanOrEqual(keyframesOffset[index - 1])
+                  test(`${index}: ${value} >= ${keyframesOffsets[index - 1]}`, () => {
+                    expect(value).toBeGreaterThanOrEqual(keyframesOffsets[index - 1])
                   })
                 }
               })
