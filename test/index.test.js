@@ -3,7 +3,7 @@ import { properties } from 'animatable-properties'
 import { validate } from 'waapi-timing-properties'
 import isPlainObject from 'lodash.isplainobject'
 
-const keyframesAllowedAttributes = [...properties, ...['offset', 'easing', 'composite']]
+const keyframesAllowedAttributes = ['offset', 'easing', 'composite', ...properties]
 
 const checkCategories = categories => {
   for (const item in categories) {
@@ -19,6 +19,22 @@ const checkCategories = categories => {
     }
   }
   return true
+}
+
+const checkAttributesOrder = keyframe => {
+  const attributes = []
+  Object.keys(keyframe).forEach(key => {
+    attributes.push(key)
+  })
+  for (const attribute of keyframesAllowedAttributes) {
+    if (attribute === attributes[0]) {
+      attributes.shift()
+    }
+    if (attributes.length === 0) {
+      return true
+    }
+  }
+  return false
 }
 
 Object.keys(animations).forEach(key => {
@@ -46,6 +62,18 @@ Object.keys(animations).forEach(key => {
             })
             test(`${index}: ${keyframesAttributes}`, () => {
               expect(keyframesAllowedAttributes).toEqual(expect.arrayContaining(keyframesAttributes))
+            })
+          })
+        })
+
+        describe(`attributes to be in order according to convention`, () => {
+          animations[key].keyframes.forEach((keyframe, index) => {
+            const keyframesAttributes = []
+            Object.keys(keyframe).forEach(attribute => {
+              keyframesAttributes.push(attribute)
+            })
+            test(`${index}: ${keyframesAttributes}`, () => {
+              expect(checkAttributesOrder(keyframe)).toEqual(true)
             })
           })
         })
