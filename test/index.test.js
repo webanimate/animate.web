@@ -21,11 +21,7 @@ const checkCategories = categories => {
   return true
 }
 
-const checkAttributesOrder = keyframe => {
-  const attributes = []
-  Object.keys(keyframe).forEach(key => {
-    attributes.push(key)
-  })
+const checkAttributesOrder = attributes => {
   for (const attribute of keyframesAllowedAttributes) {
     if (attribute === attributes[0]) {
       attributes.shift()
@@ -73,7 +69,7 @@ Object.keys(animations).forEach(key => {
               keyframesAttributes.push(attribute)
             })
             test(`${index}: ${keyframesAttributes}`, () => {
-              expect(checkAttributesOrder(keyframe)).toEqual(true)
+              expect(checkAttributesOrder(keyframesAttributes)).toEqual(true)
             })
           })
         })
