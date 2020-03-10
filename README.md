@@ -3,6 +3,8 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![](https://img.shields.io/npm/v/animate.web.svg)](https://www.npmjs.com/package/animate.web)
 [![](https://img.shields.io/bundlephobia/minzip/animate.web.svg)](https://bundlephobia.com/result?p=animate.web)
+[![Dependency Status](https://david-dm.org/webanimate/animate.web.svg?theme=shields.io)](https://david-dm.org/webanimate/animate.web)
+[![Build Status](https://travis-ci.org/webanimate/animate.web.svg?branch=master)](https://travis-ci.org/webanimate/animate.web)
 
 [Animate.css](https://github.com/daneden/animate.css) animations ported to Web Animations API.
 
@@ -85,6 +87,7 @@ For example, play animation on click:
 ```
 
 #### Categories
+
 Animations are sorted into categories via `animateweb.categories` property that allows infinite levels of sub-categories.
 
 `animateweb.categories` is an object of "key: value" pairs where `value` can be either `true` or `object` itself.
@@ -117,6 +120,12 @@ Fix linting and style errors:
 
 ```shell script
 yarn fix
+```
+
+Update dependencies:
+
+```shell script
+yarn up
 ```
 
 ## Testing
