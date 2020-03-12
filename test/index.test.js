@@ -130,6 +130,13 @@ Object.keys(animations).forEach(key => {
         test(`to contain only valid options`, () => {
           expect(validate(animations[key].options, true, true)).toBe(true)
         })
+        const options = []
+        Object.keys(animations[key].options).forEach(option => {
+          options.push(option)
+        })
+        test(`to be in alphabetical order: ${options}`, () => {
+          expect(JSON.stringify(options) === JSON.stringify(options.sort())).toBe(true)
+        })
       })
     })
   }
