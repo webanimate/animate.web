@@ -145,6 +145,7 @@ Unit tests check integrity of animations and categories and make sure that all a
 Here's what is checked in unit tests:
 
 1. Each keyframe of each animation is tested to contain only [alowed attributes](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Keyframe_Formats), that is one or more of [animatable CSS properties](https://www.npmjs.com/package/animatable-properties) and (optionally) `offset`, `easing`, `composite`.
+1. Attributes are tested to be sorted according to the convention (see above).
 1. If `offset` attribute is present in a keyframe it is tested to be a number between 0 and 1.
 1. If `offset` attributes are present in several keyframes they are tested to be in ascending order.
 1. If `easing` attribute is present in a keyframe it is tested to be valid [CSS easing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function).
