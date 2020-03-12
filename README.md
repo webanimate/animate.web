@@ -150,6 +150,7 @@ Here's what is checked in unit tests:
 1. If `easing` attribute is present in a keyframe it is tested to be valid [CSS easing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function).
 1. If `composite` attribute is present in a keyframe it is tested to be valid [KeyframeEffect.composite operation](https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect/composite).
 1. Animation's options are tested to be valid [WAAPI timing properties](https://www.npmjs.com/package/waapi-timing-properties).
+1. Animation's options are tested to be in alphabetical order.
 1. Categories object (if present) is tested to be valid.
 
 An example of passed unit tests:
