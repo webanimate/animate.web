@@ -962,8 +962,8 @@ export default {
   zoomOutUp: {
     keyframes: [
       { offset: 0.0, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', composite: 'replace', opacity: 1, transform: 'scale3d(1, 1, 1) translateY(0px)', transformOrigin: 'center' },
-      { offset: 0.4, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', composite: 'add', opacity: 1, transform: 'scale3d(0.475, 0.475, 0.475) translateY(60px)', transformOrigin: 'center' },
-      { offset: 1.0, easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)', composite: 'accumulate', opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translateY(-1000px)', transformOrigin: 'center bottom' }
+      { offset: 0.4, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', composite: 'replace', opacity: 1, transform: 'scale3d(0.475, 0.475, 0.475) translateY(60px)', transformOrigin: 'center' },
+      { offset: 1.0, easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)', composite: 'replace', opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translateY(-1000px)', transformOrigin: 'center bottom' }
     ],
     options: {
       duration: 1000,
