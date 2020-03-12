@@ -155,4 +155,4 @@ Here's what is checked in unit tests:
 
 An example of passed unit tests:
 
-![image](https://user-images.githubusercontent.com/60752454/76156345-cd924c00-6101-11ea-8e6f-17cb3ff3030a.png)
+![image](https://user-images.githubusercontent.com/60752454/76498866-63054700-6446-11ea-8e68-c139bb0e7134.png)
