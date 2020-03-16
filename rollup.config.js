@@ -1,14 +1,12 @@
 import { terser } from 'rollup-plugin-terser'
 import * as pkg from './package.json'
 
-const name = 'animate.web'
-
 export default {
   input: pkg.main,
   output: {
-    file: `dist/${name}.js`,
+    file: `dist/${pkg.name}.js`,
     format: 'umd',
-    name: name.replace('.', ''),
+    name: pkg.name.replace('.', ''),
     sourcemap: true
   },
   plugins: [
