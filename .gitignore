@@ -2,6 +2,8 @@
 .thumbs.db
 coverage
 node_modules
+cypress/videos
+cypress/screenshots
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
