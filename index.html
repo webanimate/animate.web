@@ -23,7 +23,7 @@
     <link id="favicon" rel="shortcut icon" type="image/svg+xml" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@latest/svgs/brands/github.svg" />
   </head>
   <body>
-    <script src="https://unpkg.com/animatable-properties"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animatable-properties@latest/dist/animatable.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@^1.9.1/dist/quasar.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qiconpicker@latest/dist/index.umd.min.js"></script>
@@ -73,14 +73,17 @@
                     <q-icon :name="icon" style="font-size: 10vw;z-index: 1000" id="icon"></q-icon>
                     <div class="text-h6 q-mt-md">Icon: <q-badge color="secondary">{{icon}}</q-badge></div>
                     <div class="text-h6 q-mb-md">Animation: <q-badge color="accent">{{animationName}}</q-badge></div>
-                    <q-btn round color="primary" icon="navigate_before" @click="prevNext('prev')"></q-btn>
+                    <q-btn round color="primary" icon="navigate_before" @click="prevNext('prev')" id="prev"></q-btn>
                     <q-btn round color="primary" icon="play_arrow" @click="animate(animationName)" class="q-mr-md q-ml-md"></q-btn>
-                    <q-btn round color="primary" icon="navigate_next" @click="prevNext('next')"></q-btn>
+                    <q-btn round color="primary" icon="navigate_next" @click="prevNext('next')" id="next"></q-btn>
                   </q-card-section>
                   <q-card-section>
                     <q-btn color="primary" label="Select animation">
                       <categories-menu :categories="animateweb.categories"></categories-menu>
                     </q-btn>
+                  </q-card-section>
+                  <q-card-section>
+                    <q-select v-model="animationName" :options="animations" label="Select animation" use-input input-debounce="0" hide-selected fill-input dense @filter="filterFn" @input="animated" id="animationName"></q-select>
                   </q-card-section>
                 </q-card>
               </div>
@@ -146,7 +149,9 @@
 
         data: function() {
           return {
+            previousAnimationName: '',
             animationName: 'flip',
+            animations: [],
             iconSet: 'material-icons',
             icon: 'fab fa-jenkins',
             filter: '',
@@ -162,6 +167,14 @@
         },
 
         created() {
+          this._animations = []
+          Object.keys(animateweb).forEach(key => {
+            if (!(key === 'categories' && !Array.isArray(animateweb[key].keyframes))) {
+              this.animations.push(key)
+              this._animations.push(key)
+            }
+          })
+
           this.iconSets = [
             'material-icons', //
             'mdi-v4',
@@ -238,13 +251,22 @@
         },
 
         methods: {
+          animated(name) {
+            this.animate(name)
+          },
+
           animate(name) {
-            if (name === this.animationName) {
-              this.animation.cancel()
-              this.animation.play()
-            } else {
-              this.animationName = name
-              this.animation = document.querySelector('#icon').animate(animateweb[name].keyframes, animateweb[name].options)
+            try {
+              if (name === this.previousAnimationName) {
+                this.animation.cancel()
+                this.animation.play()
+              } else {
+                this.previousAnimationName = this.animationName = name
+                this.animation = document.querySelector('#icon').animate(animateweb[name].keyframes, animateweb[name].options)
+              }
+            } catch (e) {
+              this.$q.notify({ color: 'black', message: `Invalid animation code!<br/>Animation: ${name}<br/>${e.name}<br/>${e.message}`, html: true, position: 'center', icon: 'fas fa-skull', multiLine: true, closeBtn: 'OK', timeout: 0 })
+              console.error(e)
             }
           },
 
@@ -263,14 +285,14 @@
           filterFn(val, update) {
             if (val === '') {
               update(() => {
-                this.options = this._options
+                this.animations = this._animations
               })
               return
             }
 
             update(() => {
               const needle = val.toLowerCase()
-              this.options = this._options.filter(v => v.toLowerCase().indexOf(needle) > -1)
+              this.animations = this._animations.filter(v => v.toLowerCase().indexOf(needle) > -1)
             })
           }
         }
