@@ -29,7 +29,9 @@
     "lint": "yarn lint:eslint && yarn lint:prettier",
     "lint:eslint": "eslint \"**/*.*\"",
     "lint:prettier": "prettier --check \"**/*.*\"",
-    "test": "jest",
+    "test": "yarn test:unit && yarn test:integration",
+    "test:unit": "jest index.test.js",
+    "test:integration": "yarn build:all && jest --coverage=false integration.test.js ",
     "up": "yarn upgrade-interactive && yarn outdated"
   },
   "devDependencies": {
@@ -47,6 +49,7 @@
     "jest": "^25.1.0",
     "lodash.isplainobject": "^4.0.6",
     "prettier": "^1.19.1",
+    "puppeteer": "^2.1.1",
     "rollup": "^2.0.2",
     "rollup-plugin-terser": "^5.2.0",
     "waapi-timing-properties": "^1.0.0"
@@ -54,6 +57,7 @@
   "eslintConfig": {
     "env": {
       "browser": true,
+      "es6": true,
       "jest": true,
       "node": true
     },
