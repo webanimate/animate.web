@@ -1,8 +1,10 @@
 const runPuppeteer = () => {
   return new Promise(resolve => {
-    const { execFileSync } = require('child_process')
-    const response = execFileSync('node', [require('path').join(__dirname, 'puppeteer.js')])
-    resolve(response.toString())
+    resolve(
+      require('child_process')
+        .execFileSync('node', [require('path').join(__dirname, 'puppeteer.js')])
+        .toString()
+    )
   })
 }
 

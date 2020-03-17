@@ -13,6 +13,7 @@ const puppeteer = require('puppeteer')
 ;(async () => {
   let _animation = ''
   let _error = ''
+  const selector = '#animationName input:first-child'
   const browser = await puppeteer.launch()
   const page = await browser.newPage()
   page.on('console', msg => {
@@ -21,15 +22,15 @@ const puppeteer = require('puppeteer')
     } else {
       _error = msg._args[0]._remoteObject.description
     }
-    process.stdout.write(`Animation: ${_animation}\nError: ${_error}`)
-    process.exit()
+    process.stdout.write(`\nAnimation: ${_animation}\nError: ${_error}`)
   })
 
   await page.goto(`file:${require('path').join(__dirname, '..', 'index.html')}`)
-  await page.waitForSelector('#animationName input:first-child')
-  await page.focus('#animationName input:first-child')
+  await page.waitForSelector(selector)
+  await page.focus(selector)
 
   for (const animation of animationsNames) {
+    if (_error) break
     _animation = animation
     await page.keyboard.down('Control')
     await page.keyboard.press('A')
@@ -40,5 +41,9 @@ const puppeteer = require('puppeteer')
     await page.keyboard.press('Enter')
   }
 
-  await browser.close()
+  try {
+    await browser.close()
+  } catch (err) {
+    console.error(err)
+  }
 })()
