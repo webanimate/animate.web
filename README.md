@@ -3,7 +3,8 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![](https://img.shields.io/npm/v/animate.web.svg)](https://www.npmjs.com/package/animate.web)
 [![](https://img.shields.io/bundlephobia/minzip/animate.web.svg)](https://bundlephobia.com/result?p=animate.web)
-[![Dependency Status](https://david-dm.org/webanimate/animate.web.svg?theme=shields.io)](https://david-dm.org/webanimate/animate.web)
+[![Dependencies Status](https://david-dm.org/webanimate/animate.web.svg?theme=shields.io)](https://david-dm.org/webanimate/animate.web)
+[![devDependencies Status](https://david-dm.org/webanimate/animate.web/dev-status.svg?theme=shields.io)](https://david-dm.org/webanimate/animate.web?type=dev)
 [![Build Status](https://travis-ci.org/webanimate/animate.web.svg?branch=master)](https://travis-ci.org/webanimate/animate.web)
 
 [Animate.css](https://github.com/daneden/animate.css) animations ported to Web Animations API.
@@ -134,13 +135,19 @@ yarn up
 
 ## Testing
 
-Run tests:
+Run both unit and integration tests:
 
 ```shell script
 yarn test
 ```
 
-Unit tests check integrity of animations and categories and make sure that all animations keyframes and options contain only allowed attributes.
+#### Unit tests
+
+They check integrity of animations and categories and make sure that all animations keyframes and options contain only allowed attributes. Command to run unit tests only:
+
+```shell script
+yarn test:unit
+```
 
 Here's what is checked in unit tests:
 
@@ -157,3 +164,28 @@ Here's what is checked in unit tests:
 An example of passed unit tests:
 
 ![image](https://user-images.githubusercontent.com/60752454/76498866-63054700-6446-11ea-8e68-c139bb0e7134.png)
+
+#### Integration tests
+
+They check animations in real browser (headless Chrome via puppeteer). Command to run integration tests only:
+
+```shell script
+yarn test:integration
+```
+
+Unit tests cannot detect errors such as invalid value for a css property (e.g. `transform: translate3d(10)` ). So in this case unit tests will pass but integration will fail:
+
+![image](https://user-images.githubusercontent.com/60752454/77083544-5d8b9c00-6a06-11ea-9508-e9e3893e56ea.png)
+
+Cypress integration tests are also included but they are just for demonstration because cypress cannot catch console warnings, only errors (PRs welcomed if you know how do it).
+Run cypress tests in headless:
+
+```shell script
+yarn cy:run
+```
+
+or headed mode:
+
+```shell script
+yarn cy:open
+```
