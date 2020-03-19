@@ -1,6 +1,6 @@
 {
   "name": "animate.web",
-  "version": "0.0.0-alpha.2",
+  "version": "0.0.1",
   "description": "Animate.css animations ported to Web Animations API",
   "main": "src/index.js",
   "author": "Web Animate",
