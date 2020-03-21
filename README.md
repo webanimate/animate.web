@@ -7,7 +7,7 @@
 [![devDependencies Status](https://david-dm.org/webanimate/animate.web/dev-status.svg?theme=shields.io)](https://david-dm.org/webanimate/animate.web?type=dev)
 [![Build Status](https://travis-ci.org/webanimate/animate.web.svg?branch=master)](https://travis-ci.org/webanimate/animate.web)
 
-[Animate.css](https://github.com/daneden/animate.css) animations ported to Web Animations API.
+[Animate.css](https://github.com/daneden/animate.css) animations ported to [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API).
 
 [DEMO](https://webanimate.github.io/animate.web/) and its [source code](https://github.com/webanimate/animate.web/blob/master/index.html).
 
