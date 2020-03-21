@@ -175,7 +175,7 @@ yarn test:integration
 
 Unit tests cannot detect errors such as invalid value for a css property (e.g. `transform: translate3d(10)` ). So in this case unit tests will pass but integration will fail:
 
-![image](https://user-images.githubusercontent.com/60752454/77083544-5d8b9c00-6a06-11ea-9508-e9e3893e56ea.png)
+![image](https://user-images.githubusercontent.com/60752454/77236870-329e7500-6bcb-11ea-84f6-40ce1310a6b7.png)
 
 Cypress integration tests are also included but they are just for demonstration because cypress cannot catch console warnings, only errors (PRs welcomed if you know how do it).
 Run cypress tests in headless:
