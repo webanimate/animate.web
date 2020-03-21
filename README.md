@@ -177,7 +177,16 @@ Unit tests cannot detect errors such as invalid value for a css property (e.g. `
 
 ![image](https://user-images.githubusercontent.com/60752454/77236870-329e7500-6bcb-11ea-84f6-40ce1310a6b7.png)
 
-Cypress integration tests are also included but they are just for demonstration because cypress cannot catch console warnings, only errors (PRs welcomed if you know how do it).
+Cypress integration tests are also included but they are just for demonstration because headless cypress tests cannot catch console warnings, only errors (PRs welcomed if you know how to do it).
+
+The advantage of cypress is that in headed mode you can run tests not only in Chrome but also in Firefox and Electron:
+
+![image](https://user-images.githubusercontent.com/60752454/77237143-413a5b80-6bce-11ea-98f5-df4fa8f941cc.png)
+
+Example of failed cypress test:
+
+![image](https://user-images.githubusercontent.com/60752454/77237278-49df6180-6bcf-11ea-9f28-9fee4de7001a.png)
+
 Run cypress tests in headless:
 
 ```shell script
