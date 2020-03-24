@@ -1,3 +1,3 @@
-//animate.web v0.0.1 https://github.com/webanimate/animate.web#readme
+//animate.web v0.0.2 https://github.com/webanimate/animate.web#readme
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):((e=e||self).animateweb=e.animateweb||{},e.animateweb.flipOutY=t())}(this,(function(){"use strict";return{keyframes:[{offset:0,opacity:1,transform:"perspective(400px)"},{offset:.3,opacity:1,transform:"perspective(400px) rotate3d(0, 1, 0, -15deg)"},{offset:1,opacity:0,transform:"perspective(400px) rotate3d(0, 1, 0, 90deg)"}],options:{duration:750,easing:"ease"}}}));
 //# sourceMappingURL=flipOutY.js.map
