@@ -2,7 +2,7 @@ const pkg = require('../package.json')
 const animations = require(`../dist/${pkg.name}`)
 
 const animationsNames = []
-Object.keys(animations).forEach(key => {
+Object.keys(animations).forEach((key) => {
   if (!(key === 'categories' && !Array.isArray(animations[key].keyframes))) {
     animationsNames.push(key)
   }
@@ -16,7 +16,7 @@ const puppeteer = require('puppeteer')
   const selector = '#animationName input:first-child'
   const browser = await puppeteer.launch()
   const page = await browser.newPage()
-  page.on('console', msg => {
+  page.on('console', (msg) => {
     if (msg._type === 'warning') {
       _error = msg._text
     } else {

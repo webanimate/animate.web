@@ -9,11 +9,11 @@ export default {
       { offset: 0.7, easing: 'cubic-bezier(0.755, 0.05, 0.855, 0.06)', transform: 'translate3d(0, -15px, 0)' },
       { offset: 0.8, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(0, 0, 0)' },
       { offset: 0.9, easing: 'cubic-bezier(0.755, 0.05, 0.855, 0.06)', transform: 'translate3d(0, -4px, 0)' },
-      { offset: 1.0, easing: 'ease', transform: 'translate3d(0, 0, 0)', transformOrigin: 'center bottom' }
+      { offset: 1.0, easing: 'ease', transform: 'translate3d(0, 0, 0)', transformOrigin: 'center bottom' },
     ],
     options: {
-      duration: 1000
-    }
+      duration: 1000,
+    },
   },
 
   flash: {
@@ -22,12 +22,12 @@ export default {
       { opacity: 0 },
       { opacity: 1 },
       { opacity: 0 },
-      { opacity: 1 }
+      { opacity: 1 },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   headShake: {
@@ -38,12 +38,12 @@ export default {
       { offset: 0.315, transform: 'translateX(-3px) rotateY(-5deg)' },
       { offset: 0.435, transform: 'translateX(2px) rotateY(3deg)' },
       { offset: 0.5, transform: 'translateX(0)' },
-      { offset: 1.0, transform: 'translateX(0)' }
+      { offset: 1.0, transform: 'translateX(0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in-out'
-    }
+      easing: 'ease-in-out',
+    },
   },
 
   heartBeat: {
@@ -53,12 +53,12 @@ export default {
       { offset: 0.28, transform: 'scale(1)' },
       { offset: 0.42, transform: 'scale(1.3)' },
       { offset: 0.7, transform: 'scale(1)' },
-      { offset: 1.0, transform: 'scale(1)' }
+      { offset: 1.0, transform: 'scale(1)' },
     ],
     options: {
       duration: 1300,
-      easing: 'ease-in-out'
-    }
+      easing: 'ease-in-out',
+    },
   },
 
   jello: {
@@ -72,24 +72,24 @@ export default {
       { offset: 0.666, transform: 'skewX(-0.78125deg) skewY(-0.78125deg)' },
       { offset: 0.777, transform: 'skewX(0.390625deg) skewY(0.390625deg)' },
       { offset: 0.888, transform: 'skewX(-0.1953125deg) skewY(-0.1953125deg)' },
-      { offset: 1.0, transform: 'translate3d(0, 0, 0)' }
+      { offset: 1.0, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   pulse: {
     keyframes: [
       { transform: 'scale3d(1, 1, 1)' }, //
       { transform: 'scale3d(1.05, 1.05, 1.05)' },
-      { transform: 'scale3d(1, 1, 1)' }
+      { transform: 'scale3d(1, 1, 1)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   rubberBand: {
@@ -100,12 +100,12 @@ export default {
       { offset: 0.5, transform: 'scale3d(1.15, 0.85, 1)' },
       { offset: 0.65, transform: 'scale3d(0.95, 1.05, 1)' },
       { offset: 0.75, transform: 'scale3d(1.05, 0.95, 1)' },
-      { offset: 1.0, transform: 'scale3d(1, 1, 1)' }
+      { offset: 1.0, transform: 'scale3d(1, 1, 1)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   shake: {
@@ -120,12 +120,12 @@ export default {
       { offset: 0.7, transform: 'translate3d(-10px, 0, 0)' },
       { offset: 0.8, transform: 'translate3d(10px, 0, 0)' },
       { offset: 0.9, transform: 'translate3d(-10px, 0, 0)' },
-      { offset: 1.0, transform: 'translate3d(0, 0, 0)' }
+      { offset: 1.0, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   swing: {
@@ -135,12 +135,12 @@ export default {
       { offset: 0.4, transform: 'rotate3d(0, 0, 1, -10deg)' },
       { offset: 0.6, transform: 'rotate3d(0, 0, 1, 5deg)' },
       { offset: 0.8, transform: 'rotate3d(0, 0, 1, -5deg)' },
-      { offset: 1.0, transform: 'rotate3d(0, 0, 1, 0deg)', transformOrigin: 'top center' }
+      { offset: 1.0, transform: 'rotate3d(0, 0, 1, 0deg)', transformOrigin: 'top center' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   tada: {
@@ -155,12 +155,12 @@ export default {
       { offset: 0.7, transform: 'scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)' },
       { offset: 0.8, transform: 'scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg)' },
       { offset: 0.9, transform: 'scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg)' },
-      { offset: 1.0, transform: 'scale3d(1, 1, 1)' }
+      { offset: 1.0, transform: 'scale3d(1, 1, 1)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   wobble: {
@@ -171,12 +171,12 @@ export default {
       { offset: 0.45, transform: 'translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg)' },
       { offset: 0.6, transform: 'translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg)' },
       { offset: 0.75, transform: 'translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg)' },
-      { offset: 1.0, transform: 'translate3d(0, 0, 0)' }
+      { offset: 1.0, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   bounceIn: {
@@ -186,12 +186,12 @@ export default {
       { offset: 0.4, transform: 'scale3d(0.9, 0.9, 0.9)' },
       { offset: 0.6, opacity: 1, transform: 'scale3d(1.03, 1.03, 1.03)' },
       { offset: 0.8, transform: 'scale3d(0.97, 0.97, 0.97)' },
-      { offset: 1.0, opacity: 1, transform: 'scale3d(1, 1, 1)' }
+      { offset: 1.0, opacity: 1, transform: 'scale3d(1, 1, 1)' },
     ],
     options: {
       duration: 750,
-      easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
-    }
+      easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+    },
   },
 
   bounceInDown: {
@@ -200,12 +200,12 @@ export default {
       { offset: 0.6, opacity: 1, transform: 'translate3d(0, 25px, 0)' },
       { offset: 0.75, transform: 'translate3d(0, -10px, 0)' },
       { offset: 0.9, transform: 'translate3d(0, 5px, 0)' },
-      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)' }
+      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
-    }
+      easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+    },
   },
 
   bounceInLeft: {
@@ -214,12 +214,12 @@ export default {
       { offset: 0.6, opacity: 1, transform: 'translate3d(25px, 0, 0)' },
       { offset: 0.75, transform: 'translate3d(-10px, 0, 0)' },
       { offset: 0.9, transform: 'translate3d(5px, 0, 0)' },
-      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)' }
+      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
-    }
+      easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+    },
   },
 
   bounceInRight: {
@@ -228,12 +228,12 @@ export default {
       { offset: 0.6, opacity: 1, transform: 'translate3d(-25px, 0, 0)' },
       { offset: 0.75, transform: 'translate3d(10px, 0, 0)' },
       { offset: 0.9, transform: 'translate3d(-5px, 0, 0)' },
-      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)' }
+      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
-    }
+      easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+    },
   },
 
   bounceInUp: {
@@ -242,12 +242,12 @@ export default {
       { offset: 0.6, opacity: 1, transform: 'translate3d(0, -20px, 0)' },
       { offset: 0.75, transform: 'translate3d(0, 10px, 0)' },
       { offset: 0.9, transform: 'translate3d(0, -5px, 0)' },
-      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)' }
+      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
-    }
+      easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)',
+    },
   },
 
   bounceOut: {
@@ -256,12 +256,12 @@ export default {
       { offset: 0.2, transform: 'scale3d(0.9, 0.9, 0.9)' },
       { offset: 0.5, transform: 'scale3d(1.1, 1.1, 1.1)' },
       { offset: 0.55, opacity: 1, transform: 'scale3d(1.1, 1.1, 1.1)' },
-      { offset: 1.0, opacity: 0, transform: 'scale3d(0.3, 0.3, 0.3)' }
+      { offset: 1.0, opacity: 0, transform: 'scale3d(0.3, 0.3, 0.3)' },
     ],
     options: {
       duration: 750,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   bounceOutDown: {
@@ -270,36 +270,36 @@ export default {
       { offset: 0.2, transform: 'translate3d(0, 10px, 0)' },
       { offset: 0.4, transform: 'translate3d(0, -20px, 0)' },
       { offset: 0.45, opacity: 1, transform: 'translate3d(0, -20px, 0)' },
-      { offset: 1.0, opacity: 0, transform: 'translate3d(0, 2000px, 0)' }
+      { offset: 1.0, opacity: 0, transform: 'translate3d(0, 2000px, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   bounceOutLeft: {
     keyframes: [
       { offset: 0.0, opacity: 1, transform: 'translate3d(0, 0, 0)' },
       { offset: 0.2, opacity: 1, transform: 'translate3d(20px, 0, 0)' },
-      { offset: 1.0, opacity: 0, transform: 'translate3d(-2000px, 0, 0)' }
+      { offset: 1.0, opacity: 0, transform: 'translate3d(-2000px, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   bounceOutRight: {
     keyframes: [
       { offset: 0.0, opacity: 1, transform: 'translate3d(0, 0, 0)' },
       { offset: 0.2, opacity: 1, transform: 'translate3d(-20px, 0, 0)' },
-      { offset: 1.0, opacity: 0, transform: 'translate3d(2000px, 0, 0)' }
+      { offset: 1.0, opacity: 0, transform: 'translate3d(2000px, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   bounceOutUp: {
@@ -308,210 +308,210 @@ export default {
       { offset: 0.2, transform: 'translate3d(0, -10px, 0)' },
       { offset: 0.4, transform: 'translate3d(0, 20px, 0)' },
       { offset: 0.45, opacity: 1, transform: 'translate3d(0, 20px, 0)' },
-      { offset: 1.0, opacity: 0, transform: 'translate3d(0, -2000px, 0)' }
+      { offset: 1.0, opacity: 0, transform: 'translate3d(0, -2000px, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeIn: {
     keyframes: [
       { opacity: 0 }, //
-      { opacity: 1 }
+      { opacity: 1 },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeInDown: {
     keyframes: [
       { opacity: 0, transform: 'translate3d(0, -100%, 0)' },
-      { opacity: 1, transform: 'translate3d(0, 0, 0)' }
+      { opacity: 1, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeInDownBig: {
     keyframes: [
       { opacity: 0, transform: 'translate3d(0, -2000px, 0)' },
-      { opacity: 1, transform: 'translate3d(0, 0, 0)' }
+      { opacity: 1, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeInLeft: {
     keyframes: [
       { opacity: 0, transform: 'translate3d(-100%, 0, 0)' },
-      { opacity: 1, transform: 'translate3d(0, 0, 0)' }
+      { opacity: 1, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeInLeftBig: {
     keyframes: [
       { opacity: 0, transform: 'translate3d(-2000px, 0, 0)' },
-      { opacity: 1, transform: 'translate3d(0, 0, 0)' }
+      { opacity: 1, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeInRight: {
     keyframes: [
       { opacity: 0, transform: 'translate3d(100%, 0, 0)' },
-      { opacity: 1, transform: 'translate3d(0, 0, 0)' }
+      { opacity: 1, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeInRightBig: {
     keyframes: [
       { opacity: 0, transform: 'translate3d(2000px, 0, 0)' },
-      { opacity: 1, transform: 'translate3d(0, 0, 0)' }
+      { opacity: 1, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeInUp: {
     keyframes: [
       { opacity: 0, transform: 'translate3d(0, 100%, 0)' },
-      { opacity: 1, transform: 'translate3d(0, 0, 0)' }
+      { opacity: 1, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeInUpBig: {
     keyframes: [
       { opacity: 0, transform: 'translate3d(0, 2000px, 0)' },
-      { opacity: 1, transform: 'translate3d(0, 0, 0)' }
+      { opacity: 1, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeOut: {
     keyframes: [
       { opacity: 1 }, //
-      { opacity: 0 }
+      { opacity: 0 },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeOutDown: {
     keyframes: [
       { opacity: 1, transform: 'translate3d(0, 0, 0)' },
-      { opacity: 0, transform: 'translate3d(0, 100%, 0)' }
+      { opacity: 0, transform: 'translate3d(0, 100%, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeOutDownBig: {
     keyframes: [
       { opacity: 1, transform: 'translate3d(0, 0, 0)' },
-      { opacity: 0, transform: 'translate3d(0, 2000px, 0)' }
+      { opacity: 0, transform: 'translate3d(0, 2000px, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeOutLeft: {
     keyframes: [
       { opacity: 1, transform: 'translate3d(0, 0, 0)' },
-      { opacity: 0, transform: 'translate3d(-100%, 0, 0)' }
+      { opacity: 0, transform: 'translate3d(-100%, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeOutLeftBig: {
     keyframes: [
       { opacity: 1, transform: 'translate3d(0, 0, 0)' },
-      { opacity: 0, transform: 'translate3d(-2000px, 0, 0)' }
+      { opacity: 0, transform: 'translate3d(-2000px, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeOutRight: {
     keyframes: [
       { opacity: 1, transform: 'translate3d(0, 0, 0)' },
-      { opacity: 0, transform: 'translate3d(100%, 0, 0)' }
+      { opacity: 0, transform: 'translate3d(100%, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeOutRightBig: {
     keyframes: [
       { opacity: 1, transform: 'translate3d(0, 0, 0)' },
-      { opacity: 0, transform: 'translate3d(2000px, 0, 0)' }
+      { opacity: 0, transform: 'translate3d(2000px, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeOutUp: {
     keyframes: [
       { opacity: 1, transform: 'translate3d(0, 0, 0)' },
-      { opacity: 0, transform: 'translate3d(0, -100%, 0)' }
+      { opacity: 0, transform: 'translate3d(0, -100%, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   fadeOutUpBig: {
     keyframes: [
       { opacity: 1, transform: 'translate3d(0, 0, 0)' },
-      { opacity: 0, transform: 'translate3d(0, -2000px, 0)' }
+      { opacity: 0, transform: 'translate3d(0, -2000px, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   flip: {
@@ -520,11 +520,11 @@ export default {
       { offset: 0.4, easing: 'ease-out', transform: 'perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -190deg)' },
       { offset: 0.5, easing: 'ease-in', transform: 'perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 150px) rotate3d(0, 1, 0, -170deg)' },
       { offset: 0.8, transform: 'perspective(400px) scale3d(0.95, 0.95, 0.95) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg)' },
-      { offset: 1.0, easing: 'ease-in', transform: 'perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg)' }
+      { offset: 1.0, easing: 'ease-in', transform: 'perspective(400px) scale3d(1, 1, 1) translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg)' },
     ],
     options: {
-      duration: 1000
-    }
+      duration: 1000,
+    },
   },
 
   flipInX: {
@@ -533,12 +533,12 @@ export default {
       { offset: 0.4, easing: 'ease-in', transform: 'perspective(400px) rotate3d(1, 0, 0, -20deg)' },
       { offset: 0.6, opacity: 1, transform: 'perspective(400px) rotate3d(1, 0, 0, 10deg)' },
       { offset: 0.8, transform: 'perspective(400px) rotate3d(1, 0, 0, -5deg)' },
-      { offset: 1.0, opacity: 1, transform: 'perspective(400px)' }
+      { offset: 1.0, opacity: 1, transform: 'perspective(400px)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   flipInY: {
@@ -547,36 +547,36 @@ export default {
       { offset: 0.4, easing: 'ease-in', transform: 'perspective(400px) rotate3d(0, 1, 0, -20deg)' },
       { offset: 0.6, opacity: 1, transform: 'perspective(400px) rotate3d(0, 1, 0, 10deg)' },
       { offset: 0.8, transform: 'perspective(400px) rotate3d(0, 1, 0, -5deg)' },
-      { offset: 1.0, opacity: 1, transform: 'perspective(400px)' }
+      { offset: 1.0, opacity: 1, transform: 'perspective(400px)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   flipOutX: {
     keyframes: [
       { offset: 0.0, opacity: 1, transform: 'perspective(400px)' },
       { offset: 0.3, opacity: 1, transform: 'perspective(400px) rotate3d(1, 0, 0, -20deg)' },
-      { offset: 1.0, opacity: 0, transform: 'perspective(400px) rotate3d(1, 0, 0, 90deg)' }
+      { offset: 1.0, opacity: 0, transform: 'perspective(400px) rotate3d(1, 0, 0, 90deg)' },
     ],
     options: {
       duration: 750,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   flipOutY: {
     keyframes: [
       { offset: 0.0, opacity: 1, transform: 'perspective(400px)' },
       { offset: 0.3, opacity: 1, transform: 'perspective(400px) rotate3d(0, 1, 0, -15deg)' },
-      { offset: 1.0, opacity: 0, transform: 'perspective(400px) rotate3d(0, 1, 0, 90deg)' }
+      { offset: 1.0, opacity: 0, transform: 'perspective(400px) rotate3d(0, 1, 0, 90deg)' },
     ],
     options: {
       duration: 750,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   lightSpeedIn: {
@@ -584,221 +584,221 @@ export default {
       { offset: 0.0, opacity: 0, transform: 'translate3d(100%, 0, 0) skewX(-30deg)' },
       { offset: 0.6, opacity: 1, transform: 'skewX(20deg)' },
       { offset: 0.8, transform: 'skewX(-5deg)' },
-      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)' }
+      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-out'
-    }
+      easing: 'ease-out',
+    },
   },
 
   lightSpeedOut: {
     keyframes: [
       { offset: 0.0, opacity: 1, transform: 'translate3d(0, 0, 0)' },
-      { offset: 1.0, opacity: 0, transform: 'translate3d(100%, 0, 0) skewX(30deg)' }
+      { offset: 1.0, opacity: 0, transform: 'translate3d(100%, 0, 0) skewX(30deg)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   rotateIn: {
     keyframes: [
       { offset: 0.0, opacity: 0, transform: 'rotate3d(0, 0, 1, -200deg)' },
-      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)' }
+      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   rotateInDownLeft: {
     keyframes: [
       { offset: 0.0, opacity: 0, transform: 'rotate3d(0, 0, 1, -45deg)', transformOrigin: 'left bottom' },
-      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)', transformOrigin: 'left bottom' }
+      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)', transformOrigin: 'left bottom' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   rotateInDownRight: {
     keyframes: [
       { offset: 0.0, opacity: 0, transform: 'rotate3d(0, 0, 1, 45deg)', transformOrigin: 'right bottom' },
-      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)', transformOrigin: 'right bottom' }
+      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)', transformOrigin: 'right bottom' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   rotateInUpLeft: {
     keyframes: [
       { offset: 0.0, opacity: 0, transform: 'rotate3d(0, 0, 1, 45deg)', transformOrigin: 'left bottom' },
-      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)', transformOrigin: 'left bottom' }
+      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)', transformOrigin: 'left bottom' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   rotateInUpRight: {
     keyframes: [
       { offset: 0.0, opacity: 0, transform: 'rotate3d(0, 0, 1, -90deg)', transformOrigin: 'right bottom' },
-      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)', transformOrigin: 'right bottom' }
+      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)', transformOrigin: 'right bottom' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   rotateOut: {
     keyframes: [
       { offset: 0.0, opacity: 1, transform: 'rotate3d(0, 0, 0, 0)' },
-      { offset: 1.0, opacity: 0, transform: 'rotate3d(0, 0, 1, 200deg)' }
+      { offset: 1.0, opacity: 0, transform: 'rotate3d(0, 0, 1, 200deg)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   rotateOutDownLeft: {
     keyframes: [
       { offset: 0.0, opacity: 1, transform: 'rotate3d(0, 0, 0, 0)', transformOrigin: 'left bottom' },
-      { offset: 1.0, opacity: 0, transform: 'rotate3d(0, 0, 1, 45deg)', transformOrigin: 'left bottom' }
+      { offset: 1.0, opacity: 0, transform: 'rotate3d(0, 0, 1, 45deg)', transformOrigin: 'left bottom' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   rotateOutDownRight: {
     keyframes: [
       { offset: 0.0, opacity: 1, transform: 'rotate3d(0, 0, 0, 0)', transformOrigin: 'right bottom' },
-      { offset: 1.0, opacity: 0, transform: 'rotate3d(0, 0, 1, -45deg)', transformOrigin: 'right bottom' }
+      { offset: 1.0, opacity: 0, transform: 'rotate3d(0, 0, 1, -45deg)', transformOrigin: 'right bottom' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   rotateOutUpLeft: {
     keyframes: [
       { offset: 0.0, opacity: 1, transform: 'rotate3d(0, 0, 0, 0)', transformOrigin: 'left bottom' },
-      { offset: 1.0, opacity: 0, transform: 'rotate3d(0, 0, 1, -45deg)', transformOrigin: 'left bottom' }
+      { offset: 1.0, opacity: 0, transform: 'rotate3d(0, 0, 1, -45deg)', transformOrigin: 'left bottom' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   rotateOutUpRight: {
     keyframes: [
       { offset: 0.0, opacity: 1, transform: 'rotate3d(0, 0, 0, 0)', transformOrigin: 'right bottom' },
-      { offset: 1.0, opacity: 0, transform: 'rotate3d(0, 0, 1, 90deg)', transformOrigin: 'right bottom' }
+      { offset: 1.0, opacity: 0, transform: 'rotate3d(0, 0, 1, 90deg)', transformOrigin: 'right bottom' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   slideInDown: {
     keyframes: [
       { offset: 0.0, transform: 'translate3d(0, -100%, 0)' },
-      { offset: 1.0, transform: 'translate3d(0, 0, 0)' }
+      { offset: 1.0, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   slideInLeft: {
     keyframes: [
       { offset: 0.0, transform: 'translate3d(-100%, 0, 0)' },
-      { offset: 1.0, transform: 'translate3d(0, 0, 0)' }
+      { offset: 1.0, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   slideInRight: {
     keyframes: [
       { offset: 0.0, transform: 'translate3d(100%, 0, 0)' },
-      { offset: 1.0, transform: 'translate3d(0, 0, 0)' }
+      { offset: 1.0, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   slideInUp: {
     keyframes: [
       { offset: 0.0, transform: 'translate3d(0, 100%, 0)' },
-      { offset: 1.0, transform: 'translate3d(0, 0, 0)' }
+      { offset: 1.0, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   slideOutDown: {
     keyframes: [
       { offset: 0.0, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
-      { offset: 1.0, transform: 'translate3d(0, 100%, 0)', visibility: 'hidden' }
+      { offset: 1.0, transform: 'translate3d(0, 100%, 0)', visibility: 'hidden' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   slideOutLeft: {
     keyframes: [
       { offset: 0.0, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
-      { offset: 1.0, transform: 'translate3d(-100%, 0, 0)', visibility: 'hidden' }
+      { offset: 1.0, transform: 'translate3d(-100%, 0, 0)', visibility: 'hidden' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   slideOutRight: {
     keyframes: [
       { offset: 0.0, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
-      { offset: 1.0, transform: 'translate3d(100%, 0, 0)', visibility: 'hidden' }
+      { offset: 1.0, transform: 'translate3d(100%, 0, 0)', visibility: 'hidden' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   slideOutUp: {
     keyframes: [
       { offset: 0.0, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
-      { offset: 1.0, transform: 'translate3d(0, -100%, 0)', visibility: 'hidden' }
+      { offset: 1.0, transform: 'translate3d(0, -100%, 0)', visibility: 'hidden' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease-in'
-    }
+      easing: 'ease-in',
+    },
   },
 
   hinge: {
@@ -808,12 +808,12 @@ export default {
       { offset: 0.4, transform: 'rotate3d(0, 0, 1, 60deg)' },
       { offset: 0.6, transform: 'rotate3d(0, 0, 1, 80deg)' },
       { offset: 0.8, opacity: 1, transform: 'rotate3d(0, 0, 1, 60deg)' },
-      { offset: 1.0, easing: 'ease-in-out', opacity: 0, transform: 'translate3d(0, 700px, 0)', transformOrigin: 'top left' }
+      { offset: 1.0, easing: 'ease-in-out', opacity: 0, transform: 'translate3d(0, 700px, 0)', transformOrigin: 'top left' },
     ],
     options: {
       duration: 2000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   jackInTheBox: {
@@ -821,154 +821,154 @@ export default {
       { offset: 0.0, opacity: 0, transform: 'scale(0.1) rotate(30deg)', transformOrigin: 'center bottom' },
       { offset: 0.5, transform: 'rotate(-10deg)' },
       { offset: 0.7, transform: 'rotate(3deg)' },
-      { offset: 1.0, opacity: 1, transform: 'scale(1)', transformOrigin: 'center bottom' }
+      { offset: 1.0, opacity: 1, transform: 'scale(1)', transformOrigin: 'center bottom' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   rollIn: {
     keyframes: [
       { offset: 0.0, opacity: 0, transform: 'translate3d(-100%, 0, 0) rotate3d(0, 0, 1, -120deg)' },
-      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)' }
+      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   rollOut: {
     keyframes: [
       { offset: 0.0, opacity: 1, transform: 'translate3d(0, 0, 0)' },
-      { offset: 1.0, opacity: 0, transform: 'translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg)' }
+      { offset: 1.0, opacity: 0, transform: 'translate3d(100%, 0, 0) rotate3d(0, 0, 1, 120deg)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   zoomIn: {
     keyframes: [
       { offset: 0.0, opacity: 0, transform: 'scale3d(0.3, 0.3, 0.3)' },
       { offset: 0.5, opacity: 1 },
-      { offset: 1.0, opacity: 1, transform: 'scale3d(1, 1, 1)' }
+      { offset: 1.0, opacity: 1, transform: 'scale3d(1, 1, 1)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   zoomInDown: {
     keyframes: [
       { offset: 0.0, easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)', opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translate3d(0, -1000px, 0)' },
       { offset: 0.6, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(0.475, 0.475, 0.475) translate3d(0, 60px, 0)' },
-      { offset: 1.0, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(1, 1, 1)' }
+      { offset: 1.0, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(1, 1, 1)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   zoomInLeft: {
     keyframes: [
       { offset: 0.0, easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)', opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translate3d(-1000px, 0, 0)' },
       { offset: 0.6, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(0.475, 0.475, 0.475) translate3d(10px, 0, 0)' },
-      { offset: 1.0, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(1, 1, 1)' }
+      { offset: 1.0, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(1, 1, 1)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   zoomInRight: {
     keyframes: [
       { offset: 0.0, easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)', opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translate3d(1000px, 0, 0)' },
       { offset: 0.6, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(0.475, 0.475, 0.475) translate3d(-10px, 0, 0)' },
-      { offset: 1.0, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(1, 1, 1)' }
+      { offset: 1.0, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(1, 1, 1)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   zoomInUp: {
     keyframes: [
       { offset: 0.0, easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)', opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0)' },
       { offset: 0.6, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0)' },
-      { offset: 1.0, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(1, 1, 1)' }
+      { offset: 1.0, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(1, 1, 1)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   zoomOut: {
     keyframes: [
       { offset: 0.0, opacity: 1, transform: 'scale3d(1, 1, 1)' },
       { offset: 0.5, opacity: 0, transform: 'scale3d(0.3, 0.3, 0.3)' },
-      { offset: 1.0, opacity: 0, transform: 'scale3d(0, 0, 0)' }
+      { offset: 1.0, opacity: 0, transform: 'scale3d(0, 0, 0)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   zoomOutDown: {
     keyframes: [
       { offset: 0.0, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(1, 1, 1) translateY(0px)', transformOrigin: 'center' },
       { offset: 0.4, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(0.475, 0.475, 0.475) translateY(-60px)', transformOrigin: 'center' },
-      { offset: 1.0, easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)', opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translateY(1000px)', transformOrigin: 'center bottom' }
+      { offset: 1.0, easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)', opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translateY(1000px)', transformOrigin: 'center bottom' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   zoomOutLeft: {
     keyframes: [
       { offset: 0.0, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(1, 1, 1) translateX(0px)' },
       { offset: 0.4, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(0.475, 0.475, 0.475) translateX(10px)' },
-      { offset: 1.0, easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)', opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translateX(-1000px)' }
+      { offset: 1.0, easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)', opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translateX(-1000px)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   zoomOutRight: {
     keyframes: [
       { offset: 0.0, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(1, 1, 1) translateX(0px)' },
       { offset: 0.4, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', opacity: 1, transform: 'scale3d(0.475, 0.475, 0.475) translateX(-10px)' },
-      { offset: 1.0, easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)', opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translateX(1000px)' }
+      { offset: 1.0, easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)', opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translateX(1000px)' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   zoomOutUp: {
     keyframes: [
       { offset: 0.0, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', composite: 'replace', opacity: 1, transform: 'scale3d(1, 1, 1) translateY(0px)', transformOrigin: 'center' },
       { offset: 0.4, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1)', composite: 'replace', opacity: 1, transform: 'scale3d(0.475, 0.475, 0.475) translateY(60px)', transformOrigin: 'center' },
-      { offset: 1.0, easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)', composite: 'replace', opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translateY(-1000px)', transformOrigin: 'center bottom' }
+      { offset: 1.0, easing: 'cubic-bezier(0.55, 0.055, 0.675, 0.19)', composite: 'replace', opacity: 0, transform: 'scale3d(0.1, 0.1, 0.1) translateY(-1000px)', transformOrigin: 'center bottom' },
     ],
     options: {
       duration: 1000,
-      easing: 'ease'
-    }
+      easing: 'ease',
+    },
   },
 
   categories: {
@@ -983,7 +983,7 @@ export default {
       tada: true,
       wobble: true,
       jello: true,
-      heartBeat: true
+      heartBeat: true,
     },
 
     Bounce: {
@@ -992,15 +992,15 @@ export default {
         bounceInDown: true,
         bounceInLeft: true,
         bounceInRight: true,
-        bounceInUp: true
+        bounceInUp: true,
       },
       Exits: {
         bounceOut: true,
         bounceOutDown: true,
         bounceOutLeft: true,
         bounceOutRight: true,
-        bounceOutUp: true
-      }
+        bounceOutUp: true,
+      },
     },
 
     Fade: {
@@ -1013,7 +1013,7 @@ export default {
         fadeInRight: true,
         fadeInRightBig: true,
         fadeInUp: true,
-        fadeInUpBig: true
+        fadeInUpBig: true,
       },
       Exits: {
         fadeOut: true,
@@ -1024,20 +1024,20 @@ export default {
         fadeOutRight: true,
         fadeOutRightBig: true,
         fadeOutUp: true,
-        fadeOutUpBig: true
-      }
+        fadeOutUpBig: true,
+      },
     },
 
     Flip: {
       Entrances: {
         flipInX: true,
-        flipInY: true
+        flipInY: true,
       },
       Exits: {
         flipOutX: true,
-        flipOutY: true
+        flipOutY: true,
       },
-      flip: true
+      flip: true,
     },
 
     Rotate: {
@@ -1046,40 +1046,40 @@ export default {
         rotateInDownLeft: true,
         rotateInDownRight: true,
         rotateInUpLeft: true,
-        rotateInUpRight: true
+        rotateInUpRight: true,
       },
       Exits: {
         rotateOut: true,
         rotateOutDownLeft: true,
         rotateOutDownRight: true,
         rotateOutUpLeft: true,
-        rotateOutUpRight: true
-      }
+        rotateOutUpRight: true,
+      },
     },
     Slide: {
       Entrances: {
         slideInDown: true,
         slideInLeft: true,
         slideInRight: true,
-        slideInUp: true
+        slideInUp: true,
       },
       Exits: {
         slideOutDown: true,
         slideOutLeft: true,
         slideOutRight: true,
-        slideOutUp: true
-      }
+        slideOutUp: true,
+      },
     },
 
     Specials: {
       lightSpeed: {
         lightSpeedIn: true,
-        lightSpeedOut: true
+        lightSpeedOut: true,
       },
       hinge: true,
       jackInTheBox: true,
       rollIn: true,
-      rollOut: true
+      rollOut: true,
     },
 
     Zoom: {
@@ -1088,15 +1088,15 @@ export default {
         zoomInDown: true,
         zoomInLeft: true,
         zoomInRight: true,
-        zoomInUp: true
+        zoomInUp: true,
       },
       Exits: {
         zoomOut: true,
         zoomOutDown: true,
         zoomOutLeft: true,
         zoomOutRight: true,
-        zoomOutUp: true
-      }
-    }
-  }
+        zoomOutUp: true,
+      },
+    },
+  },
 }

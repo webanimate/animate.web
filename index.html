@@ -70,7 +70,7 @@
               <div class="q-ma-md" style="min-width: 30%; max-width: 100%;">
                 <q-card bordered style="text-align: center;">
                   <q-card-section>
-                    <q-icon :name="icon" style="font-size: 10vw;z-index: 1000" id="icon"></q-icon>
+                    <q-icon :name="icon" style="font-size: 10vw; z-index: 1000;" id="icon"></q-icon>
                     <div class="text-h6 q-mt-md">Icon: <q-badge color="secondary">{{icon}}</q-badge></div>
                     <div class="text-h6 q-mb-md">Animation: <q-badge color="accent">{{animationName}}</q-badge></div>
                     <q-btn round color="primary" icon="navigate_before" @click="prevNext('prev')" id="prev"></q-btn>
@@ -93,7 +93,7 @@
                   <q-card-section>
                     <q-select v-model="iconSet" :options="iconSets" label="Select icon set" dense></q-select>
                     <q-input v-model="filter" label="Filter" dense clearable class="q-ma-md"> </q-input>
-                    <q-icon-picker v-model="icon" :icon-set="iconSet" :pagination.sync="pagination" :filter="filter" tooltips style="height: 490px"></q-icon-picker>
+                    <q-icon-picker v-model="icon" :icon-set="iconSet" :pagination.sync="pagination" :filter="filter" tooltips style="height: 490px;"></q-icon-picker>
                   </q-card-section>
                 </q-card>
               </div>
@@ -116,7 +116,7 @@
                 <q-item-label>{{label}}</q-item-label>
                 <q-item-label caption>{{caption}}</q-item-label>
               </q-item-section>
-            </q-item>`
+            </q-item>`,
       })
 
       Vue.component('categories-menu', {
@@ -141,13 +141,13 @@
               </template>
               <q-separator></q-separator>
             </q-list>
-          </q-menu>`
+          </q-menu>`,
       })
 
       new Vue({
         el: '#q-app',
 
-        data: function() {
+        data: function () {
           return {
             previousAnimationName: '',
             animationName: 'flip',
@@ -156,19 +156,19 @@
             icon: 'fab fa-jenkins',
             filter: '',
             keyframesPagination: {
-              rowsPerPage: 0
+              rowsPerPage: 0,
             },
             pagination: {
               itemsPerPage: 60,
-              page: 0
+              page: 0,
             },
-            drawer: false
+            drawer: false,
           }
         },
 
         created() {
           this._animations = []
-          Object.keys(animateweb).forEach(key => {
+          Object.keys(animateweb).forEach((key) => {
             if (!(key === 'categories' && !Array.isArray(animateweb[key].keyframes))) {
               this.animations.push(key)
               this._animations.push(key)
@@ -182,33 +182,33 @@
             'eva-icons',
             'fontawesome-v5',
             // 'themify',
-            'line-awesome'
+            'line-awesome',
           ]
           this.drawerMenuItems = [
             {
               url: 'https://github.com/webanimate/animate.web',
               icon: 'fab fa-github',
               label: 'Github repository',
-              caption: 'View repository on Github'
+              caption: 'View repository on Github',
             },
             {
               url: 'https://npmjs.com/package/animate.web',
               icon: 'fab fa-npm',
               label: 'NPM package',
-              caption: 'View package on NPM'
+              caption: 'View package on NPM',
             },
             {
               url: 'https://github.com/webanimate/animate.web/blob/master/index.html',
               icon: 'fab fa-github-alt',
               label: 'Github demo',
-              caption: 'View source of this demo'
+              caption: 'View source of this demo',
             },
             {
               url: 'https://quasar.dev/',
               icon: 'img:https://cdn.quasar.dev/logo/svg/quasar-logo.svg',
               label: 'Running on Quasar v' + Quasar.version,
-              caption: 'Visit Quasar website'
-            }
+              caption: 'Visit Quasar website',
+            },
           ]
           this.animation = null
           this.animationsNames = Object.keys(animateweb)
@@ -220,34 +220,34 @@
         },
 
         computed: {
-          keyFrames: function() {
+          keyFrames: function () {
             return animateweb[this.animationName].keyframes
           },
 
-          keyframesData: function() {
+          keyframesData: function () {
             const properties = {}
             const columns = []
             const data = []
             for (const val of Object.keys(animateweb[this.animationName].keyframes)) {
               const _data = {}
-              Object.keys(animateweb[this.animationName].keyframes[val]).forEach(key => {
+              Object.keys(animateweb[this.animationName].keyframes[val]).forEach((key) => {
                 properties[key] = true
                 _data[key] = animateweb[this.animationName].keyframes[val][key]
               })
               data.push(_data)
             }
-            ;['offset', 'easing', 'composite', ...animatable.properties].forEach(key => {
+            ;['offset', 'easing', 'composite', ...animatable.properties].forEach((key) => {
               if (properties[key]) {
                 columns.push({
                   name: key,
                   label: key,
                   field: key,
-                  align: 'left'
+                  align: 'left',
                 })
               }
             })
             return { data: data, columns: columns }
-          }
+          },
         },
 
         methods: {
@@ -292,10 +292,10 @@
 
             update(() => {
               const needle = val.toLowerCase()
-              this.animations = this._animations.filter(v => v.toLowerCase().indexOf(needle) > -1)
+              this.animations = this._animations.filter((v) => v.toLowerCase().indexOf(needle) > -1)
             })
-          }
-        }
+          },
+        },
       })
     </script>
   </body>

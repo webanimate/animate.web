@@ -7,13 +7,13 @@ export default {
     file: `dist/${pkg.name}.js`,
     format: 'umd',
     name: pkg.name.replace('.', ''),
-    sourcemap: true
+    sourcemap: true,
   },
   plugins: [
     terser({
       output: {
-        preamble: `//${pkg.name} v${pkg.version} ${pkg.homepage}`
-      }
-    })
-  ]
+        preamble: `//${pkg.name} v${pkg.version} ${pkg.homepage}`,
+      },
+    }),
+  ],
 }

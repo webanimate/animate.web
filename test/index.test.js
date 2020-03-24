@@ -5,7 +5,7 @@ import isPlainObject from 'lodash.isplainobject'
 
 const keyframesAllowedAttributes = ['offset', 'easing', 'composite', ...properties]
 
-const checkCategories = categories => {
+const checkCategories = (categories) => {
   for (const item in categories) {
     if (categories[item] !== true) {
       if (isPlainObject(categories[item])) {
@@ -21,7 +21,7 @@ const checkCategories = categories => {
   return true
 }
 
-const checkAttributesOrder = attributes => {
+const checkAttributesOrder = (attributes) => {
   for (const attribute of keyframesAllowedAttributes) {
     if (attribute === attributes[0]) {
       attributes.shift()
@@ -33,7 +33,7 @@ const checkAttributesOrder = attributes => {
   return false
 }
 
-Object.keys(animations).forEach(key => {
+Object.keys(animations).forEach((key) => {
   if (Array.isArray(animations[key].keyframes)) {
     describe(`\n\n******************************\n${key} animation\n******************************\n`, () => {
       // Keyframes
@@ -44,7 +44,7 @@ Object.keys(animations).forEach(key => {
         describe(`to contain only alowed attributes`, () => {
           animations[key].keyframes.forEach((keyframe, index) => {
             const keyframesAttributes = []
-            Object.keys(keyframe).forEach(attribute => {
+            Object.keys(keyframe).forEach((attribute) => {
               keyframesAttributes.push(attribute)
               if (attribute === 'offset' && keyframe[attribute] !== null) {
                 keyframesOffsets.push(keyframe[attribute])
@@ -65,7 +65,7 @@ Object.keys(animations).forEach(key => {
         describe(`attributes to be in order according to convention`, () => {
           animations[key].keyframes.forEach((keyframe, index) => {
             const keyframesAttributes = []
-            Object.keys(keyframe).forEach(attribute => {
+            Object.keys(keyframe).forEach((attribute) => {
               keyframesAttributes.push(attribute)
             })
             test(`${index}: ${keyframesAttributes}`, () => {
@@ -131,7 +131,7 @@ Object.keys(animations).forEach(key => {
           expect(validate(animations[key].options, true, true)).toBe(true)
         })
         const options = []
-        Object.keys(animations[key].options).forEach(option => {
+        Object.keys(animations[key].options).forEach((option) => {
           options.push(option)
         })
         test(`to be in alphabetical order: ${options}`, () => {

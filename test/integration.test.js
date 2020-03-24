@@ -1,5 +1,5 @@
 const runPuppeteer = () => {
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     resolve(
       require('child_process')
         .execFileSync('node', [require('path').join(__dirname, 'puppeteer.js')])
