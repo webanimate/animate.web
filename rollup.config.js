@@ -6,7 +6,7 @@ export default {
   output: {
     file: `dist/${pkg.name}.js`,
     format: 'umd',
-    name: pkg.name.replace('.', ''),
+    name: pkg.outputName,
     sourcemap: true,
   },
   plugins: [

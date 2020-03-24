@@ -13,7 +13,7 @@ export default animations.map((name) => ({
   output: {
     file: `dist/${name}.js`,
     format: 'umd',
-    name: `${pkg.name.replace('.', '')}.${name}`,
+    name: `${pkg.outputName}.${name}`,
     sourcemap: true,
   },
   plugins: [
