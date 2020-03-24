@@ -54,6 +54,8 @@ If you need only one or several animations it is possible to load them individua
 <script src="https://cdn.jsdelivr.net/npm/animate.web@latest/dist/flip.js"></script>
 ```
 
+When loading from CDN a global variable `animateweb` is added to the scope. If you load the full bundle `animateweb` contains all the animations from the package. If individual animations are loaded it contains only them.
+
 Assign a selector to the element(s) you want to animate:
 
 ```html
