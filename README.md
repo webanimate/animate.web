@@ -40,9 +40,6 @@ import animateweb from 'animate.web'
 Or load from CDN:
 
 ```html
-<!-- Either -->
-<script src="https://unpkg.com/animate.web"></script>
-<!-- or -->
 <script src="https://cdn.jsdelivr.net/npm/animate.web@latest/dist/animate.web.js"></script>
 ```
 

@@ -3,16 +3,15 @@
   "outputName": "animateweb",
   "version": "0.0.2",
   "description": "Animate.css animations ported to Web Animations API",
-  "main": "src/index.js",
   "author": "Web Animate",
-  "license": "MIT",
-  "private": false,
   "homepage": "https://github.com/webanimate/animate.web#readme",
-  "unpkg": "dist/animate.web.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/webanimate/animate.web.git"
   },
+  "license": "MIT",
+  "private": false,
+  "main": "src/index.js",
   "files": [
     "src",
     "dist"
