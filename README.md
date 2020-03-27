@@ -142,6 +142,8 @@ yarn test
 
 #### Unit tests
 
+[Source](https://github.com/webanimate/animate.web/blob/master/test/index.test.js)
+
 They check integrity of animations and categories and make sure that all animations keyframes and options contain only allowed attributes. Command to run unit tests only:
 
 ```shell script
@@ -166,6 +168,8 @@ An example of passed unit tests:
 
 #### Integration tests
 
+[Source](https://github.com/webanimate/animate.web/blob/master/test/integration.test.js)
+
 They check animations in real browser (headless Chrome via puppeteer). Command to run integration tests only:
 
 ```shell script
@@ -177,6 +181,8 @@ Unit tests cannot detect errors such as invalid value for a css property (e.g. `
 ![image](https://user-images.githubusercontent.com/60752454/77236870-329e7500-6bcb-11ea-84f6-40ce1310a6b7.png)
 
 Cypress integration tests are also included but they are just for demonstration because headless cypress tests cannot catch console warnings, only errors (PRs welcomed if you know how to do it).
+
+[Source](https://github.com/webanimate/animate.web/blob/master/cypress/integration/animations.spec.js)
 
 The advantage of cypress is that in headed mode you can run tests not only in Chrome but also in Firefox and Electron:
 
