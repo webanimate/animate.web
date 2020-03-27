@@ -29,7 +29,7 @@
     "lint": "yarn lint:eslint && yarn lint:prettier",
     "lint:eslint": "eslint \"**/*.*\"",
     "lint:prettier": "prettier --check \"**/*.*\"",
-    "test": "yarn test:unit && yarn test:integration",
+    "test": "yarn fix && yarn test:unit && yarn test:integration",
     "test:unit": "jest index.test.js",
     "test:integration": "yarn build:all && jest --coverage=false integration.test.js ",
     "up": "yarn upgrade-interactive && yarn outdated"
