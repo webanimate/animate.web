@@ -152,6 +152,7 @@ yarn test:unit
 
 Here's what is checked in unit tests:
 
+1. Animation name is a valid filename.
 1. Each keyframe of each animation is tested to contain only [alowed attributes](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Keyframe_Formats), that is one or more of [animatable CSS properties](https://www.npmjs.com/package/animatable-properties) and (optionally) `offset`, `easing`, `composite`.
 1. Attributes are tested to be sorted according to the convention (see above).
 1. If `offset` attribute is present in a keyframe it is tested to be a number between 0 and 1.

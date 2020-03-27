@@ -3,6 +3,7 @@ import { properties } from 'animatable-properties'
 import { validate } from 'waapi-timing-properties'
 import isPlainObject from 'lodash.isplainobject'
 
+const sanitize = require('sanitize-filename')
 const keyframesAllowedAttributes = ['offset', 'easing', 'composite', ...properties]
 
 const checkCategories = (categories) => {
@@ -36,6 +37,11 @@ const checkAttributesOrder = (attributes) => {
 Object.keys(animations).forEach((key) => {
   if (Array.isArray(animations[key].keyframes)) {
     describe(`\n\n******************************\n${key} animation\n******************************\n`, () => {
+      describe(`Animation name to be valid filename`, () => {
+        test(`${key}`, () => {
+          expect(sanitize(key)).toEqual(key)
+        })
+      })
       // Keyframes
       describe(`keyframes`, () => {
         const keyframesOffsets = []
