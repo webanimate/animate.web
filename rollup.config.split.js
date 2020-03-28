@@ -3,6 +3,19 @@ import { terser } from 'rollup-plugin-terser'
 import * as pkg from './package.json'
 import animateweb from './src/index.js'
 
+// Clean dist folder
+const path = require('path')
+const rimraf = require('rimraf')
+require('fs')
+  .readdirSync(path.join(__dirname, 'dist'))
+  .forEach((file) => {
+    if (![`${pkg.name}.js`, `${pkg.name}.js.map`].includes(file)) {
+      rimraf(path.join(__dirname, 'dist', file), { disableGlob: true }, (err) => {
+        if (err) throw err
+      })
+    }
+  })
+
 const animations = []
 Object.keys(animateweb).forEach((key) => {
   animations.push(key)
