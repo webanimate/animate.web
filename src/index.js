@@ -16,7 +16,7 @@ export default {
     },
   },
 
-  'fla😁sh': {
+  flash: {
     keyframes: [
       { opacity: 1 }, //
       { opacity: 0 },
