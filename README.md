@@ -62,7 +62,7 @@ Assign a selector to the element(s) you want to animate:
 Create animation with default options:
 
 ```javascript
-const animation = document.querySelector('#animation').animate(animateweb.bounceIn.keyframes, animateweb.bounceIn.options)
+const animation = document.querySelector('#animation').animate(animateweb['bounceIn'].keyframes, animateweb['bounceIn'].options)
 ```
 
 Or apply any custom options if you need. Full list of available options [here](https://developer.mozilla.org/en-US/docs/Web/API/Element/animate)
@@ -70,15 +70,15 @@ Or apply any custom options if you need. Full list of available options [here](h
 For example, change duration to 3 seconds and play it infinitely:
 
 ```javascript
-animateweb.bounceIn.options.duration = 3000
-animateweb.bounceIn.options.iterations = Infinity
-const animation = document.querySelector('#animation').animate(animateweb.bounceIn.keyframes, animateweb.bounceIn.options)
+animateweb['bounceIn'].options.duration = 3000
+animateweb['bounceIn'].options.iterations = Infinity
+const animation = document.querySelector('#animation').animate(animateweb['bounceIn'].keyframes, animateweb['bounceIn'].options)
 ```
 
 After being created the animation will play immediately. If you want to prevent this use `cancel()` method right after the creation:
 
 ```javascript
-const animation = document.querySelector('#animation').animate(animateweb.bounceIn.keyframes, animateweb.bounceIn.options)
+const animation = document.querySelector('#animation').animate(animateweb['bounceIn'].keyframes, animateweb['bounceIn'].options)
 animation.cancel()
 ```
 
