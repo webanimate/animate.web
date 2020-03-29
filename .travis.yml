@@ -9,4 +9,3 @@ install:
   - yarn
 script:
   - yarn test
-  - codecov
