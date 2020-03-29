@@ -35,9 +35,9 @@
       <q-layout view="hHh lpR fFf" class="shadow-2 rounded-borders">
         <q-header elevated reveal>
           <q-toolbar class="bg-primary glossy text-white">
-            <q-toolbar-title
-              >Animate.web
-              <div class="text-subtitle2">$ yarn add animate.web&nbsp;</div>
+            <q-toolbar-title>
+              <span style="text-transform: capitalize;">{{packageName}}</span>
+              <div class="text-subtitle2">$ yarn add {{packageName}}&nbsp;</div>
             </q-toolbar-title>
 
             <q-btn flat dense round @click="drawer = !drawer" aria-label="Menu">
@@ -75,7 +75,7 @@
                   </q-card-section>
                   <q-card-section>
                     <q-btn color="primary" label="Select animation">
-                      <categories-menu :categories="animateweb.categories"></categories-menu>
+                      <categories-menu :categories="animationsSet.categories"></categories-menu>
                     </q-btn>
                   </q-card-section>
                   <q-card-section>
@@ -99,7 +99,8 @@
       </q-layout>
     </div>
     <script>
-      /* global Vue, Quasar, animateweb, animatable */
+      /* global Vue, Quasar, animatable, animateweb */
+      const animationsSet = animateweb
 
       Vue.component('drawer-menu-item', {
         props: ['url', 'icon', 'label', 'caption'],
@@ -163,9 +164,11 @@
         },
 
         created() {
+          this.packageName = 'animate.web'
+          this.githubUsername = 'webanimate'
           this._animations = []
-          Object.keys(animateweb).forEach((key) => {
-            if (!(key === 'categories' && !Array.isArray(animateweb[key].keyframes))) {
+          Object.keys(animationsSet).forEach((key) => {
+            if (!(key === 'categories' && !Array.isArray(animationsSet[key].keyframes))) {
               this.animations.push(key)
               this._animations.push(key)
             }
@@ -182,21 +185,21 @@
           ]
           this.drawerMenuItems = [
             {
-              url: 'https://github.com/webanimate/animate.web',
+              url: `https://github.com/${this.githubUsername}/${this.packageName}`,
               icon: 'fab fa-github',
               label: 'Github repository',
               caption: 'View repository on Github',
             },
             {
-              url: 'https://npmjs.com/package/animate.web',
+              url: `https://npmjs.com/package/${this.packageName}`,
               icon: 'fab fa-npm',
               label: 'NPM package',
               caption: 'View package on NPM',
             },
             {
-              url: 'https://github.com/webanimate/animate.web/blob/master/index.html',
+              url: `https://github.com/${this.githubUsername}/${this.packageName}/blob/master/index.html`,
               icon: 'fab fa-github-alt',
-              label: 'Github demo',
+              label: 'Demo source',
               caption: 'View source of this demo',
             },
             {
@@ -207,28 +210,28 @@
             },
           ]
           this.animation = null
-          this.animationsNames = Object.keys(animateweb)
+          this.animationsNames = Object.keys(animationsSet)
           this.animationsNames.splice(this.animationsNames.indexOf('categories'), 1)
         },
 
         mounted() {
-          this.animation = document.querySelector('#icon').animate(animateweb[this.animationName].keyframes, animateweb[this.animationName].options)
+          this.animation = document.querySelector('#icon').animate(animationsSet[this.animationName].keyframes, animationsSet[this.animationName].options)
         },
 
         computed: {
           keyFrames: function () {
-            return animateweb[this.animationName].keyframes
+            return animationsSet[this.animationName].keyframes
           },
 
           keyframesData: function () {
             const properties = {}
             const columns = []
             const data = []
-            for (const val of Object.keys(animateweb[this.animationName].keyframes)) {
+            for (const val of Object.keys(animationsSet[this.animationName].keyframes)) {
               const _data = {}
-              Object.keys(animateweb[this.animationName].keyframes[val]).forEach((key) => {
+              Object.keys(animationsSet[this.animationName].keyframes[val]).forEach((key) => {
                 properties[key] = true
-                _data[key] = animateweb[this.animationName].keyframes[val][key]
+                _data[key] = animationsSet[this.animationName].keyframes[val][key]
               })
               data.push(_data)
             }
@@ -258,7 +261,7 @@
                 this.animation.play()
               } else {
                 this.previousAnimationName = this.animationName = name
-                this.animation = document.querySelector('#icon').animate(animateweb[name].keyframes, animateweb[name].options)
+                this.animation = document.querySelector('#icon').animate(animationsSet[name].keyframes, animationsSet[name].options)
               }
             } catch (e) {
               this.$q.notify({ color: 'black', message: `Invalid animation code!<br/>Animation: ${name}<br/>${e.name}<br/>${e.message}`, html: true, position: 'center', icon: 'fas fa-skull', multiLine: true, closeBtn: 'OK', timeout: 0 })
