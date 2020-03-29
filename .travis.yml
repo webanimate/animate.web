@@ -1,6 +1,6 @@
 language: node_js
 node_js: node
-os: windows
+os: osx
 cache: yarn
 before_install:
   - npm install -g yarn
@@ -9,3 +9,4 @@ install:
   - yarn
 script:
   - yarn test
+  - codecov
