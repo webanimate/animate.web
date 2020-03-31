@@ -11,7 +11,7 @@ install:
   - cypress install
 script:
   - yarn test
-  - yarn cy:run
-  - cypress run --headless --browser chrome
-  - cypress run --headless --browser firefox
+  - cypress run --config video=false
+  - cypress run --config video=false --headless --browser chrome
+  - cypress run --config video=false --headless --browser firefox
   - codecov
