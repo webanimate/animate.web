@@ -1,6 +1,8 @@
 language: node_js
 node_js: node
 cache: yarn
+addons:
+  chrome: stable
 before_install:
   - npm install -g yarn
 install:
@@ -10,5 +12,6 @@ install:
 script:
   - yarn test
   - yarn cy:run
+  - cypress run --headless --browser chrome
   - cypress run --headless --browser firefox
   - codecov
