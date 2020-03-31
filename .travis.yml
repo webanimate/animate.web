@@ -8,5 +8,5 @@ install:
   - yarn
 script:
   - yarn test
-  - cy:run
+  - yarn cy:run
   - codecov
