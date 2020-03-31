@@ -184,7 +184,7 @@ Unit tests cannot detect errors such as invalid value for a css property (e.g. `
 
 ![image](https://user-images.githubusercontent.com/60752454/77236870-329e7500-6bcb-11ea-84f6-40ce1310a6b7.png)
 
-Cypress integration tests are also included but they are just for demonstration because headless cypress tests cannot catch console warnings, only errors (PRs welcomed if you know how to do it).
+Cypress integration tests are also included but they are only used in CI because headless cypress tests cannot catch console warnings, only errors (PRs welcomed if you know how to do it).
 
 [Source](https://github.com/webanimate/animate.web/blob/master/cypress/integration/animations.spec.js)
 
