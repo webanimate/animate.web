@@ -19,7 +19,7 @@ const searchObjects = [
     replace: pkg.name + '.js"></script>',
   },
   {
-    search: '/* global Vue, Quasar, animatable, ',
+    search: '/* global Vue, Quasar, animatable, WTProperties ',
     replace: pkg.outputName + ' */',
   },
   {
