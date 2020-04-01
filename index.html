@@ -20,6 +20,7 @@
   </head>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/animatable-properties@latest/dist/animatable.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/waapi-timing-properties@latest/dist/wtproperties.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@^2.0.0/dist/vue.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/quasar@^1.9.1/dist/quasar.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qiconpicker@latest/dist/index.umd.min.js"></script>
@@ -55,51 +56,69 @@
         <q-page-container>
           <q-page>
             <div class="row">
-              <div class="q-ma-md" style="min-width: 30%; max-width: 100%;">
-                <q-card style="text-align: center;">
-                  <q-card-section>
-                    <q-table title="Keyframes" :data="keyframesData.data" :columns="keyframesData.columns" :pagination.sync="keyframesPagination" :rows-per-page-options="[0]" hide-bottom></q-table>
-                  </q-card-section>
-                </q-card>
-              </div>
-
-              <div class="q-ma-md" style="min-width: 30%; max-width: 100%;">
+              <div class="q-ma-md" :style="{ minWidth: minWidth }" style="max-width: 100%;">
                 <q-card bordered style="text-align: center;">
                   <q-card-section>
-                    <q-icon :name="icon" style="font-size: 10vw; z-index: 1000;" id="icon"></q-icon>
-                    <div class="text-h6 q-mt-md">Icon: <q-badge color="secondary">{{icon}}</q-badge></div>
-                    <div class="text-h6 q-mb-md">Animation: <q-badge color="accent">{{animationName}}</q-badge></div>
+                    <q-icon :name="icon" style="font-size: 15em; z-index: 1000;" id="icon"></q-icon>
+                    <div class="text-h6 q-mt-md">
+                      <q-btn flat color="primary" label="Select icon:" @click="selectIcon = true"></q-btn>
+                      <q-badge color="secondary">{{icon}}</q-badge>
+                    </div>
+                    <div class="text-h6 q-mb-md">
+                      <q-btn flat color="primary" label="Select animation:">
+                        <categories-menu :categories="animationsSet.categories"></categories-menu>
+                      </q-btn>
+                      <q-badge color="accent">{{animationName}}</q-badge>
+                    </div>
                     <q-btn round color="primary" icon="navigate_before" @click="prevNext('prev')" id="prev"></q-btn>
                     <q-btn round color="primary" icon="play_arrow" @click="animate(animationName)" class="q-mr-md q-ml-md"></q-btn>
                     <q-btn round color="primary" icon="navigate_next" @click="prevNext('next')" id="next"></q-btn>
                   </q-card-section>
                   <q-card-section>
-                    <q-btn color="primary" label="Select animation">
-                      <categories-menu :categories="animationsSet.categories"></categories-menu>
-                    </q-btn>
-                  </q-card-section>
-                  <q-card-section>
-                    <q-select v-model="animationName" :options="animations" label="Select animation" use-input input-debounce="0" hide-selected fill-input dense @filter="filterFn" @input="animated" id="animationName"></q-select>
+                    <div style="max-width: 300px; margin: auto;">
+                      <q-select v-model="animationName" :options="animations" label="Select animation" use-input input-debounce="0" hide-selected fill-input dense @filter="filterFn" @input="animated" id="animationName"></q-select>
+                    </div>
                   </q-card-section>
                 </q-card>
               </div>
 
-              <div class="q-ma-md" style="min-width: 350px; max-width: 350px;">
-                <q-card bordered style="text-align: center;">
+              <div class="q-ma-md" :style="{ minWidth: minWidth }" style="max-width: 100%;">
+                <q-card style="text-align: center;">
                   <q-card-section>
-                    <q-select v-model="iconSet" :options="iconSets" label="Select icon set" dense></q-select>
-                    <q-input v-model="filter" label="Filter" dense clearable class="q-ma-md"> </q-input>
-                    <q-icon-picker v-model="icon" :icon-set="iconSet" :pagination.sync="pagination" :filter="filter" tooltips style="height: 490px;"></q-icon-picker>
+                    <q-table title="Keyframes" :data="keyframesData.data" :columns="keyframesData.columns" :pagination.sync="keyframesPagination" :rows-per-page-options="[0]" hide-bottom></q-table>
+                  </q-card-section>
+                  <q-card-section>
+                    <q-table title="Options" :data="optionsData.data" :columns="optionsData.columns" :pagination.sync="keyframesPagination" :rows-per-page-options="[0]" hide-bottom></q-table>
                   </q-card-section>
                 </q-card>
               </div>
+
+              <q-dialog v-model="selectIcon">
+                <div class="q-ma-md" style="min-width: 350px; max-width: 350px;">
+                  <q-card bordered style="text-align: center;">
+                    <q-bar>
+                      <div>Select icon</div>
+                      <q-space></q-space>
+                      <q-btn dense flat icon="close" v-close-popup>
+                        <q-tooltip>Close</q-tooltip>
+                      </q-btn>
+                    </q-bar>
+                    <q-card-section>
+                      <q-select v-model="iconSet" :options="iconSets" label="Select icon set" dense></q-select>
+                      <q-input v-model="filter" label="Filter" dense clearable class="q-ma-md"> </q-input>
+                      <q-icon-picker v-model="icon" :icon-set="iconSet" :pagination.sync="pagination" :filter="filter" tooltips style="height: 490px;"></q-icon-picker>
+                    </q-card-section>
+                  </q-card>
+                </div>
+              </q-dialog>
             </div>
           </q-page>
         </q-page-container>
       </q-layout>
+      <q-resize-observer @resize="onResize"></q-resize-observer>
     </div>
     <script>
-      /* global Vue, Quasar, animatable, animateweb */
+      /* global Vue, Quasar, animatable, WTProperties, animateweb */
       const animationsSet = animateweb
 
       Vue.component('drawer-menu-item', {
@@ -160,6 +179,8 @@
               page: 0,
             },
             drawer: false,
+            selectIcon: false,
+            minWidth: '30%',
           }
         },
 
@@ -247,6 +268,23 @@
             })
             return { data: data, columns: columns }
           },
+
+          optionsData: function () {
+            const columns = []
+            const data = [{}]
+            WTProperties.propertiesNames.sort().forEach((key) => {
+              if (Object.prototype.hasOwnProperty.call(animationsSet[this.animationName].options, key)) {
+                columns.push({
+                  name: key,
+                  label: key,
+                  field: key,
+                  align: 'left',
+                })
+                data[0][key] = animationsSet[this.animationName].options[key]
+              }
+            })
+            return { data: data, columns: columns }
+          },
         },
 
         methods: {
@@ -266,6 +304,14 @@
             } catch (e) {
               this.$q.notify({ color: 'black', message: `Invalid animation code!<br/>Animation: ${name}<br/>${e.name}<br/>${e.message}`, html: true, position: 'center', icon: 'fas fa-skull', multiLine: true, closeBtn: 'OK', timeout: 0 })
               console.error(e)
+            }
+          },
+
+          onResize(size) {
+            if (size.width >= size.height) {
+              this.minWidth = '30%'
+            } else {
+              this.minWidth = '90%'
             }
           },
 
