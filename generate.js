@@ -19,6 +19,10 @@ const searchObjects = [
     replace: pkg.name + '.js"></script>',
   },
   {
+    search: '<span id="toolbarTitle">',
+    replace: pkgNameUCFirst + '</span>',
+  },
+  {
     search: '/* global Vue, Quasar, animatable, WTProperties ',
     replace: pkg.outputName + ' */',
   },
