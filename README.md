@@ -174,7 +174,7 @@ An example of passed unit tests:
 
 [Source](https://github.com/webanimate/animate.web/blob/master/test/integration.test.js)
 
-They check animations in real browser (headless Chromium via Puppeteer). Command to run integration tests only:
+They check animations in real browser (headless Chromium via puppeteer). Command to run integration tests only:
 
 ```shell script
 yarn test:integration
