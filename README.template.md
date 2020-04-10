@@ -154,7 +154,7 @@ Here's what is checked:
 1. Animation's options are valid [WAAPI timing properties](https://www.npmjs.com/package/waapi-timing-properties).
 1. Animation's options are in alphabetical order.
 1. The first and last keyframes contain all animatable properties used in animation. If they don't you get `Uncaught DOMException: Failed to execute 'animate' on 'Element': Partial keyframes are not supported.` in Chrome or `NotSupportedError: Animation to or from an underlying value is not yet supported.` in Firefox.
-11. Every animatable CSS property has a valid value.
+1. Every animatable CSS property has a valid value.
 1. Categories object (if present) is valid.
 
 An example of passed unit tests:
