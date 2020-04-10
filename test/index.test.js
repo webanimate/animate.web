@@ -47,6 +47,7 @@ Object.keys(animations).forEach((key) => {
         const keyframesOffsets = []
         const keyframesEasings = []
         const keyframesComposites = []
+        const animationAttributes = {}
         describe(`to contain only allowed attributes`, () => {
           animations[key].keyframes.forEach((keyframe, index) => {
             const keyframesAttributes = []
@@ -54,12 +55,12 @@ Object.keys(animations).forEach((key) => {
               keyframesAttributes.push(attribute)
               if (attribute === 'offset' && keyframe[attribute] !== null) {
                 keyframesOffsets.push(keyframe[attribute])
-              }
-              if (attribute === 'easing') {
+              } else if (attribute === 'easing') {
                 keyframesEasings.push(keyframe[attribute])
-              }
-              if (attribute === 'composite') {
+              } else if (attribute === 'composite') {
                 keyframesComposites.push(keyframe[attribute])
+              } else {
+                animationAttributes[attribute] = true
               }
             })
             test(`${index}: ${keyframesAttributes}`, () => {
@@ -77,6 +78,20 @@ Object.keys(animations).forEach((key) => {
             test(`${index}: ${keyframesAttributes}`, () => {
               expect(checkAttributesOrder(keyframesAttributes)).toEqual(true)
             })
+          })
+        })
+
+        // Validate animatable css properties
+        describe(`animatable css properties to have valid values`, () => {
+          animations[key].keyframes.forEach((keyframe, index) => {
+            ;['offset', 'easing', 'composite'].forEach((attribute) => {
+              delete keyframe[attribute]
+            })
+            if ([0, animations[key].keyframes.length - 1].includes(index)) {
+              test(`${index}: first and last keyframe to contain all animatable properties used in animation`, () => {
+                expect(Object.keys(keyframe)).toEqual(expect.arrayContaining(Object.keys(animationAttributes)))
+              })
+            }
           })
         })
 
