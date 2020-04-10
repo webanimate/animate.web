@@ -1,10 +1,13 @@
 import animations from '../src/index'
-import { properties } from 'animatable-properties'
+import { properties, jsToCss } from 'animatable-properties'
 import { validate } from 'waapi-timing-properties'
 import isPlainObject from 'lodash.isplainobject'
 
+const csstree = require('css-tree')
 const sanitize = require('sanitize-filename')
-const keyframesAllowedAttributes = ['offset', 'easing', 'composite', ...properties]
+
+const keyframesSpecialAttributes = ['offset', 'easing', 'composite']
+const keyframesAllowedAttributes = [...keyframesSpecialAttributes, ...properties]
 
 const checkCategories = (categories) => {
   for (const item in categories) {
@@ -32,6 +35,13 @@ const checkAttributesOrder = (attributes) => {
     }
   }
   return false
+}
+
+const removeSpecialAttributes = (keyframe) => {
+  keyframesSpecialAttributes.forEach((attribute) => {
+    delete keyframe[attribute]
+  })
+  return keyframe
 }
 
 Object.keys(animations).forEach((key) => {
@@ -82,16 +92,50 @@ Object.keys(animations).forEach((key) => {
         })
 
         // Validate animatable css properties
-        describe(`animatable css properties to have valid values`, () => {
+        describe(`first and last keyframe to contain all animatable properties used in animation`, () => {
           animations[key].keyframes.forEach((keyframe, index) => {
-            ;['offset', 'easing', 'composite'].forEach((attribute) => {
-              delete keyframe[attribute]
-            })
+            keyframe = removeSpecialAttributes(keyframe)
             if ([0, animations[key].keyframes.length - 1].includes(index)) {
-              test(`${index}: first and last keyframe to contain all animatable properties used in animation`, () => {
+              let text = ''
+              if (!index) {
+                text = 'first'
+              } else {
+                text = 'last'
+              }
+              test(`${index}: ${text} keyframe to contain all animatable properties used in animation`, () => {
                 expect(Object.keys(keyframe)).toEqual(expect.arrayContaining(Object.keys(animationAttributes)))
               })
             }
+          })
+        })
+
+        describe(`animatable css properties to have valid values`, () => {
+          animations[key].keyframes.forEach((keyframe, index) => {
+            keyframe = removeSpecialAttributes(keyframe)
+            Object.keys(keyframe).forEach((attribute) => {
+              const ast = csstree.parse(`${jsToCss(attribute)}: ${keyframe[attribute]}`, {
+                context: 'declaration',
+                onParseError: (error) => {
+                  test(`${index}: ${attribute}`, () => {
+                    expect(`\n${error.name}: ${error.message}\n${error.source}\n`).toEqual('')
+                  })
+                },
+              })
+
+              csstree.walk(ast, {
+                visit: 'Declaration',
+                enter: function (node) {
+                  const error = csstree.lexer.matchDeclaration(node).error
+                  let message = ''
+                  if (error) {
+                    message = `\n${error.rawMessage}\nsyntax: ${error.syntax}\nvalue: ${error.css}\n`
+                  }
+                  test(`${index}: ${attribute}: ${keyframe[attribute]}`, () => {
+                    expect(message).toEqual('')
+                  })
+                },
+              })
+            })
           })
         })
 
