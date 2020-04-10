@@ -156,15 +156,16 @@ yarn test:unit
 Here's what is checked in unit tests:
 
 1. Animation name is a valid filename.
-1. Each keyframe of each animation is tested to contain only [alowed attributes](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Keyframe_Formats), that is one or more of [animatable CSS properties](https://www.npmjs.com/package/animatable-properties) and (optionally) `offset`, `easing`, `composite`.
-1. Attributes are tested to be sorted according to the convention (see above).
-1. If `offset` attribute is present in a keyframe it is tested to be a number between 0 and 1.
-1. If `offset` attributes are present in several keyframes they are tested to be in ascending order.
-1. If `easing` attribute is present in a keyframe it is tested to be valid [CSS easing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function).
-1. If `composite` attribute is present in a keyframe it is tested to be valid [KeyframeEffect.composite operation](https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect/composite).
-1. Animation's options are tested to be valid [WAAPI timing properties](https://www.npmjs.com/package/waapi-timing-properties).
-1. Animation's options are tested to be in alphabetical order.
-1. Categories object (if present) is tested to be valid.
+1. Each keyframe of each animation contains only [alowed attributes](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Keyframe_Formats), that is one or more of [animatable CSS properties](https://www.npmjs.com/package/animatable-properties) and (optionally) `offset`, `easing`, `composite`.
+1. Attributes are sorted according to the convention (see above).
+1. `offset` attribute (if present in a keyframe) is a number between 0 and 1.
+1. `offset` attributes (if present in several keyframes) are in ascending order.
+1. `easing` attribute (if present in a keyframe) is a valid [CSS easing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function).
+1. `composite` attribute (if present in a keyframe) is a valid [KeyframeEffect.composite operation](https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect/composite).
+1. Animation's options are valid [WAAPI timing properties](https://www.npmjs.com/package/waapi-timing-properties).
+1. Animation's options are in alphabetical order.
+1. The first and last keyframes contain all animatable properties used in animation. If they don't you get `Uncaught DOMException: Failed to execute 'animate' on 'Element': Partial keyframes are not supported.` in Chrome and `NotSupportedError: Animation to or from an underlying value is not yet supported.` in Firefox.
+1. Categories object (if present) is valid.
 
 An example of passed unit tests:
 
