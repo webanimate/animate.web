@@ -30,9 +30,8 @@
     "lint": "yarn lint:eslint && yarn lint:prettier",
     "lint:eslint": "eslint \"**/*.*\"",
     "lint:prettier": "prettier --check \"**/*.*\"",
-    "test": "yarn gen && yarn fix:eslint && yarn fix:prettier && yarn test:unit && yarn build:split && yarn test:integration",
+    "test": "yarn gen && yarn fix:eslint && yarn fix:prettier && jest && yarn build:all && yarn build:split",
     "test:unit": "jest index.test.js",
-    "test:integration": "yarn build:all && jest --coverage=false integration.test.js ",
     "up": "yarn upgrade-interactive && yarn outdated"
   },
   "devDependencies": {
@@ -51,7 +50,6 @@
     "jest": "^25.3.0",
     "lodash.isplainobject": "^4.0.6",
     "prettier": "^2.0.4",
-    "puppeteer": "^2.1.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.4.0",
     "rollup-plugin-terser": "^5.3.0",
