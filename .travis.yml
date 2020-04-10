@@ -1,17 +1,11 @@
 language: node_js
 node_js: node
 cache: yarn
-addons:
-  chrome: stable
 before_install:
   - npm install -g yarn
 install:
   - yarn global add codecov
   - yarn
-  - cypress install
 script:
   - yarn test
-  - cypress run --config video=false
-  - cypress run --config video=false --headless --browser chrome
-  - cypress run --config video=false --headless --browser firefox
   - codecov

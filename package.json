@@ -20,8 +20,6 @@
     "build": "yarn build:all && yarn build:split",
     "build:all": "rollup -c",
     "build:split": "rollup -c rollup.config.split.js",
-    "cy:run": "yarn build:all && cypress run",
-    "cy:open": "yarn build:all && cypress open",
     "watch": "rollup -cw",
     "fix": "yarn fix:eslint && yarn fix:prettier && yarn build",
     "fix:eslint": "eslint --fix \"**/*.*\"",
@@ -31,7 +29,6 @@
     "lint:eslint": "eslint \"**/*.*\"",
     "lint:prettier": "prettier --check \"**/*.*\"",
     "test": "yarn gen && yarn fix:eslint && yarn fix:prettier && jest && yarn build:all && yarn build:split",
-    "test:unit": "jest index.test.js",
     "up": "yarn upgrade-interactive && yarn outdated"
   },
   "devDependencies": {
@@ -41,10 +38,8 @@
     "animatable-properties": "^2.1.1",
     "babel-jest": "^25.3.0",
     "css-tree": "^1.0.0-alpha.39",
-    "cypress": "^4.3.0",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.1",
-    "eslint-plugin-cypress": "^2.10.3",
     "eslint-plugin-html": "^6.0.1",
     "eslint-plugin-json": "^2.1.1",
     "jest": "^25.3.0",
@@ -73,7 +68,6 @@
     ],
     "extends": [
       "eslint:recommended",
-      "plugin:cypress/recommended",
       "plugin:json/recommended",
       "prettier"
     ]
@@ -87,9 +81,6 @@
       "text",
       "clover",
       "html"
-    ],
-    "testPathIgnorePatterns": [
-      "cypress/integration/"
     ],
     "transformIgnorePatterns": [
       "node_modules/(?!(animatable-properties|waapi-timing-properties)/)"
