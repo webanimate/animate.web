@@ -137,23 +137,15 @@ yarn up
 
 ## Testing
 
-Run both unit and integration tests:
-
 ```shell script
 yarn test
 ```
 
-#### Unit tests
-
 [Source](https://github.com/webanimate/animate.web/blob/master/test/index.test.js)
 
-They check integrity of animations and categories and make sure that all animations keyframes and options contain only allowed attributes. Command to run unit tests only:
+Tests check integrity of animations and categories and make sure that all animations keyframes and options contain only allowed attributes.
 
-```shell script
-yarn test:unit
-```
-
-Here's what is checked in unit tests:
+Here's what is checked:
 
 1. Animation name is a valid filename.
 1. Each keyframe of each animation contains only [alowed attributes](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API/Keyframe_Formats), that is one or more of [animatable CSS properties](https://www.npmjs.com/package/animatable-properties) and (optionally) `offset`, `easing`, `composite`.
@@ -169,42 +161,4 @@ Here's what is checked in unit tests:
 
 An example of passed unit tests:
 
-![image](https://user-images.githubusercontent.com/60752454/76498866-63054700-6446-11ea-8e68-c139bb0e7134.png)
-
-#### Integration tests
-
-[Source](https://github.com/webanimate/animate.web/blob/master/test/integration.test.js)
-
-They check animations in real browser (headless Chromium via puppeteer). Command to run integration tests only:
-
-```shell script
-yarn test:integration
-```
-
-Unit tests cannot detect errors such as invalid value for a css property (e.g. `transform: translate3d(10)` ). So in this case unit tests will pass but integration will fail:
-
-![image](https://user-images.githubusercontent.com/60752454/77236870-329e7500-6bcb-11ea-84f6-40ce1310a6b7.png)
-
-Cypress integration tests are also included but they are only used in CI because headless cypress tests cannot catch console warnings, only errors (PRs welcomed if you know how to do it).
-
-[Source](https://github.com/webanimate/animate.web/blob/master/cypress/integration/animations.spec.js)
-
-The advantage of cypress is that in headed mode you can run tests not only in Chrome but also in Firefox and Electron:
-
-![image](https://user-images.githubusercontent.com/60752454/77237143-413a5b80-6bce-11ea-98f5-df4fa8f941cc.png)
-
-Example of failed cypress test:
-
-![image](https://user-images.githubusercontent.com/60752454/77237278-49df6180-6bcf-11ea-9f28-9fee4de7001a.png)
-
-Run cypress tests in headless:
-
-```shell script
-yarn cy:run
-```
-
-or headed mode:
-
-```shell script
-yarn cy:open
-```
+![image](https://user-images.githubusercontent.com/60752454/79008358-80b8ef80-7b5d-11ea-804c-29b44137794e.png)
