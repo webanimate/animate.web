@@ -3155,11 +3155,6 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
-lodash.isempty@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/lodash.isempty/-/lodash.isempty-4.4.0.tgz#6f86cbedd8be4ec987be9aaf33c9684db1b31e7e"
-  integrity sha1-b4bL7di+TsmHvpqvM8loTbGzHn4=
-
 lodash.isnumber@^3.0.3:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/lodash.isnumber/-/lodash.isnumber-3.0.3.tgz#3ce76810c5928d03352301ac287317f11c0b1ffc"
@@ -3904,10 +3899,10 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.4.0.tgz#b136a4d701d24dd79ec9551ee0330e7f632ee9d2"
-  integrity sha512-dYE2ZKl9+kxuFKDaaSuauZjIPa8hcKDqI7WrOq1pTXYG4GJw+6ypLifGIvCKw5yJpSmuFohuimYpg0wfRXTCLw==
+rollup@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.6.1.tgz#8354e67caa7b8bf24c2488d9e2f64da2be62eebe"
+  integrity sha512-1RhFDRJeg027YjBO6+JxmVWkEZY0ASztHhoEUEWxOwkh4mjO58TFD6Uo7T7Y3FbmDpRTfKhM5NVxJyimCn0Elg==
   optionalDependencies:
     fsevents "~2.1.2"
 
@@ -4592,12 +4587,11 @@ w3c-xmlserializer@^1.1.2:
     webidl-conversions "^4.0.2"
     xml-name-validator "^3.0.0"
 
-waapi-timing-properties@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/waapi-timing-properties/-/waapi-timing-properties-1.1.0.tgz#348cccecb6e883bf0be2366e827840021c239fbc"
-  integrity sha512-IioYRLXpsA27FP01a6/ri1O9XMw+KnzFAAzDkQYfihmxFBWHH5BwfMsMrH7efKGAgldbUccQm/m9luvnVqZWvg==
+waapi-timing-properties@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/waapi-timing-properties/-/waapi-timing-properties-1.2.1.tgz#1f6b59586bb0535020cdb751bf8b9686920adcfc"
+  integrity sha512-Zg7lxloXHFgvaQGEz1JCdeSgtroibxt40gMRU4f2DyBlb4T1XYt3bRbi34k4Cvc3d7cfhe7CeJw3fRsodPmZvA==
   dependencies:
-    lodash.isempty "^4.4.0"
     lodash.isnumber "^3.0.3"
     lodash.isobject "^3.0.2"
     lodash.isstring "^4.0.1"
