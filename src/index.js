@@ -985,7 +985,6 @@ export default {
       jello: true,
       heartBeat: true,
     },
-
     Bounce: {
       Entrances: {
         bounceIn: true,
@@ -1002,7 +1001,6 @@ export default {
         bounceOutUp: true,
       },
     },
-
     Fade: {
       Entrances: {
         fadeIn: true,
@@ -1027,7 +1025,6 @@ export default {
         fadeOutUpBig: true,
       },
     },
-
     Flip: {
       Entrances: {
         flipInX: true,
@@ -1039,7 +1036,6 @@ export default {
       },
       flip: true,
     },
-
     Rotate: {
       Entrances: {
         rotateIn: true,
@@ -1070,7 +1066,6 @@ export default {
         slideOutUp: true,
       },
     },
-
     Specials: {
       lightSpeed: {
         lightSpeedIn: true,
@@ -1081,7 +1076,6 @@ export default {
       rollIn: true,
       rollOut: true,
     },
-
     Zoom: {
       Entrances: {
         zoomIn: true,
