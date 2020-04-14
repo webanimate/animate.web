@@ -21,14 +21,14 @@
     "build:all": "rollup -c",
     "build:split": "rollup -c rollup.config.split.js",
     "watch": "rollup -cw",
-    "fix": "yarn fix:eslint && yarn fix:prettier && yarn build",
+    "fix": "yarn gen && yarn fix:eslint && yarn fix:prettier",
     "fix:eslint": "eslint --fix \"**/*.*\"",
     "fix:prettier": "prettier --write \"**/*.*\"",
     "gen": "node generate.js",
     "lint": "yarn lint:eslint && yarn lint:prettier",
     "lint:eslint": "eslint \"**/*.*\"",
     "lint:prettier": "prettier --check \"**/*.*\"",
-    "test": "yarn gen && yarn fix:eslint && yarn fix:prettier && jest && yarn build:all && yarn build:split",
+    "test": "yarn fix && jest && yarn build",
     "up": "yarn upgrade-interactive && yarn outdated"
   },
   "devDependencies": {
