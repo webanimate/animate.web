@@ -1,3 +1,9 @@
+## [0.0.3](https://github.com/webanimate/animate.web/compare/v0.0.2...v0.0.3) (2020-04-14)
+
+### Performance Improvements
+
+- remove redundant offsets ([7ec9c16](https://github.com/webanimate/animate.web/commit/7ec9c16839b7d980cb7b82540978613c5903c2a6))
+
 ## [0.0.2](https://github.com/webanimate/animate.web/compare/v0.0.1...v0.0.2) (2020-03-24)
 
 ## [0.0.1](https://github.com/webanimate/animate.web/compare/v0.0.0-alpha.2...v0.0.1) (2020-03-19)
