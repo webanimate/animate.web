@@ -4588,9 +4588,9 @@ w3c-xmlserializer@^1.1.2:
     xml-name-validator "^3.0.0"
 
 waapi-timing-properties@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/waapi-timing-properties/-/waapi-timing-properties-1.2.1.tgz#1f6b59586bb0535020cdb751bf8b9686920adcfc"
-  integrity sha512-Zg7lxloXHFgvaQGEz1JCdeSgtroibxt40gMRU4f2DyBlb4T1XYt3bRbi34k4Cvc3d7cfhe7CeJw3fRsodPmZvA==
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/waapi-timing-properties/-/waapi-timing-properties-1.3.0.tgz#87a4343907abf141b6ea083b7f789c96b690e8ad"
+  integrity sha512-cPnnZV/MrE2VyCG1yOMxhaC7Ujm1Ovz7tsC+IKury1p2B2qkTTGeccVTUHi/pmo8sx62vqWmCfJfmvBkgFzrXg==
   dependencies:
     lodash.isnumber "^3.0.3"
     lodash.isobject "^3.0.2"
