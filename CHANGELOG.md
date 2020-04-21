@@ -1,3 +1,9 @@
+## [0.0.4](https://github.com/webanimate/animate.web/compare/v0.0.3...v0.0.4) (2020-04-21)
+
+### Bug Fixes
+
+- move `easing` from `options` to `keyframes`; add `visibility` property to all entrances and exits ([88cf86e](https://github.com/webanimate/animate.web/commit/88cf86e02d570e5771df0241fbf7855963c50be7))
+
 ## [0.0.3](https://github.com/webanimate/animate.web/compare/v0.0.2...v0.0.3) (2020-04-14)
 
 ### Performance Improvements
