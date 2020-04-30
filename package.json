@@ -32,8 +32,8 @@
     "up": "yarn upgrade-interactive && yarn outdated"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
+    "@babel/core": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "@rollup/plugin-virtual": "^2.0.1",
     "animatable-properties": "^2.1.1",
     "babel-jest": "^25.4.0",
