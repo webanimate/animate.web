@@ -1,7 +1,7 @@
 {
   "name": "animate.web",
   "outputName": "animateweb",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Animate.css animations ported to Web Animations API",
   "author": "Web Animate <60752454+webanimate@users.noreply.github.com>",
   "homepage": "https://github.com/webanimate/animate.web#readme",

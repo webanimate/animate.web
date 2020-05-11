@@ -1,3 +1,3 @@
-//animate.web v0.0.4 https://github.com/webanimate/animate.web#readme
+//animate.web v0.0.5 https://github.com/webanimate/animate.web#readme
 !function(e,i){"object"==typeof exports&&"undefined"!=typeof module?module.exports=i():"function"==typeof define&&define.amd?define(i):((e=e||self).animateweb=e.animateweb||{},e.animateweb.bounceIn=i())}(this,(function(){"use strict";return{keyframes:[{easing:"cubic-bezier(0.215, 0.61, 0.355, 1)",opacity:0,transform:"scale3d(0.3, 0.3, 0.3)",visibility:"visible"},{easing:"cubic-bezier(0.215, 0.61, 0.355, 1)",transform:"scale3d(1.1, 1.1, 1.1)"},{easing:"cubic-bezier(0.215, 0.61, 0.355, 1)",transform:"scale3d(0.9, 0.9, 0.9)"},{easing:"cubic-bezier(0.215, 0.61, 0.355, 1)",opacity:1,transform:"scale3d(1.03, 1.03, 1.03)"},{easing:"cubic-bezier(0.215, 0.61, 0.355, 1)",transform:"scale3d(0.97, 0.97, 0.97)"},{opacity:1,transform:"scale3d(1, 1, 1)",visibility:"visible"}],options:{duration:750}}}));
 //# sourceMappingURL=bounceIn.js.map
