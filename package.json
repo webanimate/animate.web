@@ -34,7 +34,7 @@
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@babel/preset-env": "^7.9.6",
-    "@rollup/plugin-virtual": "^2.0.1",
+    "@rollup/plugin-virtual": "^2.0.2",
     "animatable-properties": "^2.1.1",
     "babel-jest": "^26.0.1",
     "css-tree": "^1.0.0-alpha.39",

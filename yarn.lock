@@ -958,10 +958,10 @@
     "@types/yargs" "^15.0.0"
     chalk "^4.0.0"
 
-"@rollup/plugin-virtual@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@rollup/plugin-virtual/-/plugin-virtual-2.0.1.tgz#5e899513cd659aa9cbe182b6e621418a869648f5"
-  integrity sha512-p1OmbadojpfF1olZ0YS0SQE256+0eiTTJYeBURtsWuahTRcNpjLELvI87cwx1gOe4OwVUom+Mvl9tiUy5T2p2Q==
+"@rollup/plugin-virtual@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-virtual/-/plugin-virtual-2.0.2.tgz#47b30ef2a28a006fc1f26beceaaac56e182839c8"
+  integrity sha512-krmINkjJOwl3dgXKUcEsVIzLnGDn27Ir2chb+Gxts6Lw2RODI6Li4Z8Zmsthojux+AJqgJ0W0mH/42tvYQ2/gQ==
 
 "@sinonjs/commons@^1.7.0":
   version "1.7.2"
