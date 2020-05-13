@@ -1122,10 +1122,15 @@ ajv@^6.5.5:
     json-schema-traverse "^0.4.1"
     uri-js "^4.2.2"
 
-animatable-properties@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/animatable-properties/-/animatable-properties-2.1.1.tgz#07f0c08b186a8a0f976b1195015558cb93425fa8"
-  integrity sha512-bws6w4qvhYJ5QgCeT3eGVoYgFqDDrCMPx4CYWqbHHsKg6zagEc1fEWIpffk25SxsoB3ma4HzcRAeTltolNhm4A==
+animatable-properties@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/animatable-properties/-/animatable-properties-3.0.0.tgz#40812094fa7397da7aaf3f0859a53f73fe64f8f9"
+  integrity sha512-q1O3f3NaLtSRCPNbyDtFngWjV7U9UeAM5A+pG1z0SrSg/DZznrU2DEh4zZVgwgOEB4qoCySJ8RbEtbhRclle1w==
+  dependencies:
+    css-tree "^1.0.0-alpha.39"
+    lodash.isnumber "^3.0.3"
+    lodash.isplainobject "^4.0.6"
+    lodash.isstring "^4.0.1"
 
 ansi-escapes@^4.2.1:
   version "4.3.1"
