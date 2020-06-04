@@ -20,6 +20,7 @@
     "build": "yarn build:all && yarn build:split",
     "build:all": "rollup -c",
     "build:split": "rollup -c rollup.config.split.js",
+    "c": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
     "watch": "rollup -cw",
     "fix": "yarn gen && yarn fix:eslint && yarn fix:prettier",
     "fix:eslint": "eslint --fix \"**/*.*\"",

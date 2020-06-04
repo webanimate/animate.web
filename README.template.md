@@ -132,6 +132,14 @@ Update dependencies:
 yarn up
 ```
 
+Generate changelog based on commit messages:
+
+```shell script
+yarn c
+```
+
+To use the above command [conventional-changelog-cli](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli) must be installed globally. Follow [the recommended workflow](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-cli#recommended-workflow).
+
 ## Testing
 
 ```shell script
