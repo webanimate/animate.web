@@ -81,12 +81,12 @@ async function processLineByLineReadme() {
   bufferReadme.push('')
   const fileStream = fs.createReadStream('README.template.md')
 
-  const rl = readline.createInterface({
+  const readLine = readline.createInterface({
     input: fileStream,
     crlfDelay: Infinity,
   })
 
-  for await (let line of rl) {
+  for await (let line of readLine) {
     searchObjectsReadme.forEach((obj) => {
       const substr = line.indexOf(`{{${obj}}}`)
       if (substr >= 0) {
