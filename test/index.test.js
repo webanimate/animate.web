@@ -3,7 +3,7 @@ import { properties, jsToCss } from 'animatable-properties'
 import { validate } from 'waapi-timing-properties'
 import isPlainObject from 'lodash.isplainobject'
 
-const csstree = require('css-tree')
+const csstree = require('css-tree-animatable')
 const sanitize = require('sanitize-filename')
 
 const keyframesSpecialAttributes = ['offset', 'easing', 'composite']
