@@ -3,12 +3,12 @@ export default {
     keyframes: [
       { offset: 0.0, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(0, 0, 0)', transformOrigin: 'center bottom' },
       { offset: 0.2, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(0, 0, 0)' },
-      { offset: 0.4, easing: 'cubic-bezier(0.755, 0.05, 0.855, 0.06)', transform: 'translate3d(0, -30px, 0)' },
-      { offset: 0.43, easing: 'cubic-bezier(0.755, 0.05, 0.855, 0.06)', transform: 'translate3d(0, -30px, 0)' },
+      { offset: 0.4, easing: 'cubic-bezier(0.755, 0.05, 0.855, 0.06)', transform: 'translate3d(0, -30px, 0) scaleY(1.1)' },
+      { offset: 0.43, easing: 'cubic-bezier(0.755, 0.05, 0.855, 0.06)', transform: 'translate3d(0, -30px, 0) scaleY(1.1)' },
       { offset: 0.53, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(0, 0, 0)' },
-      { offset: 0.7, easing: 'cubic-bezier(0.755, 0.05, 0.855, 0.06)', transform: 'translate3d(0, -15px, 0)' },
-      { offset: 0.8, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(0, 0, 0)' },
-      { offset: 0.9, easing: 'cubic-bezier(0.755, 0.05, 0.855, 0.06)', transform: 'translate3d(0, -4px, 0)' },
+      { offset: 0.7, easing: 'cubic-bezier(0.755, 0.05, 0.855, 0.06)', transform: 'translate3d(0, -15px, 0) scaleY(1.05)' },
+      { offset: 0.8, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(0, 0, 0) scaleY(0.95)' },
+      { offset: 0.9, easing: 'cubic-bezier(0.755, 0.05, 0.855, 0.06)', transform: 'translate3d(0, -4px, 0) scaleY(1.02)' },
       { offset: 1.0, transform: 'translate3d(0, 0, 0)', transformOrigin: 'center bottom' },
     ],
     options: {
@@ -78,8 +78,8 @@ export default {
 
   pulse: {
     keyframes: [
-      { easing: 'ease', transform: 'scale3d(1, 1, 1)' }, //
-      { easing: 'ease', transform: 'scale3d(1.05, 1.05, 1.05)' },
+      { easing: 'ease-in-out', transform: 'scale3d(1, 1, 1)' }, //
+      { easing: 'ease-in-out', transform: 'scale3d(1.05, 1.05, 1.05)' },
       { transform: 'scale3d(1, 1, 1)' },
     ],
     options: {
@@ -185,10 +185,10 @@ export default {
 
   bounceInDown: {
     keyframes: [
-      { offset: 0.0, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', opacity: 0, transform: 'translate3d(0, -3000px, 0)', visibility: 'visible' },
-      { offset: 0.6, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', opacity: 1, transform: 'translate3d(0, 25px, 0)' },
-      { offset: 0.75, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(0, -10px, 0)' },
-      { offset: 0.9, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(0, 5px, 0)' },
+      { offset: 0.0, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', opacity: 0, transform: 'translate3d(0, -3000px, 0) scaleY(3)', visibility: 'visible' },
+      { offset: 0.6, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', opacity: 1, transform: 'translate3d(0, 25px, 0) scaleY(0.9)' },
+      { offset: 0.75, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(0, -10px, 0) scaleY(0.95)' },
+      { offset: 0.9, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(0, 5px, 0) scaleY(0.985)' },
       { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
     ],
     options: {
@@ -198,10 +198,10 @@ export default {
 
   bounceInLeft: {
     keyframes: [
-      { offset: 0.0, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', opacity: 0, transform: 'translate3d(-3000px, 0, 0)', visibility: 'visible' },
-      { offset: 0.6, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', opacity: 1, transform: 'translate3d(25px, 0, 0)' },
-      { offset: 0.75, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(-10px, 0, 0)' },
-      { offset: 0.9, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(5px, 0, 0)' },
+      { offset: 0.0, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', opacity: 0, transform: 'translate3d(-3000px, 0, 0) scaleX(3)', visibility: 'visible' },
+      { offset: 0.6, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', opacity: 1, transform: 'translate3d(25px, 0, 0) scaleX(1)' },
+      { offset: 0.75, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(-10px, 0, 0) scaleX(0.98)' },
+      { offset: 0.9, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(5px, 0, 0) scaleX(0.995)' },
       { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
     ],
     options: {
@@ -211,10 +211,10 @@ export default {
 
   bounceInRight: {
     keyframes: [
-      { offset: 0.0, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', opacity: 0, transform: 'translate3d(3000px, 0, 0)', visibility: 'visible' },
-      { offset: 0.6, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', opacity: 1, transform: 'translate3d(-25px, 0, 0)' },
-      { offset: 0.75, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(10px, 0, 0)' },
-      { offset: 0.9, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(-5px, 0, 0)' },
+      { offset: 0.0, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', opacity: 0, transform: 'translate3d(3000px, 0, 0) scaleX(3)', visibility: 'visible' },
+      { offset: 0.6, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', opacity: 1, transform: 'translate3d(-25px, 0, 0) scaleX(1)' },
+      { offset: 0.75, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(10px, 0, 0) scaleX(0.98)' },
+      { offset: 0.9, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(-5px, 0, 0) scaleX(0.995)' },
       { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
     ],
     options: {
@@ -224,10 +224,10 @@ export default {
 
   bounceInUp: {
     keyframes: [
-      { offset: 0.0, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', opacity: 0, transform: 'translate3d(0, 3000px, 0)', visibility: 'visible' },
-      { offset: 0.6, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', opacity: 1, transform: 'translate3d(0, -20px, 0)' },
-      { offset: 0.75, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(0, 10px, 0)' },
-      { offset: 0.9, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(0, -5px, 0)' },
+      { offset: 0.0, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', opacity: 0, transform: 'translate3d(0, 3000px, 0) scaleY(5)', visibility: 'visible' },
+      { offset: 0.6, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', opacity: 1, transform: 'translate3d(0, -20px, 0) scaleY(0.9)' },
+      { offset: 0.75, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(0, 10px, 0) scaleY(0.95)' },
+      { offset: 0.9, easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)', transform: 'translate3d(0, -5px, 0) scaleY(0.985)' },
       { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
     ],
     options: {
@@ -252,10 +252,10 @@ export default {
   bounceOutDown: {
     keyframes: [
       { offset: 0.0, easing: 'ease', opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
-      { offset: 0.2, easing: 'ease', transform: 'translate3d(0, 10px, 0)' },
-      { offset: 0.4, easing: 'ease', transform: 'translate3d(0, -20px, 0)' },
-      { offset: 0.45, easing: 'ease', opacity: 1, transform: 'translate3d(0, -20px, 0)' },
-      { offset: 1.0, opacity: 0, transform: 'translate3d(0, 2000px, 0)', visibility: 'hidden' },
+      { offset: 0.2, easing: 'ease', transform: 'translate3d(0, 10px, 0) scaleY(0.985)' },
+      { offset: 0.4, easing: 'ease', transform: 'translate3d(0, -20px, 0) scaleY(0.9)' },
+      { offset: 0.45, easing: 'ease', opacity: 1, transform: 'translate3d(0, -20px, 0) scaleY(0.9)' },
+      { offset: 1.0, opacity: 0, transform: 'translate3d(0, 2000px, 0) scaleY(3)', visibility: 'hidden' },
     ],
     options: {
       duration: 1000,
@@ -266,8 +266,8 @@ export default {
   bounceOutLeft: {
     keyframes: [
       { offset: 0.0, easing: 'ease', opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
-      { offset: 0.2, easing: 'ease', opacity: 1, transform: 'translate3d(20px, 0, 0)' },
-      { offset: 1.0, opacity: 0, transform: 'translate3d(-2000px, 0, 0)', visibility: 'hidden' },
+      { offset: 0.2, easing: 'ease', opacity: 1, transform: 'translate3d(20px, 0, 0) scaleX(0.9)' },
+      { offset: 1.0, opacity: 0, transform: 'translate3d(-2000px, 0, 0) scaleX(2)', visibility: 'hidden' },
     ],
     options: {
       duration: 1000,
@@ -278,8 +278,8 @@ export default {
   bounceOutRight: {
     keyframes: [
       { offset: 0.0, easing: 'ease', opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
-      { offset: 0.2, easing: 'ease', opacity: 1, transform: 'translate3d(-20px, 0, 0)' },
-      { offset: 1.0, opacity: 0, transform: 'translate3d(2000px, 0, 0)', visibility: 'hidden' },
+      { offset: 0.2, easing: 'ease', opacity: 1, transform: 'translate3d(-20px, 0, 0) scaleX(0.9)' },
+      { offset: 1.0, opacity: 0, transform: 'translate3d(2000px, 0, 0) scaleX(2)', visibility: 'hidden' },
     ],
     options: {
       duration: 1000,
@@ -290,10 +290,10 @@ export default {
   bounceOutUp: {
     keyframes: [
       { offset: 0.0, easing: 'ease', opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
-      { offset: 0.2, easing: 'ease', transform: 'translate3d(0, -10px, 0)' },
-      { offset: 0.4, easing: 'ease', transform: 'translate3d(0, 20px, 0)' },
-      { offset: 0.45, easing: 'ease', opacity: 1, transform: 'translate3d(0, 20px, 0)' },
-      { offset: 1.0, opacity: 0, transform: 'translate3d(0, -2000px, 0)', visibility: 'hidden' },
+      { offset: 0.2, easing: 'ease', transform: 'translate3d(0, -10px, 0) scaleY(0.985)' },
+      { offset: 0.4, easing: 'ease', transform: 'translate3d(0, 20px, 0) scaleY(0.9)' },
+      { offset: 0.45, easing: 'ease', opacity: 1, transform: 'translate3d(0, 20px, 0) scaleY(0.9)' },
+      { offset: 1.0, opacity: 0, transform: 'translate3d(0, -2000px, 0) scaleY(3)', visibility: 'hidden' },
     ],
     options: {
       duration: 1000,
