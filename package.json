@@ -29,7 +29,7 @@
     "lint:eslint": "eslint \"**/*.*\"",
     "lint:prettier": "prettier --check \"**/*.*\"",
     "test": "yarn fix && jest && yarn build",
-    "up": "yarn upgrade-interactive && yarn outdated"
+    "up": "yarn upgrade-interactive && ncu -i && yarn"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
