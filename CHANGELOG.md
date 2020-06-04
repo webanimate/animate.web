@@ -1,3 +1,10 @@
+# [1.0.0](https://github.com/webanimate/animate.web/compare/v0.0.5...v1.0.0) (2020-06-04)
+
+### Features
+
+- add 22 new animations ([3d1534d](https://github.com/webanimate/animate.web/commit/3d1534df7dc472f2c7d41df0561a3edc3eb04eff))
+- update 10 existing animations ([1d7568c](https://github.com/webanimate/animate.web/commit/1d7568c0724015a1c0ff957e9435c50d6789f6fe))
+
 ## [0.0.5](https://github.com/webanimate/animate.web/compare/v0.0.4...v0.0.5) (2020-05-11)
 
 ### Performance Improvements
