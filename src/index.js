@@ -121,6 +121,44 @@ export default {
     },
   },
 
+  shakeX: {
+    keyframes: [
+      { easing: 'ease', transform: 'translate3d(0, 0, 0)' },
+      { easing: 'ease', transform: 'translate3d(-10px, 0, 0)' },
+      { easing: 'ease', transform: 'translate3d(10px, 0, 0)' },
+      { easing: 'ease', transform: 'translate3d(-10px, 0, 0)' },
+      { easing: 'ease', transform: 'translate3d(10px, 0, 0)' },
+      { easing: 'ease', transform: 'translate3d(-10px, 0, 0)' },
+      { easing: 'ease', transform: 'translate3d(10px, 0, 0)' },
+      { easing: 'ease', transform: 'translate3d(-10px, 0, 0)' },
+      { easing: 'ease', transform: 'translate3d(10px, 0, 0)' },
+      { easing: 'ease', transform: 'translate3d(-10px, 0, 0)' },
+      { transform: 'translate3d(0, 0, 0)' },
+    ],
+    options: {
+      duration: 1000,
+    },
+  },
+
+  shakeY: {
+    keyframes: [
+      { easing: 'ease', transform: 'translate3d(0, 0, 0)' },
+      { easing: 'ease', transform: 'translate3d(0, -10px, 0)' },
+      { easing: 'ease', transform: 'translate3d(0, 10px, 0)' },
+      { easing: 'ease', transform: 'translate3d(0, -10px, 0)' },
+      { easing: 'ease', transform: 'translate3d(0, 10px, 0)' },
+      { easing: 'ease', transform: 'translate3d(0, -10px, 0)' },
+      { easing: 'ease', transform: 'translate3d(0, 10px, 0)' },
+      { easing: 'ease', transform: 'translate3d(0, -10px, 0)' },
+      { easing: 'ease', transform: 'translate3d(0, 10px, 0)' },
+      { easing: 'ease', transform: 'translate3d(0, -10px, 0)' },
+      { transform: 'translate3d(0, 0, 0)' },
+    ],
+    options: {
+      duration: 1000,
+    },
+  },
+
   swing: {
     keyframes: [
       { easing: 'ease', transform: 'rotate3d(0, 0, 1, 0deg)', transformOrigin: 'top center' },
@@ -166,6 +204,98 @@ export default {
     ],
     options: {
       duration: 1000,
+    },
+  },
+
+  backInDown: {
+    keyframes: [
+      { easing: 'ease', opacity: 0.7, transform: 'translateY(-1200px) scale(0.7)', visibility: 'visible' },
+      { offset: 0.8, easing: 'ease', opacity: 0.7, transform: 'translateY(0px) scale(0.7)' },
+      { opacity: 1, transform: 'scale(1)', visibility: 'visible' },
+    ],
+    options: {
+      duration: 1000,
+    },
+  },
+
+  backInLeft: {
+    keyframes: [
+      { easing: 'ease', opacity: 0.7, transform: 'translateX(-2000px) scale(0.7)', visibility: 'visible' },
+      { offset: 0.8, easing: 'ease', opacity: 0.7, transform: 'translateX(0px) scale(0.7)' },
+      { opacity: 1, transform: 'scale(1)', visibility: 'visible' },
+    ],
+    options: {
+      duration: 1000,
+    },
+  },
+
+  backInRight: {
+    keyframes: [
+      { easing: 'ease', opacity: 0.7, transform: 'translateX(2000px) scale(0.7)', visibility: 'visible' },
+      { offset: 0.8, easing: 'ease', opacity: 0.7, transform: 'translateX(0px) scale(0.7)' },
+      { opacity: 1, transform: 'scale(1)', visibility: 'visible' },
+    ],
+    options: {
+      duration: 1000,
+    },
+  },
+
+  backInUp: {
+    keyframes: [
+      { easing: 'ease', opacity: 0.7, transform: 'translateY(1200px) scale(0.7)', visibility: 'visible' },
+      { offset: 0.8, easing: 'ease', opacity: 0.7, transform: 'translateY(0px) scale(0.7)' },
+      { opacity: 1, transform: 'scale(1)', visibility: 'visible' },
+    ],
+    options: {
+      duration: 1000,
+    },
+  },
+
+  backOutDown: {
+    keyframes: [
+      { easing: 'ease', opacity: 1, transform: 'scale(1)', visibility: 'visible' },
+      { offset: 0.2, easing: 'ease', opacity: 0.7, transform: 'translateY(0px) scale(0.7)' },
+      { opacity: 0.7, transform: 'translateY(700px) scale(0.7)', visibility: 'hidden' },
+    ],
+    options: {
+      duration: 1000,
+      fill: 'forwards',
+    },
+  },
+
+  backOutLeft: {
+    keyframes: [
+      { easing: 'ease', opacity: 1, transform: 'scale(1)', visibility: 'visible' },
+      { offset: 0.2, easing: 'ease', opacity: 0.7, transform: 'translateX(0px) scale(0.7)' },
+      { opacity: 0.7, transform: 'translateX(-2000px) scale(0.7)', visibility: 'hidden' },
+    ],
+    options: {
+      duration: 1000,
+      fill: 'forwards',
+    },
+  },
+
+  backOutRight: {
+    keyframes: [
+      { easing: 'ease', opacity: 1, transform: 'scale(1)', visibility: 'visible' },
+      { offset: 0.2, easing: 'ease', opacity: 0.7, transform: 'translateX(0px) scale(0.7)' },
+      { opacity: 0.7, transform: 'translateX(2000px) scale(0.7)', visibility: 'hidden' },
+    ],
+    options: {
+      duration: 1000,
+      fill: 'forwards',
+    },
+  },
+
+  backOutUp: {
+    keyframes: [
+      { easing: 'ease', opacity: 1, transform: 'scale(1)', visibility: 'visible' },
+      { offset: 0.2, easing: 'ease', opacity: 0.7, transform: 'translateY(0px) scale(0.7)' },
+      { opacity: 0.7, transform: 'translateY(-700px) scale(0.7)', visibility: 'hidden' },
+    ],
+    options: {
+      duration: 1000,
+      fill: 'forwards',
     },
   },
 
@@ -311,6 +441,26 @@ export default {
     },
   },
 
+  fadeInBottomLeft: {
+    keyframes: [
+      { easing: 'ease', opacity: 0, transform: 'translate3d(-100%, 100%, 0)', visibility: 'visible' }, //
+      { opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
+    ],
+    options: {
+      duration: 1000,
+    },
+  },
+
+  fadeInBottomRight: {
+    keyframes: [
+      { easing: 'ease', opacity: 0, transform: 'translate3d(100%, 100%, 0)', visibility: 'visible' }, //
+      { opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
+    ],
+    options: {
+      duration: 1000,
+    },
+  },
+
   fadeInDown: {
     keyframes: [
       { easing: 'ease', opacity: 0, transform: 'translate3d(0, -100%, 0)', visibility: 'visible' },
@@ -371,6 +521,26 @@ export default {
     },
   },
 
+  fadeInTopLeft: {
+    keyframes: [
+      { easing: 'ease', opacity: 0, transform: 'translate3d(-100%, -100%, 0)', visibility: 'visible' }, //
+      { opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
+    ],
+    options: {
+      duration: 1000,
+    },
+  },
+
+  fadeInTopRight: {
+    keyframes: [
+      { easing: 'ease', opacity: 0, transform: 'translate3d(100%, -100%, 0)', visibility: 'visible' }, //
+      { opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
+    ],
+    options: {
+      duration: 1000,
+    },
+  },
+
   fadeInUp: {
     keyframes: [
       { easing: 'ease', opacity: 0, transform: 'translate3d(0, 100%, 0)', visibility: 'visible' },
@@ -395,6 +565,28 @@ export default {
     keyframes: [
       { easing: 'ease', opacity: 1, visibility: 'visible' }, //
       { opacity: 0, visibility: 'hidden' },
+    ],
+    options: {
+      duration: 1000,
+      fill: 'forwards',
+    },
+  },
+
+  fadeOutBottomLeft: {
+    keyframes: [
+      { easing: 'ease', opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' }, //
+      { opacity: 0, transform: 'translate3d(-100%, 100%, 0)', visibility: 'hidden' },
+    ],
+    options: {
+      duration: 1000,
+      fill: 'forwards',
+    },
+  },
+
+  fadeOutBottomRight: {
+    keyframes: [
+      { easing: 'ease', opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' }, //
+      { opacity: 0, transform: 'translate3d(100%, 100%, 0)', visibility: 'hidden' },
     ],
     options: {
       duration: 1000,
@@ -461,6 +653,28 @@ export default {
     keyframes: [
       { easing: 'ease', opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
       { opacity: 0, transform: 'translate3d(2000px, 0, 0)', visibility: 'hidden' },
+    ],
+    options: {
+      duration: 1000,
+      fill: 'forwards',
+    },
+  },
+
+  fadeOutTopLeft: {
+    keyframes: [
+      { easing: 'ease', opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' }, //
+      { opacity: 0, transform: 'translate3d(-100%, -100%, 0)', visibility: 'hidden' },
+    ],
+    options: {
+      duration: 1000,
+      fill: 'forwards',
+    },
+  },
+
+  fadeOutTopRight: {
+    keyframes: [
+      { easing: 'ease', opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' }, //
+      { opacity: 0, transform: 'translate3d(100%, -100%, 0)', visibility: 'hidden' },
     ],
     options: {
       duration: 1000,
@@ -553,7 +767,19 @@ export default {
     },
   },
 
-  lightSpeedIn: {
+  lightSpeedInLeft: {
+    keyframes: [
+      { offset: 0.0, easing: 'ease-out', opacity: 0, transform: 'translate3d(-100%, 0, 0) skewX(30deg)', visibility: 'visible' },
+      { offset: 0.6, easing: 'ease-out', opacity: 1, transform: 'skewX(-20deg)' },
+      { offset: 0.8, easing: 'ease-out', transform: 'skewX(5deg)' },
+      { offset: 1.0, opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
+    ],
+    options: {
+      duration: 1000,
+    },
+  },
+
+  lightSpeedInRight: {
     keyframes: [
       { offset: 0.0, easing: 'ease-out', opacity: 0, transform: 'translate3d(100%, 0, 0) skewX(-30deg)', visibility: 'visible' },
       { offset: 0.6, easing: 'ease-out', opacity: 1, transform: 'skewX(20deg)' },
@@ -565,7 +791,19 @@ export default {
     },
   },
 
-  lightSpeedOut: {
+  lightSpeedOutLeft: {
+    keyframes: [
+      { easing: 'ease-in', opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
+      { opacity: 0, transform: 'translate3d(-100%, 0, 0) skewX(-30deg)', visibility: 'hidden' },
+    ],
+    options: {
+      duration: 1000,
+
+      fill: 'forwards',
+    },
+  },
+
+  lightSpeedOutRight: {
     keyframes: [
       { easing: 'ease-in', opacity: 1, transform: 'translate3d(0, 0, 0)', visibility: 'visible' },
       { opacity: 0, transform: 'translate3d(100%, 0, 0) skewX(30deg)', visibility: 'hidden' },
@@ -936,12 +1174,28 @@ export default {
       pulse: true,
       rubberBand: true,
       shake: true,
+      shakeX: true,
+      shakeY: true,
       headShake: true,
       swing: true,
       tada: true,
       wobble: true,
       jello: true,
       heartBeat: true,
+    },
+    Back: {
+      Entrances: {
+        backInDown: true,
+        backInLeft: true,
+        backInRight: true,
+        backInUp: true,
+      },
+      Exits: {
+        backOutDown: true,
+        backOutLeft: true,
+        backOutRight: true,
+        backOutUp: true,
+      },
     },
     Bounce: {
       Entrances: {
@@ -962,23 +1216,31 @@ export default {
     Fade: {
       Entrances: {
         fadeIn: true,
+        fadeInBottomLeft: true,
+        fadeInBottomRight: true,
         fadeInDown: true,
         fadeInDownBig: true,
         fadeInLeft: true,
         fadeInLeftBig: true,
         fadeInRight: true,
         fadeInRightBig: true,
+        fadeInTopLeft: true,
+        fadeInTopRight: true,
         fadeInUp: true,
         fadeInUpBig: true,
       },
       Exits: {
         fadeOut: true,
+        fadeOutBottomLeft: true,
+        fadeOutBottomRight: true,
         fadeOutDown: true,
         fadeOutDownBig: true,
         fadeOutLeft: true,
         fadeOutLeftBig: true,
         fadeOutRight: true,
         fadeOutRightBig: true,
+        fadeOutTopLeft: true,
+        fadeOutTopRight: true,
         fadeOutUp: true,
         fadeOutUpBig: true,
       },
@@ -1026,8 +1288,14 @@ export default {
     },
     Specials: {
       lightSpeed: {
-        lightSpeedIn: true,
-        lightSpeedOut: true,
+        Entrances: {
+          lightSpeedInLeft: true,
+          lightSpeedInRight: true,
+        },
+        Exits: {
+          lightSpeedOutLeft: true,
+          lightSpeedOutRight: true,
+        },
       },
       hinge: true,
       jackInTheBox: true,

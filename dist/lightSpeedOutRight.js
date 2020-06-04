@@ -1,0 +1,3 @@
+//animate.web v0.0.5 https://github.com/webanimate/animate.web#readme
+!function(e,i){"object"==typeof exports&&"undefined"!=typeof module?module.exports=i():"function"==typeof define&&define.amd?define(i):((e=e||self).animateweb=e.animateweb||{},e.animateweb.lightSpeedOutRight=i())}(this,(function(){"use strict";return{keyframes:[{easing:"ease-in",opacity:1,transform:"translate3d(0, 0, 0)",visibility:"visible"},{opacity:0,transform:"translate3d(100%, 0, 0) skewX(30deg)",visibility:"hidden"}],options:{duration:1e3,fill:"forwards"}}}));
+//# sourceMappingURL=lightSpeedOutRight.js.map
