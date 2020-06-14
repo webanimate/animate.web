@@ -47,7 +47,7 @@
     "lodash.isplainobject": "^4.0.6",
     "prettier": "^2.0.5",
     "rimraf": "^3.0.2",
-    "rollup": "^2.13.1",
+    "rollup": "^2.16.1",
     "rollup-plugin-terser": "^6.1.0",
     "sanitize-filename": "^1.6.3",
     "waapi-timing-properties": "^1.4.0"
