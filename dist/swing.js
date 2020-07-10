@@ -1,3 +1,3 @@
-//animate.web v1.0.0 https://github.com/webanimate/animate.web#readme
+//animate.web v1.0.1 https://github.com/webanimate/animate.web#readme
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):((e=e||self).animateweb=e.animateweb||{},e.animateweb.swing=t())}(this,(function(){"use strict";return{keyframes:[{easing:"ease",transform:"rotate3d(0, 0, 1, 0deg)",transformOrigin:"top center"},{easing:"ease",transform:"rotate3d(0, 0, 1, 15deg)"},{easing:"ease",transform:"rotate3d(0, 0, 1, -10deg)"},{easing:"ease",transform:"rotate3d(0, 0, 1, 5deg)"},{easing:"ease",transform:"rotate3d(0, 0, 1, -5deg)"},{transform:"rotate3d(0, 0, 1, 0deg)",transformOrigin:"top center"}],options:{duration:1e3}}}));
 //# sourceMappingURL=swing.js.map
