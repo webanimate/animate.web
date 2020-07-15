@@ -33,7 +33,7 @@
     "up": "yarn upgrade-interactive && ncu -i && yarn"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.4",
+    "@babel/core": "^7.10.5",
     "@babel/preset-env": "^7.10.4",
     "@rollup/plugin-virtual": "^2.0.3",
     "animatable-properties": "^3.0.4",
