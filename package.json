@@ -39,7 +39,7 @@
     "animatable-properties": "^3.0.4",
     "babel-jest": "^26.1.0",
     "css-tree-animatable": "^1.0.4",
-    "eslint": "^7.4.0",
+    "eslint": "^7.5.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-html": "^6.0.2",
     "eslint-plugin-json": "^2.1.1",
