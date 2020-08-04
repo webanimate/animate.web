@@ -1,3 +1,3 @@
-//animate.web v1.0.1 https://github.com/webanimate/animate.web#readme
+//animate.web v1.0.2 https://github.com/webanimate/animate.web#readme
 !function(e,s){"object"==typeof exports&&"undefined"!=typeof module?module.exports=s():"function"==typeof define&&define.amd?define(s):((e="undefined"!=typeof globalThis?globalThis:e||self).animateweb=e.animateweb||{},e.animateweb.heartBeat=s())}(this,(function(){"use strict";return{keyframes:[{offset:0,easing:"ease-in-out",transform:"scale(1)"},{offset:.14,easing:"ease-in-out",transform:"scale(1.3)"},{offset:.28,easing:"ease-in-out",transform:"scale(1)"},{offset:.42,easing:"ease-in-out",transform:"scale(1.3)"},{offset:.7,easing:"ease-in-out",transform:"scale(1)"},{offset:1,transform:"scale(1)"}],options:{duration:1300}}}));
 //# sourceMappingURL=heartBeat.js.map

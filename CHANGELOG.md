@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/webanimate/animate.web/compare/v1.0.1...v1.0.2) (2020-08-04)
+
+### Performance Improvements
+
+- update devDependencies ([2d5e616](https://github.com/webanimate/animate.web/commit/2d5e616809983d6fe7c4c095e0a7b8e762904dad))
+
 ## [1.0.1](https://github.com/webanimate/animate.web/compare/v1.0.0...v1.0.1) (2020-07-10)
 
 ### Performance Improvements
