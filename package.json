@@ -45,7 +45,7 @@
     "eslint-plugin-json": "^2.1.2",
     "jest": "^26.2.2",
     "lodash.isplainobject": "^4.0.6",
-    "prettier": "^2.0.5",
+    "prettier": "^2.1.0",
     "rimraf": "^3.0.2",
     "rollup": "^2.23.0",
     "rollup-plugin-terser": "^6.1.0",
