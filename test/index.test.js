@@ -191,16 +191,27 @@ Object.keys(animations).forEach((key) => {
       })
 
       // Options
-      describe(`options`, () => {
-        test(`to contain only valid options`, () => {
-          expect(validate(animations[key].options, true, true)).toBe(true)
+      if (Object.prototype.hasOwnProperty.call(animations[key], 'options')) {
+        describe(`options`, () => {
+          test(`to contain only valid options`, () => {
+            expect(validate(animations[key].options, true, true)).toBe(true)
+          })
+          const options = []
+          Object.keys(animations[key].options).forEach((option) => {
+            options.push(option)
+          })
+          test(`to be in alphabetical order: ${options}`, () => {
+            expect(JSON.stringify(options) === JSON.stringify(options.sort())).toBe(true)
+          })
         })
-        const options = []
-        Object.keys(animations[key].options).forEach((option) => {
-          options.push(option)
-        })
-        test(`to be in alphabetical order: ${options}`, () => {
-          expect(JSON.stringify(options) === JSON.stringify(options.sort())).toBe(true)
+      }
+    })
+  } else if (key === 'categories') {
+    if (isPlainObject(animations.categories) && !isAnimationObject(animations.categories)) {
+      // Categories
+      describe(`\n\n******************************\nCategories\n******************************\n`, () => {
+        test(`to be valid categories object`, () => {
+          expect(checkCategories(animations.categories)).toBe(true)
         })
       })
     })
