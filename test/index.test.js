@@ -37,6 +37,28 @@ const checkAttributesOrder = (attributes) => {
   return false
 }
 
+const isAnimationObject = (object) => {
+  return (
+    isPlainObject(object) &&
+    // check if it has `keyframes` array
+    Array.isArray(object.keyframes) &&
+    // check if it has `options` object
+    (Object.prototype.hasOwnProperty.call(object, 'options') ? isPlainObject(object.options) : true) &&
+    // check if it has no keys other than `keyframes` and `options`
+    Object.keys(object).every((element) => ['keyframes', 'options'].includes(element))
+  )
+}
+
+const invalidObjectFormat = (key) => {
+  describe(`\n\n******************************\n${key} animation\n******************************\n`, () => {
+    describe(`Animation object to be of valid format`, () => {
+      test(`${key}`, (done) => {
+        done.fail('Wrong animation format for ' + key)
+      })
+    })
+  })
+}
+
 const removeSpecialAttributes = (keyframe) => {
   keyframesSpecialAttributes.forEach((attribute) => {
     delete keyframe[attribute]
@@ -45,7 +67,7 @@ const removeSpecialAttributes = (keyframe) => {
 }
 
 Object.keys(animations).forEach((key) => {
-  if (Array.isArray(animations[key].keyframes)) {
+  if (isAnimationObject(animations[key])) {
     describe(`\n\n******************************\n${key} animation\n******************************\n`, () => {
       describe(`Animation name to be valid filename`, () => {
         test(`${key}`, () => {
@@ -214,15 +236,10 @@ Object.keys(animations).forEach((key) => {
           expect(checkCategories(animations.categories)).toBe(true)
         })
       })
-    })
+    } else {
+      invalidObjectFormat('categories')
+    }
+  } else {
+    invalidObjectFormat(key)
   }
 })
-
-if (isPlainObject(animations.categories) && !Array.isArray(animations.categories.keyframes)) {
-  // Categories
-  describe(`\n\n******************************\nCategories\n******************************\n`, () => {
-    test(`to be valid categories object`, () => {
-      expect(checkCategories(animations.categories)).toBe(true)
-    })
-  })
-}
