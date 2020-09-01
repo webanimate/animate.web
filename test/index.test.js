@@ -8,6 +8,7 @@ const sanitize = require('sanitize-filename')
 
 const keyframesSpecialAttributes = ['offset', 'easing', 'composite']
 const keyframesAllowedAttributes = [...keyframesSpecialAttributes, ...properties]
+const _categorizedAnimations = []
 
 const checkCategories = (categories) => {
   for (const item in categories) {
@@ -35,6 +36,16 @@ const checkAttributesOrder = (attributes) => {
     }
   }
   return false
+}
+
+const listCategorizedAnimations = (object) => {
+  Object.keys(object).forEach((key) => {
+    if (object[key] === true) {
+      _categorizedAnimations.push(key)
+    } else if (isPlainObject(object[key])) {
+      listCategorizedAnimations(object[key])
+    }
+  })
 }
 
 const isAnimationObject = (object) => {
@@ -234,6 +245,48 @@ Object.keys(animations).forEach((key) => {
       describe(`\n\n******************************\nCategories\n******************************\n`, () => {
         test(`to be valid categories object`, () => {
           expect(checkCategories(animations.categories)).toBe(true)
+        })
+
+        const missingAnimations = []
+        const extraAnimations = []
+        const _availableAnimations = []
+
+        Object.keys(animations).forEach((animation) => {
+          if (animation !== 'categories') {
+            _availableAnimations.push(animation)
+          }
+        })
+        listCategorizedAnimations(animations.categories)
+
+        const availableAnimations = [...new Set(_availableAnimations)]
+        const categorizedAnimations = [...new Set(_categorizedAnimations)]
+
+        availableAnimations.forEach((animation) => {
+          if (!categorizedAnimations.includes(animation)) {
+            missingAnimations.push(animation)
+          }
+        })
+
+        categorizedAnimations.forEach((animation) => {
+          if (!availableAnimations.includes(animation)) {
+            extraAnimations.push(animation)
+          }
+        })
+
+        test(`to contain all available animations`, (done) => {
+          if (missingAnimations.length > 0) {
+            done.fail('\x1b[32mMissing animations detected\x1b[0m: \x1b[31m' + missingAnimations + '\x1b[0m. \x1b[32mEither include all available animations in your categories object or drop the categories object completely\x1b[0m.')
+          } else {
+            done()
+          }
+        })
+
+        test(`to contain only available animations`, (done) => {
+          if (extraAnimations.length > 0) {
+            done.fail('\x1b[32mNon-listed animations detected\x1b[0m: \x1b[31m' + extraAnimations + '\x1b[0m. \x1b[32mEither include only available animations in your categories object or drop the categories object completely\x1b[0m.')
+          } else {
+            done()
+          }
         })
       })
     } else {
