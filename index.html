@@ -56,8 +56,8 @@
         <q-page-container>
           <q-page>
             <div class="row">
-              <div class="q-ma-md" :style="{ minWidth: minWidth }" style="max-width: 100%;">
-                <q-card bordered style="text-align: center;">
+              <div class="q-ma-md" :style="{ minWidth: minWidth }" style="max-width: 100%">
+                <q-card bordered style="text-align: center">
                   <q-card-section>
                     <q-icon :name="icon" style="font-size: 15em; z-index: 1000;" id="icon"></q-icon>
                     <div class="text-h6 q-mt-md">
@@ -75,15 +75,15 @@
                     <q-btn round color="primary" icon="navigate_next" @click="prevNext('next')" id="next"></q-btn>
                   </q-card-section>
                   <q-card-section>
-                    <div style="max-width: 300px; margin: auto;">
+                    <div style="max-width: 300px; margin: auto">
                       <q-select v-model="animationName" :options="animations" label="Select animation" use-input input-debounce="0" hide-selected fill-input dense @filter="filterFn" @input="animated" id="animationName"></q-select>
                     </div>
                   </q-card-section>
                 </q-card>
               </div>
 
-              <div class="q-ma-md" :style="{ minWidth: minWidth }" style="max-width: 100%;">
-                <q-card style="text-align: center;">
+              <div class="q-ma-md" :style="{ minWidth: minWidth }" style="max-width: 30%">
+                <q-card style="text-align: center">
                   <q-card-section>
                     <q-table title="Keyframes" :data="keyframesData.data" :columns="keyframesData.columns" :pagination.sync="keyframesPagination" :rows-per-page-options="[0]" hide-bottom></q-table>
                   </q-card-section>
@@ -94,8 +94,8 @@
               </div>
 
               <q-dialog v-model="selectIcon">
-                <div class="q-ma-md" style="min-width: 350px; max-width: 350px;">
-                  <q-card bordered style="text-align: center;">
+                <div class="q-ma-md" style="min-width: 350px; max-width: 350px">
+                  <q-card bordered style="text-align: center">
                     <q-bar>
                       <div>Select icon</div>
                       <q-space></q-space>
@@ -106,7 +106,7 @@
                     <q-card-section>
                       <q-select v-model="iconSet" :options="iconSets" label="Select icon set" dense></q-select>
                       <q-input v-model="filter" label="Filter" dense clearable class="q-ma-md"> </q-input>
-                      <q-icon-picker v-model="icon" :icon-set="iconSet" :pagination.sync="pagination" :filter="filter" tooltips style="height: 490px;"></q-icon-picker>
+                      <q-icon-picker v-model="icon" :icon-set="iconSet" :pagination.sync="pagination" :filter="filter" tooltips style="height: 490px"></q-icon-picker>
                     </q-card-section>
                   </q-card>
                 </div>
