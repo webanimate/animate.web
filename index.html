@@ -187,7 +187,6 @@
 
           // draw keyframes
           this.$root.keyframesOffsets.forEach((offset, index) => {
-            console.log(index)
             ctx.beginPath()
             const dot = this.getCubicBezierXYatPercent(startPoint, controlPoint1, controlPoint2, endPoint, offset)
             ctx.moveTo(0 + additionalSpace, dot.y)
