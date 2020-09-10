@@ -62,13 +62,16 @@
                     <q-icon :name="icon" style="font-size: 15em; z-index: 1000;" id="icon"></q-icon>
                     <div class="text-h6 q-mt-md">
                       <q-btn flat color="primary" label="Select icon:" @click="selectIcon = true"></q-btn>
-                      <q-badge color="secondary">{{icon}}</q-badge>
+                      <q-badge color="secondary" @click="selectIcon = true" class="cursor-pointer">{{icon}}</q-badge>
                     </div>
                     <div class="text-h6 q-mb-md">
                       <q-btn flat color="primary" label="Select animation:">
                         <categories-menu :categories="animationsSet.categories"></categories-menu>
                       </q-btn>
-                      <q-badge color="accent">{{animationName}}</q-badge>
+                      <q-badge color="accent" class="cursor-pointer"
+                        >{{animationName}}
+                        <categories-menu :categories="animationsSet.categories"></categories-menu>
+                      </q-badge>
                     </div>
                     <q-btn round color="primary" icon="navigate_before" @click="prevNext('prev')" id="prev"></q-btn>
                     <q-btn round color="primary" icon="play_arrow" @click="animate(animationName)" class="q-mr-md q-ml-md"></q-btn>
