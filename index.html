@@ -17,6 +17,11 @@
     <link href="https://cdn.jsdelivr.net/npm/@quasar/quasar-ui-qiconpicker@latest/dist/index.min.css" rel="stylesheet" type="text/css" />
 
     <link id="favicon" rel="shortcut icon" type="image/svg+xml" href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@latest/svgs/brands/github.svg" />
+    <style id="highlightKeyframe">
+      #keyframesTable > div:nth-child(2) > table > tbody > tr:nth-child(1) {
+        background-color: lightgrey;
+      }
+    </style>
   </head>
   <body>
     <script src="https://cdn.jsdelivr.net/npm/animatable-properties@latest/dist/animatable.js"></script>
@@ -59,7 +64,7 @@
               <div class="q-ma-md" :style="{ minWidth: minWidth }" style="max-width: 100%">
                 <q-card bordered style="text-align: center">
                   <q-card-section>
-                    <q-icon :name="icon" style="font-size: 15em; z-index: 1000;" id="icon"></q-icon>
+                    <animation-player :icon="icon" :name="animationName" :key="'animationPlayer' + animationPlayerKey" @animation-started="startAnimation"></animation-player>
                     <div class="text-h6 q-mt-md">
                       <q-btn flat color="primary" label="Select icon:" @click="selectIcon = true"></q-btn>
                       <q-badge color="secondary" @click="selectIcon = true" class="cursor-pointer">{{icon}}</q-badge>
@@ -73,6 +78,7 @@
                         <categories-menu :categories="animationsSet.categories"></categories-menu>
                       </q-badge>
                     </div>
+                    <input v-model="timeline" type="range" :min="0" :max="sliderMax" :step="1" style="width: 100%" @input="moveSlider" />
                     <q-btn round color="primary" icon="navigate_before" @click="prevNext('prev')" id="prev"></q-btn>
                     <q-btn round color="primary" icon="play_arrow" @click="animate(animationName)" class="q-mr-md q-ml-md"></q-btn>
                     <q-btn round color="primary" icon="navigate_next" @click="prevNext('next')" id="next"></q-btn>
@@ -88,10 +94,24 @@
               <div class="q-ma-md" :style="{ minWidth: minWidth }" style="max-width: 30%">
                 <q-card style="text-align: center">
                   <q-card-section>
-                    <q-table title="Keyframes" :data="keyframesData.data" :columns="keyframesData.columns" :pagination.sync="keyframesPagination" :rows-per-page-options="[0]" hide-bottom></q-table>
+                    <q-table title="Keyframes" :data="keyframesData.data" :columns="keyframesData.columns" row-key="index" :pagination.sync="keyframesPagination" :rows-per-page-options="[0]" hide-bottom separator="cell" id="keyframesTable">
+                      <template v-slot:body="props">
+                        <q-tr :props="props" @click="focusKeyframe(props.key)" class="cursor-pointer">
+                          <q-td v-for="col in props.cols" :key="col.name" :props="props"> {{ col.value }} </q-td>
+                        </q-tr>
+                      </template>
+                    </q-table>
                   </q-card-section>
                   <q-card-section>
-                    <q-table title="Options" :data="optionsData.data" :columns="optionsData.columns" :pagination.sync="keyframesPagination" :rows-per-page-options="[0]" hide-bottom></q-table>
+                    <q-table title="Options" :data="optionsData.data" :columns="optionsData.columns" :pagination.sync="keyframesPagination" :rows-per-page-options="[0]" hide-bottom separator="vertical"></q-table>
+                  </q-card-section>
+                </q-card>
+              </div>
+
+              <div class="q-ma-md" :style="{ minWidth: minWidth }" style="max-width: 100%">
+                <q-card style="text-align: center">
+                  <q-card-section>
+                    <easing-chart :key="'easingChart' + easingChartKey"></easing-chart>
                   </q-card-section>
                 </q-card>
               </div>
@@ -124,6 +144,98 @@
       /* global Vue, Quasar, animatable, WTProperties, animateweb */
       const animationsSet = animateweb
 
+      Vue.component('animation-player', {
+        props: ['icon', 'name'],
+        template: `<q-icon :name="icon" style="font-size: 15em; z-index: 1000;" id="animation"></q-icon>`,
+        mounted() {
+          try {
+            this.$emit('animation-started', document.querySelector('#animation').animate(animationsSet[this.name].keyframes, animationsSet[this.name].options))
+          } catch (e) {
+            this.$root.cancel()
+            this.$q.notify({ color: 'black', message: `Invalid animation code!<br/>Animation: ${name}<br/>${e.name}<br/>${e.message}`, html: true, position: 'center', icon: 'fas fa-skull', multiLine: true, closeBtn: 'OK', timeout: 0 })
+            console.error(e)
+          }
+        },
+      })
+
+      Vue.component('easing-chart', {
+        template: `<canvas ref="canvas" style="transform: scaleX(-1) rotate(-180deg);"></canvas>`,
+        mounted() {
+          const canvas = this.$refs.canvas
+          const ctx = canvas.getContext('2d')
+          const additionalSpace = 10
+          canvas.width = 200 + 2 * additionalSpace
+          canvas.height = canvas.width
+          const height = canvas.height - 2 * additionalSpace
+          const width = height
+          const startPoint = { x: 0 + additionalSpace, y: 0 + additionalSpace }
+          ctx.moveTo(startPoint.x, startPoint.y)
+          const easing = animationsSet[this.$root.animationName].options.easing || WTProperties.properties.easing.default
+          let ease
+          if (easing.substring(0, 13) === 'cubic-bezier(') {
+            ease = easing.substring(13, easing.length - 1)
+          } else {
+            ease = WTProperties.properties.easing.valuesCubicBezier[easing] || WTProperties.properties.easing.valuesCubicBezier[WTProperties.properties.easing.default]
+          }
+          const points = ease.split(',')
+          const controlPoint1 = { x: Number(points[0]) * width + additionalSpace, y: Number(points[1]) * height + additionalSpace }
+          const controlPoint2 = { x: Number(points[2]) * width + additionalSpace, y: Number(points[3]) * height + additionalSpace }
+          const endPoint = { x: width + additionalSpace, y: height + additionalSpace }
+          ctx.bezierCurveTo(controlPoint1.x, controlPoint1.y, controlPoint2.x, controlPoint2.y, endPoint.x, endPoint.y)
+          ctx.lineWidth = 2
+          ctx.stroke()
+
+          // draw keyframes
+          this.$root.keyframesOffsets.forEach((offset, index) => {
+            console.log(index)
+            ctx.beginPath()
+            const dot = this.getCubicBezierXYatPercent(startPoint, controlPoint1, controlPoint2, endPoint, offset)
+            ctx.moveTo(0 + additionalSpace, dot.y)
+            ctx.lineTo(width + additionalSpace, dot.y)
+            ctx.lineWidth = 0.5
+            ctx.strokeStyle = 'green'
+            ctx.stroke()
+          })
+
+          const dot = this.getCubicBezierXYatPercent(startPoint, controlPoint1, controlPoint2, endPoint, this.$root.offset)
+          if (dot.x >= 0) {
+            ctx.beginPath()
+            ctx.arc(dot.x, dot.y, 2, 0, 2 * Math.PI, false)
+            ctx.fillStyle = 'red'
+            ctx.fill()
+            ctx.lineWidth = 4
+            ctx.strokeStyle = '#ff0000'
+            ctx.stroke()
+            ctx.beginPath()
+            ctx.moveTo(0, dot.y)
+            ctx.lineTo(canvas.width, dot.y)
+            ctx.lineWidth = 0.5
+            ctx.stroke()
+            ctx.beginPath()
+            ctx.moveTo(dot.x, 0)
+            ctx.lineTo(dot.x, canvas.height)
+            ctx.stroke()
+          }
+        },
+        methods: {
+          getCubicBezierXYatPercent(startPoint, controlPoint1, controlPoint2, endPoint, percent) {
+            const result = {}
+            ;['x', 'y'].forEach((key) => {
+              result[key] = this.CubicQ(percent, startPoint[key], controlPoint1[key], controlPoint2[key], endPoint[key])
+            })
+            return result
+          },
+          CubicQ(t, a, b, c, d) {
+            a += (b - a) * t
+            b += (c - b) * t
+            c += (d - c) * t
+            a += (b - a) * t
+            b += (c - b) * t
+            return a + (b - a) * t
+          },
+        },
+      })
+
       Vue.component('drawer-menu-item', {
         props: ['url', 'icon', 'label', 'caption'],
         template: `
@@ -153,7 +265,7 @@
                   <categories-menu :categories="value" anchor="top right" self="top left" :level="level + 1"></categories-menu>
                 </q-item>
 
-                <q-item dense clickable @click="$root.animate(key)" v-if="value === true">
+                <q-item dense clickable @click="$root.animate(key)" v-close-popup v-if="value === true">
                   <q-item-section>{{key}}</q-item-section>
                 </q-item>
 
@@ -184,10 +296,17 @@
             drawer: false,
             selectIcon: false,
             minWidth: '30%',
+            sliderMax: 0,
+            timeline: 0,
+            easingChartKey: 0,
+            animationPlayerKey: 0,
           }
         },
 
         created() {
+          if (location.hash && Object.keys(animationsSet).includes(location.hash.substring(1))) {
+            this.animationName = location.hash.substring(1)
+          }
           this.packageName = 'animate.web'
           this.githubUsername = 'webanimate'
           this._animations = []
@@ -234,30 +353,36 @@
             },
           ]
           this.animation = null
+          this.delay = 0
+          this.offset = 0
+          this.keyframesOffsets = []
+          this.currentKeyframe = 0
+          this.previousKeyframe = 0
           this.animationsNames = Object.keys(animationsSet)
           this.animationsNames.splice(this.animationsNames.indexOf('categories'), 1)
         },
 
         mounted() {
-          this.animation = document.querySelector('#icon').animate(animationsSet[this.animationName].keyframes, animationsSet[this.animationName].options)
+          this.animate(this.animationName)
         },
 
         computed: {
-          keyFrames: function () {
-            return animationsSet[this.animationName].keyframes
-          },
-
           keyframesData: function () {
             const properties = {}
             const columns = []
             const data = []
-            for (const val of Object.keys(animationsSet[this.animationName].keyframes)) {
-              const _data = {}
+            this.keyframesOffsets = []
+            for (const [i, val] of Object.keys(animationsSet[this.animationName].keyframes).entries()) {
+              const _data = { index: i }
               Object.keys(animationsSet[this.animationName].keyframes[val]).forEach((key) => {
                 properties[key] = true
                 _data[key] = animationsSet[this.animationName].keyframes[val][key]
               })
+              this.keyframesOffsets.push(_data.offset >= 0 ? _data.offset : null)
               data.push(_data)
+            }
+            if (this.keyframesOffsets.includes(null)) {
+              this.getComputedOffsets()
             }
             ;['offset', 'easing', 'composite', ...animatable.properties].forEach((key) => {
               if (properties[key]) {
@@ -296,17 +421,115 @@
           },
 
           animate(name) {
-            try {
-              if (name === this.previousAnimationName) {
-                this.animation.cancel()
-                this.animation.play()
-              } else {
-                this.previousAnimationName = this.animationName = name
-                this.animation = document.querySelector('#icon').animate(animationsSet[name].keyframes, animationsSet[name].options)
+            this.timeline = 0
+            this.delay = animationsSet[name].options.delay || 0
+            this.sliderMax = animationsSet[name].options.duration || 0
+            if (name === this.previousAnimationName) {
+              this.animation.cancel()
+            } else {
+              location.hash = name
+              this.previousAnimationName = this.animationName = name
+            }
+            this.animationPlayerKey++
+          },
+
+          focusKeyframe(key) {
+            this.timeline = this.sliderMax * this.keyframesOffsets[key]
+            this.moveSlider()
+          },
+
+          startAnimation(animation) {
+            this.animation = animation
+            this.launchSlider()
+          },
+
+          getCurrentKeyframe() {
+            this.offset = this.timeline / animationsSet[this.animationName].options.duration
+            for (const [i, value] of this.keyframesOffsets.entries()) {
+              if (i === this.keyframesOffsets.length - 1) {
+                this.currentKeyframe = i
+              } else if (this.offset >= value && this.offset < this.keyframesOffsets[i + 1]) {
+                this.currentKeyframe = i
+                break
               }
-            } catch (e) {
-              this.$q.notify({ color: 'black', message: `Invalid animation code!<br/>Animation: ${name}<br/>${e.name}<br/>${e.message}`, html: true, position: 'center', icon: 'fas fa-skull', multiLine: true, closeBtn: 'OK', timeout: 0 })
-              console.error(e)
+            }
+            if (this.currentKeyframe !== this.previousKeyframe) {
+              this.previousKeyframe = this.currentKeyframe
+              document.getElementById('highlightKeyframe').innerHTML = `#keyframesTable > div:nth-child(2) > table > tbody > tr:nth-child(${this.currentKeyframe + 1}) { background-color: lightgrey; }`
+            }
+          },
+
+          launchSlider() {
+            if (this.animation) {
+              const totalDuration = animationsSet[this.animationName].options.duration * (animationsSet[this.animationName].options.iterations || WTProperties.properties.iterations.default)
+              if (this.timeline && (totalDuration <= this.timeline || totalDuration + this.delay <= this.animation.currentTime)) {
+                this.finish()
+              } else {
+                this.timeline = (this.animation.currentTime - this.delay) % animationsSet[this.animationName].options.duration
+                this.updateFrame()
+                this.$options.frameID = requestAnimationFrame(this.launchSlider)
+              }
+            }
+          },
+
+          moveSlider() {
+            this.animation.currentTime = Number(this.timeline) + this.delay
+            this.updateFrame()
+            if (this.animation.playState === 'running') {
+              this.animation.pause()
+              this.cancel()
+            }
+          },
+
+          updateFrame() {
+            this.getCurrentKeyframe()
+            this.easingChartKey++
+          },
+
+          finish() {
+            this.timeline = this.animation.currentTime
+            this.updateFrame()
+            this.cancel()
+          },
+
+          cancel() {
+            cancelAnimationFrame(this.$options.frameID)
+          },
+
+          getRemainingComputedOffsets() {
+            const firstOffset = {}
+            const lastOffset = {}
+            for (const i in this.keyframesOffsets) {
+              if (this.keyframesOffsets[i] === null && this.keyframesOffsets[i - 1] !== null) {
+                firstOffset.index = i - 1
+                firstOffset.value = this.keyframesOffsets[i - 1]
+              }
+              if (this.keyframesOffsets[i] !== null && this.keyframesOffsets[i - 1] === null) {
+                lastOffset.index = i
+                lastOffset.value = this.keyframesOffsets[i]
+                break
+              }
+            }
+            const interval = (lastOffset.value - firstOffset.value) / (lastOffset.index - firstOffset.index)
+            for (let i = firstOffset.index + 1; i < lastOffset.index; i++) {
+              this.keyframesOffsets[i] = this.keyframesOffsets[i - 1] + interval
+            }
+            if (this.keyframesOffsets.includes(null)) {
+              this.getRemainingComputedOffsets()
+            }
+          },
+
+          getComputedOffsets() {
+            // set offset of the first keyframe to 0
+            if (this.keyframesOffsets[0] === null) {
+              this.keyframesOffsets[0] = 0
+            }
+            // set offset of the last keyframe to 1
+            if (this.keyframesOffsets[this.keyframesOffsets.length - 1] === null) {
+              this.keyframesOffsets[this.keyframesOffsets.length - 1] = 1
+            }
+            if (this.keyframesOffsets.includes(null)) {
+              this.getRemainingComputedOffsets()
             }
           },
 
