@@ -1,3 +1,3 @@
-//animate.web v1.0.2 https://github.com/webanimate/animate.web#readme
+//animate.web v1.0.3 https://github.com/webanimate/animate.web#readme
 !function(e,i){"object"==typeof exports&&"undefined"!=typeof module?module.exports=i():"function"==typeof define&&define.amd?define(i):((e="undefined"!=typeof globalThis?globalThis:e||self).animateweb=e.animateweb||{},e.animateweb.zoomOutLeft=i())}(this,(function(){"use strict";return{keyframes:[{offset:0,easing:"cubic-bezier(0.175, 0.885, 0.32, 1)",opacity:1,transform:"scale3d(1, 1, 1) translateX(0px)",visibility:"visible"},{offset:.4,easing:"cubic-bezier(0.175, 0.885, 0.32, 1)",opacity:1,transform:"scale3d(0.475, 0.475, 0.475) translateX(10px)"},{offset:1,opacity:0,transform:"scale3d(0.1, 0.1, 0.1) translateX(-1000px)",visibility:"hidden"}],options:{duration:1e3,fill:"forwards"}}}));
 //# sourceMappingURL=zoomOutLeft.js.map
