@@ -258,6 +258,7 @@ Object.keys(animations).forEach((key) => {
         })
         listCategorizedAnimations(animations.categories)
 
+        // Remove duplicates
         const availableAnimations = [...new Set(_availableAnimations)]
         const categorizedAnimations = [...new Set(_categorizedAnimations)]
 
