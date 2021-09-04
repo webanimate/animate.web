@@ -8,7 +8,7 @@
 [![](https://img.shields.io/bundlephobia/minzip/animate.web.svg)](https://bundlephobia.com/result?p=animate.web)
 [![Dependencies Status](https://david-dm.org/webanimate/animate.web.svg?theme=shields.io)](https://david-dm.org/webanimate/animate.web)
 [![devDependencies Status](https://david-dm.org/webanimate/animate.web/dev-status.svg?theme=shields.io)](https://david-dm.org/webanimate/animate.web?type=dev)
-[![Build Status](https://travis-ci.org/webanimate/animate.web.svg?branch=master)](https://travis-ci.org/webanimate/animate.web)
+[![Build Status](https://app.travis-ci.com/webanimate/animate.web.svg?branch=master)](https://app.travis-ci.com/webanimate/animate.web)
 
 [Animate.css](https://github.com/daneden/animate.css) animations ported to [Web Animations API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API).
 
