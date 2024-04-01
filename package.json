@@ -33,21 +33,21 @@
     "up": "yarn upgrade-interactive && ncu -i && yarn"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.0",
-    "@babel/preset-env": "^7.15.0",
-    "@rollup/plugin-virtual": "^2.0.3",
-    "animatable-properties": "^3.0.12",
-    "babel-jest": "^27.1.0",
-    "css-tree-animatable": "^1.0.13",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-html": "^6.1.2",
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10",
+    "@rollup/plugin-virtual": "^2.1.0",
+    "animatable-properties": "^3.0.16",
+    "babel-jest": "^28.0.3",
+    "css-tree-animatable": "^1.0.18",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-html": "^8.0.0",
     "eslint-plugin-json": "^3.1.0",
-    "jest": "^27.1.0",
+    "jest": "^28.0.3",
     "lodash.isplainobject": "^4.0.6",
-    "prettier": "^2.3.2",
-    "rimraf": "^3.0.2",
-    "rollup": "^2.56.3",
+    "prettier": "^3.2.5",
+    "rimraf": "^4.4.1",
+    "rollup": "~2.66.1",
     "rollup-plugin-terser": "^7.0.2",
     "sanitize-filename": "^1.6.3",
     "waapi-timing-properties": "^1.4.7"
@@ -101,5 +101,6 @@
     "web-animations-api",
     "css",
     "transitions"
-  ]
+  ],
+  "packageManager": "yarn@1.22.19+sha1.4ba7fc5c6e704fce2066ecbfb0b0d8976fe62447"
 }
